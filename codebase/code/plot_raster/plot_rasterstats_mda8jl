@@ -1,0 +1,160 @@
+using NCDatasets,Plots,Shapefile
+
+
+cd(@__DIR__)
+
+
+datapath = "/home/cschmidt/data/attain/bias_corr_output_mda8/timmean/"
+
+inp_f = readdir(datapath,join=true)
+inp_f = inp_f[occursin.("d5",inp_f)]
+##450x156
+##2700x936
+mda8_hist_wrf_era = Dataset(inp_f[2])
+mda8_hist_wrf_cesm = Dataset(inp_f[1])
+mda8_hist_camx_cesm = Dataset(inp_f[3])
+mda8_rcp45_nf_wrf = Dataset(inp_f[6])
+mda8_rcp45_ff_wrf = Dataset(inp_f[7])
+mda8_rcp85_nf_wrf = Dataset(inp_f[8])
+mda8_rcp85_ff_wrf = Dataset(inp_f[9])
+
+#Get lat and lon
+lat = mda8_hist_wrf_cesm["lat"][:]
+lon = mda8_hist_wrf_cesm["lon"][:]
+
+## Labels for Plots
+mda8_label = "O₃ mda8 [μg/m³]"
+mda8_label = "mda8eedances"
+
+cs1= cgrad(:bam, 10, categorical = false)
+
+clim_mag = (1,40)
+heatmap(lon,lat,transpose(mda8_hist_wrf_era[:Band1])/10,c=cs1,clim=clim_mag,colorbar_title=mda8_label,framestyle=:box)
+title!("HIST ERA WRF 10Year mda8 sum")
+xlabel!("Longitude [°]")
+ylabel!("Latitude [°]")
+png("hist_wrf_era_mda8_sum")
+
+heatmap(lon,lat,transpose(mda8_hist_wrf_cesm[:Band1])/10,c=cs1,clim=clim_mag,colorbar_title=mda8_label,framestyle=:box)
+title!("HIST CESM WRF 10Year mda8 sum")
+xlabel!("Longitude [°]")
+ylabel!("Latitude [°]")
+png("hist_wrf_cesm_mda8_sum")
+
+heatmap(transpose(mda8_hist_camx_cesm[:Band1])/10,c=cs1,clim=clim_mag,colorbar_title=mda8_label,framestyle=:box)
+title!("HIST CESM CAMx 10Year ecx sum")
+xlabel!("Longitude [°]")
+ylabel!("Latitude [°]")
+png("hist_camx_cesm_mda8_sum")
+
+heatmap(transpose(mda8_rcp45_nf_wrf[:Band1])/10,c=cs1,clim=clim_mag,colorbar_title=mda8_label,framestyle=:box)
+title!("NF RCP45 WRF 10Year mda8 sum")
+xlabel!("Longitude [°]")
+ylabel!("Latitude [°]")
+png("nf45_wrf_cesm_mda8_sum")
+
+heatmap(transpose(mda8_rcp45_ff_wrf[:Band1])/10,c=cs1,clim=clim_mag,colorbar_title=mda8_label,framestyle=:box)
+title!("FF RCP45 WRF 10Year mda8 sum")
+xlabel!("Longitude [°]")
+ylabel!("Latitude [°]")
+png("ff45_wrf_cesm_mda8_sum")
+
+heatmap(transpose(mda8_rcp85_nf_wrf[:Band1])/10,c=cs1,clim=clim_mag,colorbar_title=mda8_label,framestyle=:box)
+title!("NF RCP85 WRF 10Year mda8 sum")
+xlabel!("Longitude [°]")
+ylabel!("Latitude [°]")
+png("nf85_wrf_cesm_mda8_sum")
+
+heatmap(transpose(mda8_rcp85_ff_wrf[:Band1])/10,c=cs1,clim=clim_mag,colorbar_title=mda8_label,framestyle=:box)
+title!("FF RCP85 WRF 10Year mda8 sum")
+xlabel!("Longitude [°]")
+ylabel!("Latitude [°]")
+png("ff85_wrf_cesm_mda8_sum")
+
+####### Write Plot function for all the stuff 
+map_heat_att = function (ds,cs,clim_p,ctitle,fstyle,ptitle)
+    p = heatmap(lon,lat,transpose(ds),c=cs,clim=clim_p,colorbar_title=ctitle,framestyle=fstyle)
+    title!(ptitle)
+    xlabel!("Longitude [°]")
+    ylabel!("Latitude [°]")
+    return(p)
+end
+
+map_heat_att(mda8_hist_wrf_cesm[:Band1]/10,cs1,clim_mag,mda8_label,:box,"HIST CESM 10YEAR mda8")
+
+###### Write function which reads in file
+map_heat_att = function (filen,nckey,cs,clim_p,ctitle,fstyle,ptitle)
+    ds=Dataset(filen)
+    p = heatmap(lon,lat,transpose(ds[nckey]),c=cs,clim=clim_p,colorbar_title=ctitle,framestyle=fstyle)
+    title!(ptitle)
+    xlabel!("Longitude [°]")
+    ylabel!("Latitude [°]")
+    close(ds)
+    return(p)
+end
+
+map_heat_att_diff = function (filen,filen2,nckey,cs,clim_p,ctitle,fstyle,ptitle)
+    ds=Dataset(filen)
+    ds2=Dataset(filen2)
+    p = heatmap(lon,lat,transpose(ds[nckey]-ds2[nckey]),c=cs,clim=clim_p,colorbar_title=ctitle,framestyle=fstyle)
+    title!(ptitle)
+    xlabel!("Longitude [°]")
+    ylabel!("Latitude [°]")
+    close(ds)
+    close(ds2)
+    return(p)
+end
+
+map_heat_att(inp_f[2],:Band1,cs1,clim_mag,mda8_label,:box,"HIST CESM 10YEAR mda8")
+
+####### Difference maps
+cs2 = cgrad(:vik,30,rev=false,categorical=false)
+
+heatmap(transpose(mda8_rcp45_nf_wrf[:Band1]/10 - mda8_hist_wrf_era[:Band1]/10),c=cs2,clim=(-30,30))
+title!("Diff mda8eedances RCP45 NF vs. HIST")
+png("d5_hist_rcp45nf_mda8diff")
+
+heatmap(transpose(mda8_rcp45_ff_wrf[:Band1]/10 - mda8_hist_wrf_era[:Band1]/10),c=cs2,clim=(-30,30))
+title!("Diff mda8eedances RCP45 FF vs. HIST")
+png("d5_hist_rcp45ff_mda8diff")
+
+heatmap(transpose(mda8_rcp85_nf_wrf[:Band1]/10 - mda8_hist_wrf_era[:Band1]/10),c=cs2,clim=(-30,30))
+title!("Diff mda8eedances RCP85 NF vs. HIST")
+png("d5_hist_rcp85nf_mda8diff")
+
+heatmap(transpose(mda8_rcp85_ff_wrf[:Band1]/10 - mda8_hist_wrf_era[:Band1]/10),c=cs2,clim=(-30,30))
+title!("Diff mda8eedances RCP85 FF vs. HIST")
+png("d5_hist_rcp85ff_mda8diff")
+
+########
+######## Plots with fuction
+########
+
+inputdir = "/home/cschmidt/data/attain/bias_corr_output_mda8/timsum/"
+inp_f = readdir(inputdir,join=true)
+inp_files = readdir(inputdir,join=false)
+inp_f = inp_f[occursin.("divd5",inp_f)]
+inp_files = inp_files[occursin.("divd5",inp_files)]
+
+println.(inp_files)
+
+model_str = ["Hist WRF CESM","Hist WRF ERA5","Hist CAMx CESM","Hist CAMx ER5A","Hist WRF RCP26","NearFuture WRF RCP45","FarFuture WRF RCP85","NearFuture WRF RCP85","FarFuture WRF RCP85","FarFuture WRF RCP26","NearFuture WRF RCP26"]
+
+model_str_f = ["hist_wrf_cesm","hist_wrf_era","hist_camx_cesm","hist_camx_era","hist_wrf_rcp26","nearfuture_wrf_rcp45","farfuture_wrf_rcp45","nearfuture_wrf_rcp85","farfuture_wrf_rcp85","farfuture_wrf_rcp26","nearfuture_wrf_rcp26"]
+
+map_heat_att(inp_f[2],:Band1,cs1,clim_mag,mda8_label,:box,model_str[2]*" 10 year mda8 mean")
+
+map_heat_att(inp_f[1],:Band1,cs1,clim_mag,mda8_label,:box,model_str[1]*" 10 year mda8 mean")
+
+for i in eachindex(inp_f)
+    p = map_heat_att(inp_f[i],:Band1,cs1,clim_mag,mda8_label,:box,model_str[i]*" 10 year mda8 mean")
+    png(model_str_f[i]*"_10ymean_mda8_mean")    
+end
+
+##### Difference heatmaps
+
+model_str_f[6]
+
+clim_mag = (-10,10)
+map_heat_att_diff(inp_f[6],inp_f[1],:Band1,cs1,clim_mag,mda8_label,:box,model_str[6] * " - HIST WRF CESM")
+map_heat_att_diff(inp_f[7],inp_f[1],:Band1,cs1,clim_mag,mda8_label,:box,model_str[7] * " - HIST WRF CESM")
