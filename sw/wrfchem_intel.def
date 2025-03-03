@@ -1,0 +1,104 @@
+Bootstrap: docker
+From: debian:12
+
+%post
+    export DEBIAN_FRONTEND=noninteractive
+
+    echo "### Updating System and Installing Base Dependencies ###"
+    apt-get update && apt-get upgrade -y
+    apt-get install -y \
+        build-essential \
+        wget curl gnupg \
+        ca-certificates \
+        apt-transport-https \
+        mpich \
+        libnetcdf-dev libnetcdff-dev \
+        libhdf5-dev \
+        libpng-dev \
+        zlib1g-dev \
+        perl flex bison make cmake nano \
+        python3 python3-pip \
+        cdo nco git \
+        lsb-release software-properties-common
+
+    # Install Intel oneAPI compilers
+    echo "### Installing Intel oneAPI Compilers ###"
+    wget -O- https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB | gpg --dearmor > /usr/share/keyrings/oneapi-archive-keyring.gpg
+    echo "deb [signed-by=/usr/share/keyrings/oneapi-archive-keyring.gpg] https://apt.repos.intel.com/oneapi all main" > /etc/apt/sources.list.d/oneAPI.list
+    apt-get update
+    apt-get install -y \
+        intel-oneapi-compiler-fortran \
+        intel-oneapi-compiler-dpcpp-cpp \
+        intel-oneapi-mpi \
+        intel-oneapi-mkl
+
+    # Python packages for WRF-Chem processing
+    pip3 install numpy scipy xarray netCDF4 matplotlib
+
+    # Install KPP (Kinetic PreProcessor)
+    echo "### Installing KPP (Kinetic PreProcessor) ###"
+    cd /opt
+    git clone https://github.com/wrf-model/KPP.git
+    cd KPP
+
+    # Set Intel compiler for KPP
+    sed -i 's/^FC.*=.*$/FC = ifort/' Makefile.defs
+    sed -i 's/^CC.*=.*$/CC = icc/' Makefile.defs
+    sed -i 's/^FFLAGS.*=.*$/FFLAGS = -cpp -real-size 64 -O2/' Makefile.defs
+
+    # Build KPP
+    make
+
+    # Add KPP to PATH
+    echo "export PATH=/opt/KPP/bin:\$PATH" >> /etc/profile
+
+    # Set up environment for Intel compilers
+    cat >> /etc/profile << EOF
+# Intel oneAPI environment setup
+source /opt/intel/oneapi/setvars.sh > /dev/null 2>&1
+
+# WRF-Chem environment
+export WRF_DIR=/opt/wrfchem
+export NETCDF=/usr
+export HDF5=/usr
+export PATH=/opt/wrfchem/bin:\$PATH
+
+# Intel compiler settings
+export FC=ifort
+export CC=icc
+export CXX=icpc
+export MPIFC=mpiifort
+export MPICC=mpiicc
+
+# Intel-optimized compiler flags
+export FFLAGS='-O3 -xHost -ip -no-prec-div -qopt-report=5 -qopenmp'
+export CFLAGS='-O3 -xHost -ip -no-prec-div -qopt-report=5 -qopenmp'
+export LDFLAGS='-O3 -qopenmp'
+EOF
+
+    source /etc/profile
+
+    # Create directories for WRFChem
+    mkdir -p /opt/wrfchem/bin
+    mkdir -p /opt/wrfchem/data
+    mkdir -p /opt/wrfchem/tools
+
+%environment
+    source /etc/profile
+
+%runscript
+    exec /bin/bash
+
+%help
+    Intel-optimized container for WRFChem simulations on Debian 12.
+
+    Features:
+    - Intel oneAPI Fortran & C/C++ compilers
+    - Intel MPI for parallel processing
+    - Intel MKL for optimized math routines
+    - NetCDF and HDF5 libraries
+    - Basic Python tools for data processing
+
+    Recommended for Intel Xeon and Core processors.
+
+    To use: apptainer shell wrfchem-intel.sif

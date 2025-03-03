@@ -1,0 +1,98 @@
+Bootstrap: docker
+From: debian:12
+
+%post
+    echo "### Updating System and Installing Dependencies ###"
+    apt-get update && apt-get upgrade -y
+    apt-get install -y \
+        build-essential \
+        gfortran \
+        gcc g++ \
+        mpich \
+        libnetcdf-dev libnetcdff-dev \
+        libhdf5-dev \
+        libpng-dev \
+        zlib1g-dev \
+        perl flex bison make cmake wget nano \
+        python3 python3-pip \
+        cdo nco git \
+        libopenblas-dev liblapack-dev
+
+    # Install Python packages for WRF-Chem processing
+    pip3 install numpy scipy xarray netCDF4 matplotlib
+
+    # Install KPP (Kinetic PreProcessor)
+    echo "### Installing KPP (Kinetic PreProcessor) ###"
+    cd /opt
+    git clone https://github.com/wrf-model/KPP.git
+    cd KPP
+
+    # Set GNU compiler for KPP
+    sed -i 's/^FC.*=.*$/FC = gfortran/' Makefile.defs
+    sed -i 's/^CC.*=.*$/CC = gcc/' Makefile.defs
+    sed -i 's/^FFLAGS.*=.*$/FFLAGS = -cpp -fdefault-real-8 -O2/' Makefile.defs
+
+    # Build KPP
+    make
+
+    # Add KPP to PATH
+    echo "export PATH=/opt/KPP/bin:\$PATH" >> /etc/profile
+
+    echo "### Setting Up Environment Variables ###"
+    cat >> /etc/profile << EOF
+# WRF-Chem environment
+export WRF_DIR=/opt/wrfchem
+export NETCDF=/usr
+export HDF5=/usr
+export PATH=/opt/wrfchem/bin:\$PATH
+
+# GNU compiler settings
+export FC=gfortran
+export CC=gcc
+export CXX=g++
+export MPIFC=mpif90
+export MPICC=mpicc
+
+# GNU-optimized compiler flags
+export FFLAGS='-O3 -march=native -mtune=native -funroll-loops -fopenmp -ffast-math -ftree-vectorize -ffp-contract=fast'
+export CFLAGS='-O3 -march=native -mtune=native -funroll-loops -fopenmp -ffast-math -ftree-vectorize -ffp-contract=fast'
+export LDFLAGS='-O3 -fopenmp'
+EOF
+
+    source /etc/profile
+
+    # Create directories for WRFChem
+    mkdir -p /opt/wrfchem/bin
+    mkdir -p /opt/wrfchem/data
+    mkdir -p /opt/wrfchem/tools
+
+    # Optional: Add Fortran specific tools
+    apt-get install -y fprettify # Optional Fortran code formatter
+
+%environment
+    source /etc/profile
+
+%runscript
+    exec /bin/bash
+
+%help
+    GNU-optimized container for WRFChem simulations.
+
+    Features:
+    - GNU Fortran (gfortran) and GCC
+    - MPICH for parallel processing
+    - OpenBLAS and LAPACK optimized math libraries
+    - NetCDF and HDF5 libraries
+    - Basic Python tools for data processing
+
+    Broadly compatible with all CPU types.
+
+    To use: apptainer shell wrfchem-gnu.sif
+
+    Notes:
+    - The 'native' architecture setting automatically optimizes for the CPU
+      where the container is built
+    - For specific CPU types, replace 'native' with appropriate architecture:
+      • For Intel: 'skylake', 'cascadelake', 'icelake-server', etc.
+      • For AMD: 'znver1', 'znver2', 'znver3', 'znver4', etc.
+      • For Arm: 'armv8-a', 'neoverse-n1', etc.
