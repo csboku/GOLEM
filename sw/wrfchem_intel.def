@@ -13,13 +13,19 @@ From: debian:12
         apt-transport-https \
         libnetcdf-dev libnetcdff-dev \
         libhdf5-dev \
+        byacc \
         libpng-dev \
+        libfl-dev \
+        libfl2 \
         zlib1g-dev \
         perl flex bison make cmake nano \
         cdo nco git \
         lsb-release software-properties-common \
         locales unzip zip \
-        libjpeg-dev
+        libjpeg-dev \
+        vim \
+        ksh \
+        csh
 
     # Configure locales
     echo "### Configuring locales ###"
@@ -51,12 +57,22 @@ if [ -f /opt/intel/oneapi/setvars.sh ]; then
 fi
 
 # WRF-Chem environment
-export WRF_DIR="/opt/wrfchem"
+export WRF_DIR="/opt/GOLEM/wrfchem"
+export WRF_CHEM=1
+export WRF_KPP=1
+export EM_CORE=1
+export NMM_CORE=0
 export NETCDF="/usr"
+export NETCDF_LIB=/usr/lib/x86_64-linux-gnu
+export NETCDF_INC=/usr/include
 export HDF5="/usr"
+export HDF5_LIB=/usr/lib/x86_64-linux-gnu
+export HDF5_INCLUDE=/usr/include
 export JASPER="/opt/GOLEM/"
 export JASPERLIB="/opt/GOLEM/lib"
 export JASPERINC="/opt/GOLEM/include"
+export YACC="/usr/bin/yacc -d"
+export FLEX_LIB_DIR=/usr/lib/x86_64-linux-gnu/
 
 # Intel compiler settings for newer LLVM-based compilers
 export FC=ifx
@@ -86,6 +102,7 @@ EOF
 
     # Source the Intel environment setup script
     . /etc/profile.d/intel-wrf.sh
+
 
 %runscript
     exec /bin/bash
