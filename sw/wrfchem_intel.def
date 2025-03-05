@@ -46,6 +46,15 @@ From: debian:12
         intel-oneapi-mpi-devel \
         intel-oneapi-mkl-devel
 
+    # Manage netcdf libraries
+    mkdir -p /opt/lib
+    mkdir -p /opt/include
+    ln -sf /usr/lib/x86_64-linux-gnu/libnetcdf* /opt/lib/
+    ln -sf /usr/include/netcdf* /opt/include/
+
+    ln -sf /usr/lib/x86_64-linux-gnu/libhdf5* /opt/lib/
+    ln -sf /usr/include/hdf5* /opt/include/
+
 
     # Add Intel oneAPI environment to shell startup
     echo "### Creating environment setup script ###"
@@ -62,12 +71,8 @@ export WRF_CHEM=1
 export WRF_KPP=1
 export EM_CORE=1
 export NMM_CORE=0
-export NETCDF="/usr"
-export NETCDF_LIB=/usr/lib/x86_64-linux-gnu
-export NETCDF_INC=/usr/include
-export HDF5="/usr"
-export HDF5_LIB=/usr/lib/x86_64-linux-gnu
-export HDF5_INCLUDE=/usr/include
+export NETCDF=/opt/
+export HDF5=/opt/
 export JASPER="/opt/GOLEM/"
 export JASPERLIB="/opt/GOLEM/lib"
 export JASPERINC="/opt/GOLEM/include"
