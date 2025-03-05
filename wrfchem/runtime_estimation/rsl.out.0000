@@ -1,0 +1,1000 @@
+taskid: 0 hostname: n4912-057
+Quilting with   1 groups of   0 I/O tasks.
+ Ntasks in X           10 , ntasks in Y           14
+  Domain # 1: dx =  9000.000 m
+  Domain # 2: dx =  3000.000 m
+  Domain # 3: dx =  1000.000 m
+  Domain # 4: dx =  1000.000 m
+WRF V4.6.1 MODEL
+git commit d66e442fccc04111067e29274c9f9eaccc3cef28 1 file changed, 88 insertions(+), 90 deletions(-)
+ *************************************
+ Parent domain
+ ids,ide,jds,jde            1         180           1         160
+ ims,ime,jms,jme           -4          25          -4          19
+ ips,ipe,jps,jpe            1          18           1          12
+ *************************************
+DYNAMICS OPTION: Eulerian Mass Coordinate
+   alloc_space_field: domain            1 ,               25415668  bytes allocated
+  med_initialdata_input: calling input_input
+   Input data is acceptable to use: wrfinput_d01
+ CURRENT DATE          = 2004-12-01_00:00:00
+ SIMULATION START DATE = 2004-12-01_00:00:00
+Timing for processing wrfinput file (stream 0) for domain        1:    0.77865 elapsed seconds
+Max map factor in domain 1 =  0.98. Scale the dt in the model accordingly.
+ D01: Time step                              =    48.00000      (s)
+ D01: Grid Distance                          =    9.000000      (km)
+ D01: Grid Distance Ratio dt/dx              =    5.333333      (s/km)
+ D01: Ratio Including Maximum Map Factor     =    5.206763      (s/km)
+ D01: NML defined reasonable_time_step_ratio =    6.000000
+ Climate GHG input from file from year         1765  to         2499
+ CO2   range =    277.913000000000        579.264000000000       ppm
+ N2O   range =    274.372000000000        359.798000000000       ppb
+ CH4   range =    738.986000000000        997.311000000000       ppb
+ CFC11 range =   0.000000000000000E+000  1.400000000000000E-002  ppt
+ CFC12 range =   0.000000000000000E+000   2.88100000000000       ppt
+ Normal ending of CAMtr_volume_mixing_ratio file
+ GHG annual values from CAM trace gas file
+ Year =         2004 , Julian day =          336
+ CO2   =   3.778812456432316E-004  volume mixing ratio
+ N2O   =   3.187170183921634E-007  volume mixing ratio
+ CH4   =   1.783824744060592E-006  volume mixing ratio
+ CFC11 =   2.521325469116822E-010  volume mixing ratio
+ CFC12 =   5.425210389200587E-010  volume mixing ratio
+INPUT LandUse = "MODIFIED_IGBP_MODIS_NOAH"
+ LANDUSE TYPE = "MODIFIED_IGBP_MODIS_NOAH" FOUND          61  CATEGORIES           2  SEASONS WATER CATEGORY =           17  SNOW CATEGORY =           15
+INITIALIZE THREE Noah LSM RELATED TABLES
+Skipping over LUTYPE = USGS
+ LANDUSE TYPE = MODIFIED_IGBP_MODIS_NOAH FOUND          20  CATEGORIES
+ INPUT SOIL TEXTURE CLASSIFICATION = STAS
+ SOIL TEXTURE CLASSIFICATION = STAS FOUND          19  CATEGORIES
+ *************************************
+ Nesting domain
+ ids,ide,jds,jde            1         301           1         151
+ ims,ime,jms,jme           -4          42          -4          21
+ ips,ipe,jps,jpe            1          30           1          11
+ INTERMEDIATE domain
+ ids,ide,jds,jde           33         138          53         108
+ ims,ime,jms,jme           28          54          48          68
+ ips,ipe,jps,jpe           31          44          51          58
+ *************************************
+d01 2004-12-01_00:00:00  alloc_space_field: domain            2 ,                5812884  bytes allocated
+d01 2004-12-01_00:00:00  alloc_space_field: domain            2 ,               38955272  bytes allocated
+d01 2004-12-01_00:00:00 *** Initializing nest domain # 2 from an input file. ***
+d01 2004-12-01_00:00:00 med_initialdata_input: calling input_input
+d01 2004-12-01_00:00:00  Input data is acceptable to use: wrfinput_d02
+Timing for processing wrfinput file (stream 0) for domain        2:    1.04158 elapsed seconds
+ Climate GHG input from file from year         1765  to         2499
+ CO2   range =    277.913000000000        579.264000000000       ppm
+ N2O   range =    274.372000000000        359.798000000000       ppb
+ CH4   range =    738.986000000000        997.311000000000       ppb
+ CFC11 range =   0.000000000000000E+000  1.400000000000000E-002  ppt
+ CFC12 range =   0.000000000000000E+000   2.88100000000000       ppt
+ Normal ending of CAMtr_volume_mixing_ratio file
+ GHG annual values from CAM trace gas file
+ Year =         2004 , Julian day =          336
+ CO2   =   3.778812456432316E-004  volume mixing ratio
+ N2O   =   3.187170183921634E-007  volume mixing ratio
+ CH4   =   1.783824744060592E-006  volume mixing ratio
+ CFC11 =   2.521325469116822E-010  volume mixing ratio
+ CFC12 =   5.425210389200587E-010  volume mixing ratio
+INPUT LandUse = "MODIFIED_IGBP_MODIS_NOAH"
+ LANDUSE TYPE = "MODIFIED_IGBP_MODIS_NOAH" FOUND          61  CATEGORIES           2  SEASONS WATER CATEGORY =           17  SNOW CATEGORY =           15
+INITIALIZE THREE Noah LSM RELATED TABLES
+Skipping over LUTYPE = USGS
+ LANDUSE TYPE = MODIFIED_IGBP_MODIS_NOAH FOUND          20  CATEGORIES
+ INPUT SOIL TEXTURE CLASSIFICATION = STAS
+ SOIL TEXTURE CLASSIFICATION = STAS FOUND          19  CATEGORIES
+ Climate GHG input from file from year         1765  to         2499
+ CO2   range =    277.913000000000        579.264000000000       ppm
+ N2O   range =    274.372000000000        359.798000000000       ppb
+ CH4   range =    738.986000000000        997.311000000000       ppb
+ CFC11 range =   0.000000000000000E+000  1.400000000000000E-002  ppt
+ CFC12 range =   0.000000000000000E+000   2.88100000000000       ppt
+ Normal ending of CAMtr_volume_mixing_ratio file
+ GHG annual values from CAM trace gas file
+ Year =         2004 , Julian day =          336
+ CO2   =   3.778812456432316E-004  volume mixing ratio
+ N2O   =   3.187170183921634E-007  volume mixing ratio
+ CH4   =   1.783824744060592E-006  volume mixing ratio
+ CFC11 =   2.521325469116822E-010  volume mixing ratio
+ CFC12 =   5.425210389200587E-010  volume mixing ratio
+INPUT LandUse = "MODIFIED_IGBP_MODIS_NOAH"
+ LANDUSE TYPE = "MODIFIED_IGBP_MODIS_NOAH" FOUND          61  CATEGORIES           2  SEASONS WATER CATEGORY =           17  SNOW CATEGORY =           15
+INITIALIZE THREE Noah LSM RELATED TABLES
+Skipping over LUTYPE = USGS
+ LANDUSE TYPE = MODIFIED_IGBP_MODIS_NOAH FOUND          20  CATEGORIES
+ INPUT SOIL TEXTURE CLASSIFICATION = STAS
+ SOIL TEXTURE CLASSIFICATION = STAS FOUND          19  CATEGORIES
+Max map factor in domain 1 =  0.98. Scale the dt in the model accordingly.
+ D01: Time step                              =    48.00000      (s)
+ D01: Grid Distance                          =    9.000000      (km)
+ D01: Grid Distance Ratio dt/dx              =    5.333333      (s/km)
+ D01: Ratio Including Maximum Map Factor     =    5.206763      (s/km)
+ D01: NML defined reasonable_time_step_ratio =    6.000000
+ Climate GHG input from file from year         1765  to         2499
+ CO2   range =    277.913000000000        579.264000000000       ppm
+ N2O   range =    274.372000000000        359.798000000000       ppb
+ CH4   range =    738.986000000000        997.311000000000       ppb
+ CFC11 range =   0.000000000000000E+000  1.400000000000000E-002  ppt
+ CFC12 range =   0.000000000000000E+000   2.88100000000000       ppt
+ Normal ending of CAMtr_volume_mixing_ratio file
+ GHG annual values from CAM trace gas file
+ Year =         2004 , Julian day =          336
+ CO2   =   3.778812456432316E-004  volume mixing ratio
+ N2O   =   3.187170183921634E-007  volume mixing ratio
+ CH4   =   1.783824744060592E-006  volume mixing ratio
+ CFC11 =   2.521325469116822E-010  volume mixing ratio
+ CFC12 =   5.425210389200587E-010  volume mixing ratio
+INPUT LandUse = "MODIFIED_IGBP_MODIS_NOAH"
+ LANDUSE TYPE = "MODIFIED_IGBP_MODIS_NOAH" FOUND          61  CATEGORIES           2  SEASONS WATER CATEGORY =           17  SNOW CATEGORY =           15
+INITIALIZE THREE Noah LSM RELATED TABLES
+Skipping over LUTYPE = USGS
+ LANDUSE TYPE = MODIFIED_IGBP_MODIS_NOAH FOUND          20  CATEGORIES
+ INPUT SOIL TEXTURE CLASSIFICATION = STAS
+ SOIL TEXTURE CLASSIFICATION = STAS FOUND          19  CATEGORIES
+Timing for Writing wrfout_d01_2004-12-01_00:00:00 for domain        1:    1.86443 elapsed seconds
+d01 2004-12-01_00:00:00  Input data is acceptable to use: wrfbdy_d01
+Timing for processing lateral boundary for domain        1:    0.59149 elapsed seconds
+ Tile Strategy is not specified. Assuming 1D-Y
+WRF TILE   1 IS      1 IE     18 JS      1 JE     12
+WRF NUMBER OF TILES =   1
+d01 2004-12-01_00:00:00  ----------------------------------------
+d01 2004-12-01_00:00:00  W-DAMPING  BEGINS AT W-COURANT NUMBER =    1.000000
+d01 2004-12-01_00:00:00  ----------------------------------------
+ *************************************
+ Nesting domain
+ ids,ide,jds,jde            1         271           1         151
+ ims,ime,jms,jme           -4          39          -4          21
+ ips,ipe,jps,jpe            1          27           1          11
+ INTERMEDIATE domain
+ ids,ide,jds,jde           68         163          53         108
+ ims,ime,jms,jme           63          88          48          68
+ ips,ipe,jps,jpe           66          78          51          58
+ *************************************
+d02 2004-12-01_00:00:00  alloc_space_field: domain            3 ,                5597592  bytes allocated
+d02 2004-12-01_00:00:00  alloc_space_field: domain            3 ,               36847664  bytes allocated
+d02 2004-12-01_00:00:00 *** Initializing nest domain # 3 from an input file. ***
+d02 2004-12-01_00:00:00 med_initialdata_input: calling input_input
+d02 2004-12-01_00:00:00  Input data is acceptable to use: wrfinput_d03
+Timing for processing wrfinput file (stream 0) for domain        3:    0.85060 elapsed seconds
+ Climate GHG input from file from year         1765  to         2499
+ CO2   range =    277.913000000000        579.264000000000       ppm
+ N2O   range =    274.372000000000        359.798000000000       ppb
+ CH4   range =    738.986000000000        997.311000000000       ppb
+ CFC11 range =   0.000000000000000E+000  1.400000000000000E-002  ppt
+ CFC12 range =   0.000000000000000E+000   2.88100000000000       ppt
+ Normal ending of CAMtr_volume_mixing_ratio file
+ GHG annual values from CAM trace gas file
+ Year =         2004 , Julian day =          336
+ CO2   =   3.778812456432316E-004  volume mixing ratio
+ N2O   =   3.187170183921634E-007  volume mixing ratio
+ CH4   =   1.783824744060592E-006  volume mixing ratio
+ CFC11 =   2.521325469116822E-010  volume mixing ratio
+ CFC12 =   5.425210389200587E-010  volume mixing ratio
+INPUT LandUse = "MODIFIED_IGBP_MODIS_NOAH"
+ LANDUSE TYPE = "MODIFIED_IGBP_MODIS_NOAH" FOUND          61  CATEGORIES           2  SEASONS WATER CATEGORY =           17  SNOW CATEGORY =           15
+INITIALIZE THREE Noah LSM RELATED TABLES
+Skipping over LUTYPE = USGS
+ LANDUSE TYPE = MODIFIED_IGBP_MODIS_NOAH FOUND          20  CATEGORIES
+ INPUT SOIL TEXTURE CLASSIFICATION = STAS
+ SOIL TEXTURE CLASSIFICATION = STAS FOUND          19  CATEGORIES
+ Climate GHG input from file from year         1765  to         2499
+ CO2   range =    277.913000000000        579.264000000000       ppm
+ N2O   range =    274.372000000000        359.798000000000       ppb
+ CH4   range =    738.986000000000        997.311000000000       ppb
+ CFC11 range =   0.000000000000000E+000  1.400000000000000E-002  ppt
+ CFC12 range =   0.000000000000000E+000   2.88100000000000       ppt
+ Normal ending of CAMtr_volume_mixing_ratio file
+ GHG annual values from CAM trace gas file
+ Year =         2004 , Julian day =          336
+ CO2   =   3.778812456432316E-004  volume mixing ratio
+ N2O   =   3.187170183921634E-007  volume mixing ratio
+ CH4   =   1.783824744060592E-006  volume mixing ratio
+ CFC11 =   2.521325469116822E-010  volume mixing ratio
+ CFC12 =   5.425210389200587E-010  volume mixing ratio
+INPUT LandUse = "MODIFIED_IGBP_MODIS_NOAH"
+ LANDUSE TYPE = "MODIFIED_IGBP_MODIS_NOAH" FOUND          61  CATEGORIES           2  SEASONS WATER CATEGORY =           17  SNOW CATEGORY =           15
+INITIALIZE THREE Noah LSM RELATED TABLES
+Skipping over LUTYPE = USGS
+ LANDUSE TYPE = MODIFIED_IGBP_MODIS_NOAH FOUND          20  CATEGORIES
+ INPUT SOIL TEXTURE CLASSIFICATION = STAS
+ SOIL TEXTURE CLASSIFICATION = STAS FOUND          19  CATEGORIES
+ Climate GHG input from file from year         1765  to         2499
+ CO2   range =    277.913000000000        579.264000000000       ppm
+ N2O   range =    274.372000000000        359.798000000000       ppb
+ CH4   range =    738.986000000000        997.311000000000       ppb
+ CFC11 range =   0.000000000000000E+000  1.400000000000000E-002  ppt
+ CFC12 range =   0.000000000000000E+000   2.88100000000000       ppt
+ Normal ending of CAMtr_volume_mixing_ratio file
+ GHG annual values from CAM trace gas file
+ Year =         2004 , Julian day =          336
+ CO2   =   3.778812456432316E-004  volume mixing ratio
+ N2O   =   3.187170183921634E-007  volume mixing ratio
+ CH4   =   1.783824744060592E-006  volume mixing ratio
+ CFC11 =   2.521325469116822E-010  volume mixing ratio
+ CFC12 =   5.425210389200587E-010  volume mixing ratio
+INPUT LandUse = "MODIFIED_IGBP_MODIS_NOAH"
+ LANDUSE TYPE = "MODIFIED_IGBP_MODIS_NOAH" FOUND          61  CATEGORIES           2  SEASONS WATER CATEGORY =           17  SNOW CATEGORY =           15
+INITIALIZE THREE Noah LSM RELATED TABLES
+Skipping over LUTYPE = USGS
+ LANDUSE TYPE = MODIFIED_IGBP_MODIS_NOAH FOUND          20  CATEGORIES
+ INPUT SOIL TEXTURE CLASSIFICATION = STAS
+ SOIL TEXTURE CLASSIFICATION = STAS FOUND          19  CATEGORIES
+ *************************************
+ Nesting domain
+ ids,ide,jds,jde            1         226           1         151
+ ims,ime,jms,jme           -4          33          -4          21
+ ips,ipe,jps,jpe            1          23           1          11
+ INTERMEDIATE domain
+ ids,ide,jds,jde          163         243          43          98
+ ims,ime,jms,jme          158         182          38          58
+ ips,ipe,jps,jpe          161         172          41          48
+ *************************************
+d02 2004-12-01_00:00:00  alloc_space_field: domain            4 ,                5382300  bytes allocated
+d02 2004-12-01_00:00:00  alloc_space_field: domain            4 ,               32634428  bytes allocated
+d02 2004-12-01_00:00:00 *** Initializing nest domain # 4 from an input file. ***
+d02 2004-12-01_00:00:00 med_initialdata_input: calling input_input
+d02 2004-12-01_00:00:00  Input data is acceptable to use: wrfinput_d04
+Timing for processing wrfinput file (stream 0) for domain        4:    0.75244 elapsed seconds
+ Climate GHG input from file from year         1765  to         2499
+ CO2   range =    277.913000000000        579.264000000000       ppm
+ N2O   range =    274.372000000000        359.798000000000       ppb
+ CH4   range =    738.986000000000        997.311000000000       ppb
+ CFC11 range =   0.000000000000000E+000  1.400000000000000E-002  ppt
+ CFC12 range =   0.000000000000000E+000   2.88100000000000       ppt
+ Normal ending of CAMtr_volume_mixing_ratio file
+ GHG annual values from CAM trace gas file
+ Year =         2004 , Julian day =          336
+ CO2   =   3.778812456432316E-004  volume mixing ratio
+ N2O   =   3.187170183921634E-007  volume mixing ratio
+ CH4   =   1.783824744060592E-006  volume mixing ratio
+ CFC11 =   2.521325469116822E-010  volume mixing ratio
+ CFC12 =   5.425210389200587E-010  volume mixing ratio
+INPUT LandUse = "MODIFIED_IGBP_MODIS_NOAH"
+ LANDUSE TYPE = "MODIFIED_IGBP_MODIS_NOAH" FOUND          61  CATEGORIES           2  SEASONS WATER CATEGORY =           17  SNOW CATEGORY =           15
+INITIALIZE THREE Noah LSM RELATED TABLES
+Skipping over LUTYPE = USGS
+ LANDUSE TYPE = MODIFIED_IGBP_MODIS_NOAH FOUND          20  CATEGORIES
+ INPUT SOIL TEXTURE CLASSIFICATION = STAS
+ SOIL TEXTURE CLASSIFICATION = STAS FOUND          19  CATEGORIES
+ Climate GHG input from file from year         1765  to         2499
+ CO2   range =    277.913000000000        579.264000000000       ppm
+ N2O   range =    274.372000000000        359.798000000000       ppb
+ CH4   range =    738.986000000000        997.311000000000       ppb
+ CFC11 range =   0.000000000000000E+000  1.400000000000000E-002  ppt
+ CFC12 range =   0.000000000000000E+000   2.88100000000000       ppt
+ Normal ending of CAMtr_volume_mixing_ratio file
+ GHG annual values from CAM trace gas file
+ Year =         2004 , Julian day =          336
+ CO2   =   3.778812456432316E-004  volume mixing ratio
+ N2O   =   3.187170183921634E-007  volume mixing ratio
+ CH4   =   1.783824744060592E-006  volume mixing ratio
+ CFC11 =   2.521325469116822E-010  volume mixing ratio
+ CFC12 =   5.425210389200587E-010  volume mixing ratio
+INPUT LandUse = "MODIFIED_IGBP_MODIS_NOAH"
+ LANDUSE TYPE = "MODIFIED_IGBP_MODIS_NOAH" FOUND          61  CATEGORIES           2  SEASONS WATER CATEGORY =           17  SNOW CATEGORY =           15
+INITIALIZE THREE Noah LSM RELATED TABLES
+Skipping over LUTYPE = USGS
+ LANDUSE TYPE = MODIFIED_IGBP_MODIS_NOAH FOUND          20  CATEGORIES
+ INPUT SOIL TEXTURE CLASSIFICATION = STAS
+ SOIL TEXTURE CLASSIFICATION = STAS FOUND          19  CATEGORIES
+ Climate GHG input from file from year         1765  to         2499
+ CO2   range =    277.913000000000        579.264000000000       ppm
+ N2O   range =    274.372000000000        359.798000000000       ppb
+ CH4   range =    738.986000000000        997.311000000000       ppb
+ CFC11 range =   0.000000000000000E+000  1.400000000000000E-002  ppt
+ CFC12 range =   0.000000000000000E+000   2.88100000000000       ppt
+ Normal ending of CAMtr_volume_mixing_ratio file
+ GHG annual values from CAM trace gas file
+ Year =         2004 , Julian day =          336
+ CO2   =   3.778812456432316E-004  volume mixing ratio
+ N2O   =   3.187170183921634E-007  volume mixing ratio
+ CH4   =   1.783824744060592E-006  volume mixing ratio
+ CFC11 =   2.521325469116822E-010  volume mixing ratio
+ CFC12 =   5.425210389200587E-010  volume mixing ratio
+INPUT LandUse = "MODIFIED_IGBP_MODIS_NOAH"
+ LANDUSE TYPE = "MODIFIED_IGBP_MODIS_NOAH" FOUND          61  CATEGORIES           2  SEASONS WATER CATEGORY =           17  SNOW CATEGORY =           15
+INITIALIZE THREE Noah LSM RELATED TABLES
+Skipping over LUTYPE = USGS
+ LANDUSE TYPE = MODIFIED_IGBP_MODIS_NOAH FOUND          20  CATEGORIES
+ INPUT SOIL TEXTURE CLASSIFICATION = STAS
+ SOIL TEXTURE CLASSIFICATION = STAS FOUND          19  CATEGORIES
+Timing for Writing wrfout_d02_2004-12-01_00:00:00 for domain        2:    2.64845 elapsed seconds
+ Tile Strategy is not specified. Assuming 1D-Y
+WRF TILE   1 IS      1 IE     30 JS      1 JE     11
+WRF NUMBER OF TILES =   1
+Timing for Writing wrfout_d03_2004-12-01_00:00:00 for domain        3:    2.37086 elapsed seconds
+ Tile Strategy is not specified. Assuming 1D-Y
+WRF TILE   1 IS      1 IE     27 JS      1 JE     11
+WRF NUMBER OF TILES =   1
+Timing for main: time 2004-12-01_00:00:03 on domain   3:    2.64232 elapsed seconds
+Timing for main: time 2004-12-01_00:00:06 on domain   3:    0.09239 elapsed seconds
+Timing for main: time 2004-12-01_00:00:09 on domain   3:    0.09280 elapsed seconds
+Timing for main: time 2004-12-01_00:00:12 on domain   3:    0.09205 elapsed seconds
+Timing for Writing wrfout_d04_2004-12-01_00:00:00 for domain        4:    2.08086 elapsed seconds
+ Tile Strategy is not specified. Assuming 1D-Y
+WRF TILE   1 IS      1 IE     23 JS      1 JE     11
+WRF NUMBER OF TILES =   1
+Timing for main: time 2004-12-01_00:00:03 on domain   4:    2.31301 elapsed seconds
+Timing for main: time 2004-12-01_00:00:06 on domain   4:    0.07808 elapsed seconds
+Timing for main: time 2004-12-01_00:00:09 on domain   4:    0.07347 elapsed seconds
+Timing for main: time 2004-12-01_00:00:12 on domain   4:    0.07641 elapsed seconds
+Timing for main: time 2004-12-01_00:00:12 on domain   2:   11.50251 elapsed seconds
+Timing for main: time 2004-12-01_00:00:15 on domain   3:    0.09932 elapsed seconds
+Timing for main: time 2004-12-01_00:00:18 on domain   3:    0.09453 elapsed seconds
+Timing for main: time 2004-12-01_00:00:21 on domain   3:    0.09392 elapsed seconds
+Timing for main: time 2004-12-01_00:00:24 on domain   3:    0.09357 elapsed seconds
+Timing for main: time 2004-12-01_00:00:15 on domain   4:    0.07847 elapsed seconds
+Timing for main: time 2004-12-01_00:00:18 on domain   4:    0.07844 elapsed seconds
+Timing for main: time 2004-12-01_00:00:21 on domain   4:    0.07450 elapsed seconds
+Timing for main: time 2004-12-01_00:00:24 on domain   4:    0.07836 elapsed seconds
+Timing for main: time 2004-12-01_00:00:24 on domain   2:    1.01182 elapsed seconds
+Timing for main: time 2004-12-01_00:00:27 on domain   3:    0.10199 elapsed seconds
+Timing for main: time 2004-12-01_00:00:30 on domain   3:    0.09436 elapsed seconds
+Timing for main: time 2004-12-01_00:00:33 on domain   3:    0.09374 elapsed seconds
+Timing for main: time 2004-12-01_00:00:36 on domain   3:    0.09335 elapsed seconds
+Timing for main: time 2004-12-01_00:00:27 on domain   4:    0.07929 elapsed seconds
+Timing for main: time 2004-12-01_00:00:30 on domain   4:    0.07908 elapsed seconds
+Timing for main: time 2004-12-01_00:00:33 on domain   4:    0.07373 elapsed seconds
+Timing for main: time 2004-12-01_00:00:36 on domain   4:    0.07829 elapsed seconds
+Timing for main: time 2004-12-01_00:00:36 on domain   2:    1.01397 elapsed seconds
+Timing for main: time 2004-12-01_00:00:39 on domain   3:    0.10043 elapsed seconds
+Timing for main: time 2004-12-01_00:00:42 on domain   3:    0.09480 elapsed seconds
+Timing for main: time 2004-12-01_00:00:45 on domain   3:    0.09454 elapsed seconds
+Timing for main: time 2004-12-01_00:00:48 on domain   3:    0.09430 elapsed seconds
+Timing for main: time 2004-12-01_00:00:39 on domain   4:    0.08160 elapsed seconds
+Timing for main: time 2004-12-01_00:00:42 on domain   4:    0.07714 elapsed seconds
+Timing for main: time 2004-12-01_00:00:45 on domain   4:    0.07528 elapsed seconds
+Timing for main: time 2004-12-01_00:00:48 on domain   4:    0.07998 elapsed seconds
+Timing for main: time 2004-12-01_00:00:48 on domain   2:    1.02114 elapsed seconds
+Timing for main: time 2004-12-01_00:00:48 on domain   1:   19.12480 elapsed seconds
+Timing for main: time 2004-12-01_00:00:51 on domain   3:    0.10078 elapsed seconds
+Timing for main: time 2004-12-01_00:00:54 on domain   3:    0.09512 elapsed seconds
+Timing for main: time 2004-12-01_00:00:57 on domain   3:    0.09497 elapsed seconds
+Timing for main: time 2004-12-01_00:01:00 on domain   3:    0.09478 elapsed seconds
+Timing for main: time 2004-12-01_00:00:51 on domain   4:    0.07328 elapsed seconds
+Timing for main: time 2004-12-01_00:00:54 on domain   4:    0.07987 elapsed seconds
+Timing for main: time 2004-12-01_00:00:57 on domain   4:    0.08026 elapsed seconds
+Timing for main: time 2004-12-01_00:01:00 on domain   4:    0.08534 elapsed seconds
+Timing for main: time 2004-12-01_00:01:00 on domain   2:    1.03716 elapsed seconds
+Timing for main: time 2004-12-01_00:01:03 on domain   3:    0.10275 elapsed seconds
+Timing for main: time 2004-12-01_00:01:06 on domain   3:    0.09512 elapsed seconds
+Timing for main: time 2004-12-01_00:01:09 on domain   3:    0.09429 elapsed seconds
+Timing for main: time 2004-12-01_00:01:12 on domain   3:    0.08646 elapsed seconds
+Timing for main: time 2004-12-01_00:01:03 on domain   4:    0.07570 elapsed seconds
+Timing for main: time 2004-12-01_00:01:06 on domain   4:    0.07926 elapsed seconds
+Timing for main: time 2004-12-01_00:01:09 on domain   4:    0.07858 elapsed seconds
+Timing for main: time 2004-12-01_00:01:12 on domain   4:    0.07831 elapsed seconds
+Timing for main: time 2004-12-01_00:01:12 on domain   2:    1.04930 elapsed seconds
+Timing for main: time 2004-12-01_00:01:15 on domain   3:    0.09904 elapsed seconds
+Timing for main: time 2004-12-01_00:01:18 on domain   3:    0.09556 elapsed seconds
+Timing for main: time 2004-12-01_00:01:21 on domain   3:    0.09530 elapsed seconds
+Timing for main: time 2004-12-01_00:01:24 on domain   3:    0.09456 elapsed seconds
+Timing for main: time 2004-12-01_00:01:15 on domain   4:    0.07403 elapsed seconds
+Timing for main: time 2004-12-01_00:01:18 on domain   4:    0.07852 elapsed seconds
+Timing for main: time 2004-12-01_00:01:21 on domain   4:    0.07977 elapsed seconds
+Timing for main: time 2004-12-01_00:01:24 on domain   4:    0.08476 elapsed seconds
+Timing for main: time 2004-12-01_00:01:24 on domain   2:    1.02152 elapsed seconds
+Timing for main: time 2004-12-01_00:01:27 on domain   3:    0.10163 elapsed seconds
+Timing for main: time 2004-12-01_00:01:30 on domain   3:    0.09529 elapsed seconds
+Timing for main: time 2004-12-01_00:01:33 on domain   3:    0.09466 elapsed seconds
+Timing for main: time 2004-12-01_00:01:36 on domain   3:    0.08885 elapsed seconds
+Timing for main: time 2004-12-01_00:01:27 on domain   4:    0.07425 elapsed seconds
+Timing for main: time 2004-12-01_00:01:30 on domain   4:    0.07887 elapsed seconds
+Timing for main: time 2004-12-01_00:01:33 on domain   4:    0.07883 elapsed seconds
+Timing for main: time 2004-12-01_00:01:36 on domain   4:    0.07834 elapsed seconds
+Timing for main: time 2004-12-01_00:01:36 on domain   2:    1.01833 elapsed seconds
+Timing for main: time 2004-12-01_00:01:36 on domain   1:    4.29333 elapsed seconds
+Timing for main: time 2004-12-01_00:01:39 on domain   3:    0.09992 elapsed seconds
+Timing for main: time 2004-12-01_00:01:42 on domain   3:    0.09532 elapsed seconds
+Timing for main: time 2004-12-01_00:01:45 on domain   3:    0.09069 elapsed seconds
+Timing for main: time 2004-12-01_00:01:48 on domain   3:    0.09540 elapsed seconds
+Timing for main: time 2004-12-01_00:01:39 on domain   4:    0.07956 elapsed seconds
+Timing for main: time 2004-12-01_00:01:42 on domain   4:    0.07903 elapsed seconds
+Timing for main: time 2004-12-01_00:01:45 on domain   4:    0.07835 elapsed seconds
+Timing for main: time 2004-12-01_00:01:48 on domain   4:    0.08049 elapsed seconds
+Timing for main: time 2004-12-01_00:01:48 on domain   2:    1.02952 elapsed seconds
+Timing for main: time 2004-12-01_00:01:51 on domain   3:    0.09998 elapsed seconds
+Timing for main: time 2004-12-01_00:01:54 on domain   3:    0.09570 elapsed seconds
+Timing for main: time 2004-12-01_00:01:57 on domain   3:    0.08995 elapsed seconds
+Timing for main: time 2004-12-01_00:02:00 on domain   3:    0.09534 elapsed seconds
+Timing for main: time 2004-12-01_00:01:51 on domain   4:    0.07968 elapsed seconds
+Timing for main: time 2004-12-01_00:01:54 on domain   4:    0.07935 elapsed seconds
+Timing for main: time 2004-12-01_00:01:57 on domain   4:    0.07932 elapsed seconds
+Timing for main: time 2004-12-01_00:02:00 on domain   4:    0.07880 elapsed seconds
+Timing for main: time 2004-12-01_00:02:00 on domain   2:    1.02119 elapsed seconds
+Timing for main: time 2004-12-01_00:02:03 on domain   3:    0.10146 elapsed seconds
+Timing for main: time 2004-12-01_00:02:06 on domain   3:    0.09539 elapsed seconds
+Timing for main: time 2004-12-01_00:02:09 on domain   3:    0.08957 elapsed seconds
+Timing for main: time 2004-12-01_00:02:12 on domain   3:    0.09516 elapsed seconds
+Timing for main: time 2004-12-01_00:02:03 on domain   4:    0.07974 elapsed seconds
+Timing for main: time 2004-12-01_00:02:06 on domain   4:    0.07939 elapsed seconds
+Timing for main: time 2004-12-01_00:02:09 on domain   4:    0.07910 elapsed seconds
+Timing for main: time 2004-12-01_00:02:12 on domain   4:    0.07884 elapsed seconds
+Timing for main: time 2004-12-01_00:02:12 on domain   2:    1.01929 elapsed seconds
+Timing for main: time 2004-12-01_00:02:15 on domain   3:    0.10074 elapsed seconds
+Timing for main: time 2004-12-01_00:02:18 on domain   3:    0.09579 elapsed seconds
+Timing for main: time 2004-12-01_00:02:21 on domain   3:    0.08960 elapsed seconds
+Timing for main: time 2004-12-01_00:02:24 on domain   3:    0.09498 elapsed seconds
+Timing for main: time 2004-12-01_00:02:15 on domain   4:    0.07910 elapsed seconds
+Timing for main: time 2004-12-01_00:02:18 on domain   4:    0.07934 elapsed seconds
+Timing for main: time 2004-12-01_00:02:21 on domain   4:    0.07899 elapsed seconds
+Timing for main: time 2004-12-01_00:02:24 on domain   4:    0.07839 elapsed seconds
+Timing for main: time 2004-12-01_00:02:24 on domain   2:    1.02081 elapsed seconds
+Timing for main: time 2004-12-01_00:02:24 on domain   1:    4.25753 elapsed seconds
+Timing for main: time 2004-12-01_00:02:27 on domain   3:    0.10320 elapsed seconds
+Timing for main: time 2004-12-01_00:02:30 on domain   3:    0.09023 elapsed seconds
+Timing for main: time 2004-12-01_00:02:33 on domain   3:    0.09450 elapsed seconds
+Timing for main: time 2004-12-01_00:02:36 on domain   3:    0.09539 elapsed seconds
+Timing for main: time 2004-12-01_00:02:27 on domain   4:    0.07951 elapsed seconds
+Timing for main: time 2004-12-01_00:02:30 on domain   4:    0.07934 elapsed seconds
+Timing for main: time 2004-12-01_00:02:33 on domain   4:    0.07901 elapsed seconds
+Timing for main: time 2004-12-01_00:02:36 on domain   4:    0.07982 elapsed seconds
+Timing for main: time 2004-12-01_00:02:36 on domain   2:    1.03313 elapsed seconds
+Timing for main: time 2004-12-01_00:02:39 on domain   3:    0.09968 elapsed seconds
+Timing for main: time 2004-12-01_00:02:42 on domain   3:    0.09136 elapsed seconds
+Timing for main: time 2004-12-01_00:02:45 on domain   3:    0.09559 elapsed seconds
+Timing for main: time 2004-12-01_00:02:48 on domain   3:    0.09477 elapsed seconds
+Timing for main: time 2004-12-01_00:02:39 on domain   4:    0.07819 elapsed seconds
+Timing for main: time 2004-12-01_00:02:42 on domain   4:    0.08013 elapsed seconds
+Timing for main: time 2004-12-01_00:02:45 on domain   4:    0.07966 elapsed seconds
+Timing for main: time 2004-12-01_00:02:48 on domain   4:    0.08058 elapsed seconds
+Timing for main: time 2004-12-01_00:02:48 on domain   2:    1.02392 elapsed seconds
+Timing for main: time 2004-12-01_00:02:51 on domain   3:    0.10015 elapsed seconds
+Timing for main: time 2004-12-01_00:02:54 on domain   3:    0.09065 elapsed seconds
+Timing for main: time 2004-12-01_00:02:57 on domain   3:    0.09592 elapsed seconds
+Timing for main: time 2004-12-01_00:03:00 on domain   3:    0.09624 elapsed seconds
+Timing for main: time 2004-12-01_00:02:51 on domain   4:    0.08213 elapsed seconds
+Timing for main: time 2004-12-01_00:02:54 on domain   4:    0.07998 elapsed seconds
+Timing for main: time 2004-12-01_00:02:57 on domain   4:    0.08143 elapsed seconds
+Timing for main: time 2004-12-01_00:03:00 on domain   4:    0.08090 elapsed seconds
+Timing for main: time 2004-12-01_00:03:00 on domain   2:    1.03350 elapsed seconds
+Timing for main: time 2004-12-01_00:03:03 on domain   3:    0.10044 elapsed seconds
+Timing for main: time 2004-12-01_00:03:06 on domain   3:    0.09150 elapsed seconds
+Timing for main: time 2004-12-01_00:03:09 on domain   3:    0.09572 elapsed seconds
+Timing for main: time 2004-12-01_00:03:12 on domain   3:    0.09544 elapsed seconds
+Timing for main: time 2004-12-01_00:03:03 on domain   4:    0.07977 elapsed seconds
+Timing for main: time 2004-12-01_00:03:06 on domain   4:    0.07945 elapsed seconds
+Timing for main: time 2004-12-01_00:03:09 on domain   4:    0.07927 elapsed seconds
+Timing for main: time 2004-12-01_00:03:12 on domain   4:    0.07921 elapsed seconds
+Timing for main: time 2004-12-01_00:03:12 on domain   2:    1.02616 elapsed seconds
+Timing for main: time 2004-12-01_00:03:12 on domain   1:    4.28229 elapsed seconds
+Timing for main: time 2004-12-01_00:03:15 on domain   3:    0.10065 elapsed seconds
+Timing for main: time 2004-12-01_00:03:18 on domain   3:    0.09066 elapsed seconds
+Timing for main: time 2004-12-01_00:03:21 on domain   3:    0.09587 elapsed seconds
+Timing for main: time 2004-12-01_00:03:24 on domain   3:    0.09474 elapsed seconds
+Timing for main: time 2004-12-01_00:03:15 on domain   4:    0.07917 elapsed seconds
+Timing for main: time 2004-12-01_00:03:18 on domain   4:    0.07973 elapsed seconds
+Timing for main: time 2004-12-01_00:03:21 on domain   4:    0.07891 elapsed seconds
+Timing for main: time 2004-12-01_00:03:24 on domain   4:    0.07822 elapsed seconds
+Timing for main: time 2004-12-01_00:03:24 on domain   2:    1.03022 elapsed seconds
+Timing for main: time 2004-12-01_00:03:27 on domain   3:    0.10257 elapsed seconds
+Timing for main: time 2004-12-01_00:03:30 on domain   3:    0.09570 elapsed seconds
+Timing for main: time 2004-12-01_00:03:33 on domain   3:    0.09442 elapsed seconds
+Timing for main: time 2004-12-01_00:03:36 on domain   3:    0.09481 elapsed seconds
+Timing for main: time 2004-12-01_00:03:27 on domain   4:    0.07922 elapsed seconds
+Timing for main: time 2004-12-01_00:03:30 on domain   4:    0.07850 elapsed seconds
+Timing for main: time 2004-12-01_00:03:33 on domain   4:    0.07902 elapsed seconds
+Timing for main: time 2004-12-01_00:03:36 on domain   4:    0.08040 elapsed seconds
+Timing for main: time 2004-12-01_00:03:36 on domain   2:    1.01741 elapsed seconds
+Timing for main: time 2004-12-01_00:03:39 on domain   3:    0.10029 elapsed seconds
+Timing for main: time 2004-12-01_00:03:42 on domain   3:    0.09573 elapsed seconds
+Timing for main: time 2004-12-01_00:03:45 on domain   3:    0.09523 elapsed seconds
+Timing for main: time 2004-12-01_00:03:48 on domain   3:    0.09645 elapsed seconds
+Timing for main: time 2004-12-01_00:03:39 on domain   4:    0.07954 elapsed seconds
+Timing for main: time 2004-12-01_00:03:42 on domain   4:    0.07946 elapsed seconds
+Timing for main: time 2004-12-01_00:03:45 on domain   4:    0.07975 elapsed seconds
+Timing for main: time 2004-12-01_00:03:48 on domain   4:    0.07928 elapsed seconds
+Timing for main: time 2004-12-01_00:03:48 on domain   2:    1.01750 elapsed seconds
+Timing for main: time 2004-12-01_00:03:51 on domain   3:    0.10054 elapsed seconds
+Timing for main: time 2004-12-01_00:03:54 on domain   3:    0.09660 elapsed seconds
+Timing for main: time 2004-12-01_00:03:57 on domain   3:    0.09565 elapsed seconds
+Timing for main: time 2004-12-01_00:04:00 on domain   3:    0.09474 elapsed seconds
+Timing for main: time 2004-12-01_00:03:51 on domain   4:    0.07919 elapsed seconds
+Timing for main: time 2004-12-01_00:03:54 on domain   4:    0.07994 elapsed seconds
+Timing for main: time 2004-12-01_00:03:57 on domain   4:    0.07963 elapsed seconds
+Timing for main: time 2004-12-01_00:04:00 on domain   4:    0.07923 elapsed seconds
+Timing for main: time 2004-12-01_00:04:00 on domain   2:    1.01611 elapsed seconds
+Timing for main: time 2004-12-01_00:04:00 on domain   1:    4.26414 elapsed seconds
+Timing for main: time 2004-12-01_00:04:03 on domain   3:    0.10054 elapsed seconds
+Timing for main: time 2004-12-01_00:04:06 on domain   3:    0.09570 elapsed seconds
+Timing for main: time 2004-12-01_00:04:09 on domain   3:    0.09531 elapsed seconds
+Timing for main: time 2004-12-01_00:04:12 on domain   3:    0.09469 elapsed seconds
+Timing for main: time 2004-12-01_00:04:03 on domain   4:    0.07921 elapsed seconds
+Timing for main: time 2004-12-01_00:04:06 on domain   4:    0.07964 elapsed seconds
+Timing for main: time 2004-12-01_00:04:09 on domain   4:    0.07456 elapsed seconds
+Timing for main: time 2004-12-01_00:04:12 on domain   4:    0.07999 elapsed seconds
+Timing for main: time 2004-12-01_00:04:12 on domain   2:    1.02756 elapsed seconds
+Timing for main: time 2004-12-01_00:04:15 on domain   3:    0.10228 elapsed seconds
+Timing for main: time 2004-12-01_00:04:18 on domain   3:    0.09587 elapsed seconds
+Timing for main: time 2004-12-01_00:04:21 on domain   3:    0.09446 elapsed seconds
+Timing for main: time 2004-12-01_00:04:24 on domain   3:    0.09447 elapsed seconds
+Timing for main: time 2004-12-01_00:04:15 on domain   4:    0.07957 elapsed seconds
+Timing for main: time 2004-12-01_00:04:18 on domain   4:    0.07972 elapsed seconds
+Timing for main: time 2004-12-01_00:04:21 on domain   4:    0.07490 elapsed seconds
+Timing for main: time 2004-12-01_00:04:24 on domain   4:    0.08067 elapsed seconds
+Timing for main: time 2004-12-01_00:04:24 on domain   2:    1.02122 elapsed seconds
+Timing for main: time 2004-12-01_00:04:27 on domain   3:    0.10117 elapsed seconds
+Timing for main: time 2004-12-01_00:04:30 on domain   3:    0.09555 elapsed seconds
+Timing for main: time 2004-12-01_00:04:33 on domain   3:    0.09530 elapsed seconds
+Timing for main: time 2004-12-01_00:04:36 on domain   3:    0.09493 elapsed seconds
+Timing for main: time 2004-12-01_00:04:27 on domain   4:    0.07923 elapsed seconds
+Timing for main: time 2004-12-01_00:04:30 on domain   4:    0.07959 elapsed seconds
+Timing for main: time 2004-12-01_00:04:33 on domain   4:    0.07487 elapsed seconds
+Timing for main: time 2004-12-01_00:04:36 on domain   4:    0.07926 elapsed seconds
+Timing for main: time 2004-12-01_00:04:36 on domain   2:    1.02259 elapsed seconds
+Timing for main: time 2004-12-01_00:04:39 on domain   3:    0.10200 elapsed seconds
+Timing for main: time 2004-12-01_00:04:42 on domain   3:    0.09560 elapsed seconds
+Timing for main: time 2004-12-01_00:04:45 on domain   3:    0.09488 elapsed seconds
+Timing for main: time 2004-12-01_00:04:48 on domain   3:    0.09458 elapsed seconds
+Timing for main: time 2004-12-01_00:04:39 on domain   4:    0.07981 elapsed seconds
+Timing for main: time 2004-12-01_00:04:42 on domain   4:    0.08122 elapsed seconds
+Timing for main: time 2004-12-01_00:04:45 on domain   4:    0.07362 elapsed seconds
+Timing for main: time 2004-12-01_00:04:48 on domain   4:    0.08203 elapsed seconds
+Timing for main: time 2004-12-01_00:04:48 on domain   2:    1.02381 elapsed seconds
+Timing for main: time 2004-12-01_00:04:48 on domain   1:    4.26813 elapsed seconds
+Timing for main: time 2004-12-01_00:04:51 on domain   3:    0.10334 elapsed seconds
+Timing for main: time 2004-12-01_00:04:54 on domain   3:    0.09511 elapsed seconds
+Timing for main: time 2004-12-01_00:04:57 on domain   3:    0.09453 elapsed seconds
+Timing for main: time 2004-12-01_00:05:00 on domain   3:    0.10400 elapsed seconds
+Timing for main: time 2004-12-01_00:04:51 on domain   4:    0.07491 elapsed seconds
+Timing for main: time 2004-12-01_00:04:54 on domain   4:    0.07992 elapsed seconds
+Timing for main: time 2004-12-01_00:04:57 on domain   4:    0.07927 elapsed seconds
+Timing for main: time 2004-12-01_00:05:00 on domain   4:    0.08708 elapsed seconds
+Timing for main: time 2004-12-01_00:05:00 on domain   2:    1.05889 elapsed seconds
+Timing for main: time 2004-12-01_00:05:03 on domain   3:    0.10130 elapsed seconds
+Timing for main: time 2004-12-01_00:05:06 on domain   3:    0.09576 elapsed seconds
+Timing for main: time 2004-12-01_00:05:09 on domain   3:    0.09565 elapsed seconds
+Timing for main: time 2004-12-01_00:05:12 on domain   3:    0.09334 elapsed seconds
+Timing for main: time 2004-12-01_00:05:03 on domain   4:    0.07969 elapsed seconds
+Timing for main: time 2004-12-01_00:05:06 on domain   4:    0.08045 elapsed seconds
+Timing for main: time 2004-12-01_00:05:09 on domain   4:    0.07965 elapsed seconds
+Timing for main: time 2004-12-01_00:05:12 on domain   4:    0.08012 elapsed seconds
+Timing for main: time 2004-12-01_00:05:12 on domain   2:    1.02805 elapsed seconds
+Timing for main: time 2004-12-01_00:05:15 on domain   3:    0.10302 elapsed seconds
+Timing for main: time 2004-12-01_00:05:18 on domain   3:    0.09547 elapsed seconds
+Timing for main: time 2004-12-01_00:05:21 on domain   3:    0.09470 elapsed seconds
+Timing for main: time 2004-12-01_00:05:24 on domain   3:    0.08863 elapsed seconds
+Timing for main: time 2004-12-01_00:05:15 on domain   4:    0.08033 elapsed seconds
+Timing for main: time 2004-12-01_00:05:18 on domain   4:    0.07984 elapsed seconds
+Timing for main: time 2004-12-01_00:05:21 on domain   4:    0.07979 elapsed seconds
+Timing for main: time 2004-12-01_00:05:24 on domain   4:    0.08083 elapsed seconds
+Timing for main: time 2004-12-01_00:05:24 on domain   2:    1.02666 elapsed seconds
+Timing for main: time 2004-12-01_00:05:27 on domain   3:    0.10089 elapsed seconds
+Timing for main: time 2004-12-01_00:05:30 on domain   3:    0.09607 elapsed seconds
+Timing for main: time 2004-12-01_00:05:33 on domain   3:    0.09528 elapsed seconds
+Timing for main: time 2004-12-01_00:05:36 on domain   3:    0.08897 elapsed seconds
+Timing for main: time 2004-12-01_00:05:27 on domain   4:    0.08011 elapsed seconds
+Timing for main: time 2004-12-01_00:05:30 on domain   4:    0.07913 elapsed seconds
+Timing for main: time 2004-12-01_00:05:33 on domain   4:    0.07802 elapsed seconds
+Timing for main: time 2004-12-01_00:05:36 on domain   4:    0.08294 elapsed seconds
+Timing for main: time 2004-12-01_00:05:36 on domain   2:    1.02849 elapsed seconds
+Timing for main: time 2004-12-01_00:05:36 on domain   1:    4.30966 elapsed seconds
+Timing for main: time 2004-12-01_00:05:39 on domain   3:    0.10096 elapsed seconds
+Timing for main: time 2004-12-01_00:05:42 on domain   3:    0.09013 elapsed seconds
+Timing for main: time 2004-12-01_00:05:45 on domain   3:    0.09576 elapsed seconds
+Timing for main: time 2004-12-01_00:05:48 on domain   3:    0.09525 elapsed seconds
+Timing for main: time 2004-12-01_00:05:39 on domain   4:    0.07964 elapsed seconds
+Timing for main: time 2004-12-01_00:05:42 on domain   4:    0.07966 elapsed seconds
+Timing for main: time 2004-12-01_00:05:45 on domain   4:    0.07947 elapsed seconds
+Timing for main: time 2004-12-01_00:05:48 on domain   4:    0.07905 elapsed seconds
+Timing for main: time 2004-12-01_00:05:48 on domain   2:    1.03116 elapsed seconds
+Timing for main: time 2004-12-01_00:05:51 on domain   3:    0.10109 elapsed seconds
+Timing for main: time 2004-12-01_00:05:54 on domain   3:    0.09080 elapsed seconds
+Timing for main: time 2004-12-01_00:05:57 on domain   3:    0.09587 elapsed seconds
+Timing for main: time 2004-12-01_00:06:00 on domain   3:    0.09518 elapsed seconds
+Timing for main: time 2004-12-01_00:05:51 on domain   4:    0.07988 elapsed seconds
+Timing for main: time 2004-12-01_00:05:54 on domain   4:    0.07973 elapsed seconds
+Timing for main: time 2004-12-01_00:05:57 on domain   4:    0.08008 elapsed seconds
+Timing for main: time 2004-12-01_00:06:00 on domain   4:    0.08000 elapsed seconds
+Timing for main: time 2004-12-01_00:06:00 on domain   2:    1.02345 elapsed seconds
+Timing for main: time 2004-12-01_00:06:03 on domain   3:    0.10360 elapsed seconds
+Timing for main: time 2004-12-01_00:06:06 on domain   3:    0.08977 elapsed seconds
+Timing for main: time 2004-12-01_00:06:09 on domain   3:    0.09470 elapsed seconds
+Timing for main: time 2004-12-01_00:06:12 on domain   3:    0.09465 elapsed seconds
+Timing for main: time 2004-12-01_00:06:03 on domain   4:    0.07958 elapsed seconds
+Timing for main: time 2004-12-01_00:06:06 on domain   4:    0.07991 elapsed seconds
+Timing for main: time 2004-12-01_00:06:09 on domain   4:    0.07913 elapsed seconds
+Timing for main: time 2004-12-01_00:06:12 on domain   4:    0.07923 elapsed seconds
+Timing for main: time 2004-12-01_00:06:12 on domain   2:    1.02286 elapsed seconds
+Timing for main: time 2004-12-01_00:06:15 on domain   3:    0.10275 elapsed seconds
+Timing for main: time 2004-12-01_00:06:18 on domain   3:    0.08992 elapsed seconds
+Timing for main: time 2004-12-01_00:06:21 on domain   3:    0.09483 elapsed seconds
+Timing for main: time 2004-12-01_00:06:24 on domain   3:    0.09454 elapsed seconds
+Timing for main: time 2004-12-01_00:06:15 on domain   4:    0.07939 elapsed seconds
+Timing for main: time 2004-12-01_00:06:18 on domain   4:    0.07987 elapsed seconds
+Timing for main: time 2004-12-01_00:06:21 on domain   4:    0.08020 elapsed seconds
+Timing for main: time 2004-12-01_00:06:24 on domain   4:    0.08011 elapsed seconds
+Timing for main: time 2004-12-01_00:06:24 on domain   2:    1.02044 elapsed seconds
+Timing for main: time 2004-12-01_00:06:24 on domain   1:    4.26691 elapsed seconds
+Timing for main: time 2004-12-01_00:06:27 on domain   3:    0.10158 elapsed seconds
+Timing for main: time 2004-12-01_00:06:30 on domain   3:    0.09148 elapsed seconds
+Timing for main: time 2004-12-01_00:06:33 on domain   3:    0.09543 elapsed seconds
+Timing for main: time 2004-12-01_00:06:36 on domain   3:    0.09453 elapsed seconds
+Timing for main: time 2004-12-01_00:06:27 on domain   4:    0.07995 elapsed seconds
+Timing for main: time 2004-12-01_00:06:30 on domain   4:    0.07978 elapsed seconds
+Timing for main: time 2004-12-01_00:06:33 on domain   4:    0.08004 elapsed seconds
+Timing for main: time 2004-12-01_00:06:36 on domain   4:    0.07997 elapsed seconds
+Timing for main: time 2004-12-01_00:06:36 on domain   2:    1.03122 elapsed seconds
+Timing for main: time 2004-12-01_00:06:39 on domain   3:    0.10121 elapsed seconds
+Timing for main: time 2004-12-01_00:06:42 on domain   3:    0.09086 elapsed seconds
+Timing for main: time 2004-12-01_00:06:45 on domain   3:    0.09559 elapsed seconds
+Timing for main: time 2004-12-01_00:06:48 on domain   3:    0.09476 elapsed seconds
+Timing for main: time 2004-12-01_00:06:39 on domain   4:    0.07960 elapsed seconds
+Timing for main: time 2004-12-01_00:06:42 on domain   4:    0.07957 elapsed seconds
+Timing for main: time 2004-12-01_00:06:45 on domain   4:    0.08010 elapsed seconds
+Timing for main: time 2004-12-01_00:06:48 on domain   4:    0.08006 elapsed seconds
+Timing for main: time 2004-12-01_00:06:48 on domain   2:    1.02227 elapsed seconds
+Timing for main: time 2004-12-01_00:06:51 on domain   3:    0.10117 elapsed seconds
+Timing for main: time 2004-12-01_00:06:54 on domain   3:    0.09134 elapsed seconds
+Timing for main: time 2004-12-01_00:06:57 on domain   3:    0.09504 elapsed seconds
+Timing for main: time 2004-12-01_00:07:00 on domain   3:    0.09492 elapsed seconds
+Timing for main: time 2004-12-01_00:06:51 on domain   4:    0.07965 elapsed seconds
+Timing for main: time 2004-12-01_00:06:54 on domain   4:    0.07993 elapsed seconds
+Timing for main: time 2004-12-01_00:06:57 on domain   4:    0.07973 elapsed seconds
+Timing for main: time 2004-12-01_00:07:00 on domain   4:    0.07974 elapsed seconds
+Timing for main: time 2004-12-01_00:07:00 on domain   2:    1.02768 elapsed seconds
+Timing for main: time 2004-12-01_00:07:03 on domain   3:    0.10281 elapsed seconds
+Timing for main: time 2004-12-01_00:07:06 on domain   3:    0.08796 elapsed seconds
+Timing for main: time 2004-12-01_00:07:09 on domain   3:    0.09456 elapsed seconds
+Timing for main: time 2004-12-01_00:07:12 on domain   3:    0.09485 elapsed seconds
+Timing for main: time 2004-12-01_00:07:03 on domain   4:    0.07969 elapsed seconds
+Timing for main: time 2004-12-01_00:07:06 on domain   4:    0.07963 elapsed seconds
+Timing for main: time 2004-12-01_00:07:09 on domain   4:    0.07972 elapsed seconds
+Timing for main: time 2004-12-01_00:07:12 on domain   4:    0.07989 elapsed seconds
+Timing for main: time 2004-12-01_00:07:12 on domain   2:    1.02123 elapsed seconds
+Timing for main: time 2004-12-01_00:07:12 on domain   1:    4.26903 elapsed seconds
+Timing for main: time 2004-12-01_00:07:15 on domain   3:    0.10219 elapsed seconds
+Timing for main: time 2004-12-01_00:07:18 on domain   3:    0.09010 elapsed seconds
+Timing for main: time 2004-12-01_00:07:21 on domain   3:    0.09498 elapsed seconds
+Timing for main: time 2004-12-01_00:07:24 on domain   3:    0.09480 elapsed seconds
+Timing for main: time 2004-12-01_00:07:15 on domain   4:    0.07947 elapsed seconds
+Timing for main: time 2004-12-01_00:07:18 on domain   4:    0.07978 elapsed seconds
+Timing for main: time 2004-12-01_00:07:21 on domain   4:    0.07973 elapsed seconds
+Timing for main: time 2004-12-01_00:07:24 on domain   4:    0.07864 elapsed seconds
+Timing for main: time 2004-12-01_00:07:24 on domain   2:    1.02886 elapsed seconds
+Timing for main: time 2004-12-01_00:07:27 on domain   3:    0.10104 elapsed seconds
+Timing for main: time 2004-12-01_00:07:30 on domain   3:    0.09651 elapsed seconds
+Timing for main: time 2004-12-01_00:07:33 on domain   3:    0.09483 elapsed seconds
+Timing for main: time 2004-12-01_00:07:36 on domain   3:    0.09497 elapsed seconds
+Timing for main: time 2004-12-01_00:07:27 on domain   4:    0.07940 elapsed seconds
+Timing for main: time 2004-12-01_00:07:30 on domain   4:    0.08071 elapsed seconds
+Timing for main: time 2004-12-01_00:07:33 on domain   4:    0.08017 elapsed seconds
+Timing for main: time 2004-12-01_00:07:36 on domain   4:    0.07969 elapsed seconds
+Timing for main: time 2004-12-01_00:07:36 on domain   2:    1.02313 elapsed seconds
+Timing for main: time 2004-12-01_00:07:39 on domain   3:    0.10229 elapsed seconds
+Timing for main: time 2004-12-01_00:07:42 on domain   3:    0.09637 elapsed seconds
+Timing for main: time 2004-12-01_00:07:45 on domain   3:    0.09600 elapsed seconds
+Timing for main: time 2004-12-01_00:07:48 on domain   3:    0.09441 elapsed seconds
+Timing for main: time 2004-12-01_00:07:39 on domain   4:    0.07982 elapsed seconds
+Timing for main: time 2004-12-01_00:07:42 on domain   4:    0.08027 elapsed seconds
+Timing for main: time 2004-12-01_00:07:45 on domain   4:    0.07992 elapsed seconds
+Timing for main: time 2004-12-01_00:07:48 on domain   4:    0.07999 elapsed seconds
+Timing for main: time 2004-12-01_00:07:48 on domain   2:    1.02475 elapsed seconds
+Timing for main: time 2004-12-01_00:07:51 on domain   3:    0.10261 elapsed seconds
+Timing for main: time 2004-12-01_00:07:54 on domain   3:    0.09624 elapsed seconds
+Timing for main: time 2004-12-01_00:07:57 on domain   3:    0.09489 elapsed seconds
+Timing for main: time 2004-12-01_00:08:00 on domain   3:    0.09475 elapsed seconds
+Timing for main: time 2004-12-01_00:07:51 on domain   4:    0.08009 elapsed seconds
+Timing for main: time 2004-12-01_00:07:54 on domain   4:    0.08021 elapsed seconds
+Timing for main: time 2004-12-01_00:07:57 on domain   4:    0.07964 elapsed seconds
+Timing for main: time 2004-12-01_00:08:00 on domain   4:    0.07477 elapsed seconds
+Timing for main: time 2004-12-01_00:08:00 on domain   2:    1.03077 elapsed seconds
+Timing for main: time 2004-12-01_00:08:00 on domain   1:    4.27360 elapsed seconds
+Timing for main: time 2004-12-01_00:08:03 on domain   3:    0.10237 elapsed seconds
+Timing for main: time 2004-12-01_00:08:06 on domain   3:    0.09592 elapsed seconds
+Timing for main: time 2004-12-01_00:08:09 on domain   3:    0.09450 elapsed seconds
+Timing for main: time 2004-12-01_00:08:12 on domain   3:    0.09524 elapsed seconds
+Timing for main: time 2004-12-01_00:08:03 on domain   4:    0.07999 elapsed seconds
+Timing for main: time 2004-12-01_00:08:06 on domain   4:    0.07600 elapsed seconds
+Timing for main: time 2004-12-01_00:08:09 on domain   4:    0.08148 elapsed seconds
+Timing for main: time 2004-12-01_00:08:12 on domain   4:    0.08116 elapsed seconds
+Timing for main: time 2004-12-01_00:08:12 on domain   2:    1.03630 elapsed seconds
+Timing for main: time 2004-12-01_00:08:15 on domain   3:    0.10158 elapsed seconds
+Timing for main: time 2004-12-01_00:08:18 on domain   3:    0.09544 elapsed seconds
+Timing for main: time 2004-12-01_00:08:21 on domain   3:    0.09479 elapsed seconds
+Timing for main: time 2004-12-01_00:08:24 on domain   3:    0.09470 elapsed seconds
+Timing for main: time 2004-12-01_00:08:15 on domain   4:    0.08037 elapsed seconds
+Timing for main: time 2004-12-01_00:08:18 on domain   4:    0.07479 elapsed seconds
+Timing for main: time 2004-12-01_00:08:21 on domain   4:    0.08055 elapsed seconds
+Timing for main: time 2004-12-01_00:08:24 on domain   4:    0.07937 elapsed seconds
+Timing for main: time 2004-12-01_00:08:24 on domain   2:    1.02406 elapsed seconds
+Timing for main: time 2004-12-01_00:08:27 on domain   3:    0.10191 elapsed seconds
+Timing for main: time 2004-12-01_00:08:30 on domain   3:    0.09572 elapsed seconds
+Timing for main: time 2004-12-01_00:08:33 on domain   3:    0.09432 elapsed seconds
+Timing for main: time 2004-12-01_00:08:36 on domain   3:    0.09470 elapsed seconds
+Timing for main: time 2004-12-01_00:08:27 on domain   4:    0.08004 elapsed seconds
+Timing for main: time 2004-12-01_00:08:30 on domain   4:    0.07505 elapsed seconds
+Timing for main: time 2004-12-01_00:08:33 on domain   4:    0.08038 elapsed seconds
+Timing for main: time 2004-12-01_00:08:36 on domain   4:    0.08081 elapsed seconds
+Timing for main: time 2004-12-01_00:08:36 on domain   2:    1.02594 elapsed seconds
+Timing for main: time 2004-12-01_00:08:39 on domain   3:    0.10213 elapsed seconds
+Timing for main: time 2004-12-01_00:08:42 on domain   3:    0.09589 elapsed seconds
+Timing for main: time 2004-12-01_00:08:45 on domain   3:    0.09497 elapsed seconds
+Timing for main: time 2004-12-01_00:08:48 on domain   3:    0.09495 elapsed seconds
+Timing for main: time 2004-12-01_00:08:39 on domain   4:    0.08027 elapsed seconds
+Timing for main: time 2004-12-01_00:08:42 on domain   4:    0.07525 elapsed seconds
+Timing for main: time 2004-12-01_00:08:45 on domain   4:    0.07817 elapsed seconds
+Timing for main: time 2004-12-01_00:08:48 on domain   4:    0.08271 elapsed seconds
+Timing for main: time 2004-12-01_00:08:48 on domain   2:    1.02863 elapsed seconds
+Timing for main: time 2004-12-01_00:08:48 on domain   1:    4.28330 elapsed seconds
+Timing for main: time 2004-12-01_00:08:51 on domain   3:    0.10062 elapsed seconds
+Timing for main: time 2004-12-01_00:08:54 on domain   3:    0.09643 elapsed seconds
+Timing for main: time 2004-12-01_00:08:57 on domain   3:    0.09489 elapsed seconds
+Timing for main: time 2004-12-01_00:09:00 on domain   3:    0.08918 elapsed seconds
+Timing for main: time 2004-12-01_00:08:51 on domain   4:    0.08013 elapsed seconds
+Timing for main: time 2004-12-01_00:08:54 on domain   4:    0.08115 elapsed seconds
+Timing for main: time 2004-12-01_00:08:57 on domain   4:    0.07981 elapsed seconds
+Timing for main: time 2004-12-01_00:09:00 on domain   4:    0.07960 elapsed seconds
+Timing for main: time 2004-12-01_00:09:00 on domain   2:    1.03203 elapsed seconds
+Timing for main: time 2004-12-01_00:09:03 on domain   3:    0.10281 elapsed seconds
+Timing for main: time 2004-12-01_00:09:06 on domain   3:    0.09570 elapsed seconds
+Timing for main: time 2004-12-01_00:09:09 on domain   3:    0.09469 elapsed seconds
+Timing for main: time 2004-12-01_00:09:12 on domain   3:    0.08912 elapsed seconds
+Timing for main: time 2004-12-01_00:09:03 on domain   4:    0.08000 elapsed seconds
+Timing for main: time 2004-12-01_00:09:06 on domain   4:    0.08007 elapsed seconds
+Timing for main: time 2004-12-01_00:09:09 on domain   4:    0.08025 elapsed seconds
+Timing for main: time 2004-12-01_00:09:12 on domain   4:    0.08034 elapsed seconds
+Timing for main: time 2004-12-01_00:09:12 on domain   2:    1.02185 elapsed seconds
+Timing for main: time 2004-12-01_00:09:15 on domain   3:    0.10244 elapsed seconds
+Timing for main: time 2004-12-01_00:09:18 on domain   3:    0.09579 elapsed seconds
+Timing for main: time 2004-12-01_00:09:21 on domain   3:    0.08768 elapsed seconds
+Timing for main: time 2004-12-01_00:09:24 on domain   3:    0.08902 elapsed seconds
+Timing for main: time 2004-12-01_00:09:15 on domain   4:    0.08023 elapsed seconds
+Timing for main: time 2004-12-01_00:09:18 on domain   4:    0.08025 elapsed seconds
+Timing for main: time 2004-12-01_00:09:21 on domain   4:    0.08004 elapsed seconds
+Timing for main: time 2004-12-01_00:09:24 on domain   4:    0.08026 elapsed seconds
+Timing for main: time 2004-12-01_00:09:24 on domain   2:    1.02578 elapsed seconds
+Timing for main: time 2004-12-01_00:09:27 on domain   3:    0.10119 elapsed seconds
+Timing for main: time 2004-12-01_00:09:30 on domain   3:    0.09619 elapsed seconds
+Timing for main: time 2004-12-01_00:09:33 on domain   3:    0.08784 elapsed seconds
+Timing for main: time 2004-12-01_00:09:36 on domain   3:    0.08950 elapsed seconds
+Timing for main: time 2004-12-01_00:09:27 on domain   4:    0.08045 elapsed seconds
+Timing for main: time 2004-12-01_00:09:30 on domain   4:    0.08013 elapsed seconds
+Timing for main: time 2004-12-01_00:09:33 on domain   4:    0.08015 elapsed seconds
+Timing for main: time 2004-12-01_00:09:36 on domain   4:    0.08029 elapsed seconds
+Timing for main: time 2004-12-01_00:09:36 on domain   2:    1.02587 elapsed seconds
+Timing for main: time 2004-12-01_00:09:36 on domain   1:    4.28046 elapsed seconds
+Timing for main: time 2004-12-01_00:09:39 on domain   3:    0.10250 elapsed seconds
+Timing for main: time 2004-12-01_00:09:42 on domain   3:    0.09046 elapsed seconds
+Timing for main: time 2004-12-01_00:09:45 on domain   3:    0.09492 elapsed seconds
+Timing for main: time 2004-12-01_00:09:48 on domain   3:    0.09507 elapsed seconds
+Timing for main: time 2004-12-01_00:09:39 on domain   4:    0.08014 elapsed seconds
+Timing for main: time 2004-12-01_00:09:42 on domain   4:    0.07997 elapsed seconds
+Timing for main: time 2004-12-01_00:09:45 on domain   4:    0.08038 elapsed seconds
+Timing for main: time 2004-12-01_00:09:48 on domain   4:    0.08031 elapsed seconds
+Timing for main: time 2004-12-01_00:09:48 on domain   2:    1.03137 elapsed seconds
+Timing for main: time 2004-12-01_00:09:51 on domain   3:    0.10175 elapsed seconds
+Timing for main: time 2004-12-01_00:09:54 on domain   3:    0.09071 elapsed seconds
+Timing for main: time 2004-12-01_00:09:57 on domain   3:    0.09482 elapsed seconds
+Timing for main: time 2004-12-01_00:10:00 on domain   3:    0.10436 elapsed seconds
+Timing for main: time 2004-12-01_00:09:51 on domain   4:    0.08004 elapsed seconds
+Timing for main: time 2004-12-01_00:09:54 on domain   4:    0.07993 elapsed seconds
+Timing for main: time 2004-12-01_00:09:57 on domain   4:    0.07985 elapsed seconds
+Timing for main: time 2004-12-01_00:10:00 on domain   4:    0.08841 elapsed seconds
+Timing for main: time 2004-12-01_00:10:00 on domain   2:    1.04923 elapsed seconds
+Timing for main: time 2004-12-01_00:10:03 on domain   3:    0.10161 elapsed seconds
+Timing for main: time 2004-12-01_00:10:06 on domain   3:    0.09072 elapsed seconds
+Timing for main: time 2004-12-01_00:10:09 on domain   3:    0.09495 elapsed seconds
+Timing for main: time 2004-12-01_00:10:12 on domain   3:    0.09495 elapsed seconds
+Timing for main: time 2004-12-01_00:10:03 on domain   4:    0.07990 elapsed seconds
+Timing for main: time 2004-12-01_00:10:06 on domain   4:    0.08014 elapsed seconds
+Timing for main: time 2004-12-01_00:10:09 on domain   4:    0.07999 elapsed seconds
+Timing for main: time 2004-12-01_00:10:12 on domain   4:    0.08044 elapsed seconds
+Timing for main: time 2004-12-01_00:10:12 on domain   2:    1.02220 elapsed seconds
+Timing for main: time 2004-12-01_00:10:15 on domain   3:    0.10120 elapsed seconds
+Timing for main: time 2004-12-01_00:10:18 on domain   3:    0.09146 elapsed seconds
+Timing for main: time 2004-12-01_00:10:21 on domain   3:    0.09496 elapsed seconds
+Timing for main: time 2004-12-01_00:10:24 on domain   3:    0.09502 elapsed seconds
+Timing for main: time 2004-12-01_00:10:15 on domain   4:    0.08009 elapsed seconds
+Timing for main: time 2004-12-01_00:10:18 on domain   4:    0.08002 elapsed seconds
+Timing for main: time 2004-12-01_00:10:21 on domain   4:    0.07987 elapsed seconds
+Timing for main: time 2004-12-01_00:10:24 on domain   4:    0.08014 elapsed seconds
+Timing for main: time 2004-12-01_00:10:24 on domain   2:    1.02219 elapsed seconds
+Timing for main: time 2004-12-01_00:10:24 on domain   1:    4.29105 elapsed seconds
+Timing for main: time 2004-12-01_00:10:27 on domain   3:    0.10199 elapsed seconds
+Timing for main: time 2004-12-01_00:10:30 on domain   3:    0.08717 elapsed seconds
+Timing for main: time 2004-12-01_00:10:33 on domain   3:    0.09456 elapsed seconds
+Timing for main: time 2004-12-01_00:10:36 on domain   3:    0.09443 elapsed seconds
+Timing for main: time 2004-12-01_00:10:27 on domain   4:    0.08010 elapsed seconds
+Timing for main: time 2004-12-01_00:10:30 on domain   4:    0.07995 elapsed seconds
+Timing for main: time 2004-12-01_00:10:33 on domain   4:    0.07981 elapsed seconds
+Timing for main: time 2004-12-01_00:10:36 on domain   4:    0.08029 elapsed seconds
+Timing for main: time 2004-12-01_00:10:36 on domain   2:    1.03624 elapsed seconds
+Timing for main: time 2004-12-01_00:10:39 on domain   3:    0.10245 elapsed seconds
+Timing for main: time 2004-12-01_00:10:42 on domain   3:    0.09064 elapsed seconds
+Timing for main: time 2004-12-01_00:10:45 on domain   3:    0.09487 elapsed seconds
+Timing for main: time 2004-12-01_00:10:48 on domain   3:    0.09891 elapsed seconds
+Timing for main: time 2004-12-01_00:10:39 on domain   4:    0.08023 elapsed seconds
+Timing for main: time 2004-12-01_00:10:42 on domain   4:    0.08004 elapsed seconds
+Timing for main: time 2004-12-01_00:10:45 on domain   4:    0.07911 elapsed seconds
+Timing for main: time 2004-12-01_00:10:48 on domain   4:    0.08024 elapsed seconds
+Timing for main: time 2004-12-01_00:10:48 on domain   2:    1.02656 elapsed seconds
+Timing for main: time 2004-12-01_00:10:51 on domain   3:    0.10310 elapsed seconds
+Timing for main: time 2004-12-01_00:10:54 on domain   3:    0.09005 elapsed seconds
+Timing for main: time 2004-12-01_00:10:57 on domain   3:    0.09505 elapsed seconds
+Timing for main: time 2004-12-01_00:11:00 on domain   3:    0.09489 elapsed seconds
+Timing for main: time 2004-12-01_00:10:51 on domain   4:    0.08007 elapsed seconds
+Timing for main: time 2004-12-01_00:10:54 on domain   4:    0.07984 elapsed seconds
+Timing for main: time 2004-12-01_00:10:57 on domain   4:    0.08020 elapsed seconds
+Timing for main: time 2004-12-01_00:11:00 on domain   4:    0.08025 elapsed seconds
+Timing for main: time 2004-12-01_00:11:00 on domain   2:    1.02344 elapsed seconds
+Timing for main: time 2004-12-01_00:11:03 on domain   3:    0.10196 elapsed seconds
+Timing for main: time 2004-12-01_00:11:06 on domain   3:    0.09152 elapsed seconds
+Timing for main: time 2004-12-01_00:11:09 on domain   3:    0.09449 elapsed seconds
+Timing for main: time 2004-12-01_00:11:12 on domain   3:    0.09547 elapsed seconds
+Timing for main: time 2004-12-01_00:11:03 on domain   4:    0.08003 elapsed seconds
+Timing for main: time 2004-12-01_00:11:06 on domain   4:    0.07985 elapsed seconds
+Timing for main: time 2004-12-01_00:11:09 on domain   4:    0.08014 elapsed seconds
+Timing for main: time 2004-12-01_00:11:12 on domain   4:    0.08009 elapsed seconds
+Timing for main: time 2004-12-01_00:11:12 on domain   2:    1.02369 elapsed seconds
+Timing for main: time 2004-12-01_00:11:12 on domain   1:    4.27818 elapsed seconds
+Timing for main: time 2004-12-01_00:11:15 on domain   3:    0.10266 elapsed seconds
+Timing for main: time 2004-12-01_00:11:18 on domain   3:    0.09637 elapsed seconds
+Timing for main: time 2004-12-01_00:11:21 on domain   3:    0.09573 elapsed seconds
+Timing for main: time 2004-12-01_00:11:24 on domain   3:    0.09455 elapsed seconds
+Timing for main: time 2004-12-01_00:11:15 on domain   4:    0.08027 elapsed seconds
+Timing for main: time 2004-12-01_00:11:18 on domain   4:    0.08032 elapsed seconds
+Timing for main: time 2004-12-01_00:11:21 on domain   4:    0.08040 elapsed seconds
+Timing for main: time 2004-12-01_00:11:24 on domain   4:    0.07574 elapsed seconds
+Timing for main: time 2004-12-01_00:11:24 on domain   2:    1.03332 elapsed seconds
+Timing for main: time 2004-12-01_00:11:27 on domain   3:    0.10195 elapsed seconds
+Timing for main: time 2004-12-01_00:11:30 on domain   3:    0.09624 elapsed seconds
+Timing for main: time 2004-12-01_00:11:33 on domain   3:    0.09500 elapsed seconds
+Timing for main: time 2004-12-01_00:11:36 on domain   3:    0.09535 elapsed seconds
+Timing for main: time 2004-12-01_00:11:27 on domain   4:    0.08041 elapsed seconds
+Timing for main: time 2004-12-01_00:11:30 on domain   4:    0.08022 elapsed seconds
+Timing for main: time 2004-12-01_00:11:33 on domain   4:    0.08042 elapsed seconds
+Timing for main: time 2004-12-01_00:11:36 on domain   4:    0.07529 elapsed seconds
+Timing for main: time 2004-12-01_00:11:36 on domain   2:    1.02731 elapsed seconds
+Timing for main: time 2004-12-01_00:11:39 on domain   3:    0.10305 elapsed seconds
+Timing for main: time 2004-12-01_00:11:42 on domain   3:    0.09549 elapsed seconds
+Timing for main: time 2004-12-01_00:11:45 on domain   3:    0.09492 elapsed seconds
+Timing for main: time 2004-12-01_00:11:48 on domain   3:    0.09506 elapsed seconds
+Timing for main: time 2004-12-01_00:11:39 on domain   4:    0.08051 elapsed seconds
+Timing for main: time 2004-12-01_00:11:42 on domain   4:    0.08035 elapsed seconds
+Timing for main: time 2004-12-01_00:11:45 on domain   4:    0.08123 elapsed seconds
+Timing for main: time 2004-12-01_00:11:48 on domain   4:    0.07545 elapsed seconds
+Timing for main: time 2004-12-01_00:11:48 on domain   2:    1.02777 elapsed seconds
+Timing for main: time 2004-12-01_00:11:51 on domain   3:    0.10257 elapsed seconds
+Timing for main: time 2004-12-01_00:11:54 on domain   3:    0.09597 elapsed seconds
+Timing for main: time 2004-12-01_00:11:57 on domain   3:    0.09469 elapsed seconds
+Timing for main: time 2004-12-01_00:12:00 on domain   3:    0.09486 elapsed seconds
+Timing for main: time 2004-12-01_00:11:51 on domain   4:    0.08050 elapsed seconds
+Timing for main: time 2004-12-01_00:11:54 on domain   4:    0.07982 elapsed seconds
+Timing for main: time 2004-12-01_00:11:57 on domain   4:    0.08034 elapsed seconds
+Timing for main: time 2004-12-01_00:12:00 on domain   4:    0.07530 elapsed seconds
+Timing for main: time 2004-12-01_00:12:00 on domain   2:    1.02830 elapsed seconds
+Timing for main: time 2004-12-01_00:12:00 on domain   1:    4.28020 elapsed seconds
+Timing for main: time 2004-12-01_00:12:03 on domain   3:    0.10219 elapsed seconds
+Timing for main: time 2004-12-01_00:12:06 on domain   3:    0.09640 elapsed seconds
+Timing for main: time 2004-12-01_00:12:09 on domain   3:    0.09487 elapsed seconds
+Timing for main: time 2004-12-01_00:12:12 on domain   3:    0.09483 elapsed seconds
+Timing for main: time 2004-12-01_00:12:03 on domain   4:    0.07548 elapsed seconds
+Timing for main: time 2004-12-01_00:12:06 on domain   4:    0.08005 elapsed seconds
+Timing for main: time 2004-12-01_00:12:09 on domain   4:    0.08028 elapsed seconds
+Timing for main: time 2004-12-01_00:12:12 on domain   4:    0.08119 elapsed seconds
+Timing for main: time 2004-12-01_00:12:12 on domain   2:    1.03393 elapsed seconds
+Timing for main: time 2004-12-01_00:12:15 on domain   3:    0.10210 elapsed seconds
+Timing for main: time 2004-12-01_00:12:18 on domain   3:    0.09530 elapsed seconds
+Timing for main: time 2004-12-01_00:12:21 on domain   3:    0.09477 elapsed seconds
+Timing for main: time 2004-12-01_00:12:24 on domain   3:    0.09486 elapsed seconds
+Timing for main: time 2004-12-01_00:12:15 on domain   4:    0.07568 elapsed seconds
+Timing for main: time 2004-12-01_00:12:18 on domain   4:    0.08014 elapsed seconds
+Timing for main: time 2004-12-01_00:12:21 on domain   4:    0.07998 elapsed seconds
+Timing for main: time 2004-12-01_00:12:24 on domain   4:    0.08075 elapsed seconds
+Timing for main: time 2004-12-01_00:12:24 on domain   2:    1.02419 elapsed seconds
+Timing for main: time 2004-12-01_00:12:27 on domain   3:    0.10243 elapsed seconds
+Timing for main: time 2004-12-01_00:12:30 on domain   3:    0.09614 elapsed seconds
+Timing for main: time 2004-12-01_00:12:33 on domain   3:    0.09510 elapsed seconds
+Timing for main: time 2004-12-01_00:12:36 on domain   3:    0.09474 elapsed seconds
+Timing for main: time 2004-12-01_00:12:27 on domain   4:    0.07561 elapsed seconds
+Timing for main: time 2004-12-01_00:12:30 on domain   4:    0.08011 elapsed seconds
+Timing for main: time 2004-12-01_00:12:33 on domain   4:    0.08014 elapsed seconds
+Timing for main: time 2004-12-01_00:12:36 on domain   4:    0.08019 elapsed seconds
+Timing for main: time 2004-12-01_00:12:36 on domain   2:    1.03135 elapsed seconds
+Timing for main: time 2004-12-01_00:12:39 on domain   3:    0.10406 elapsed seconds
+Timing for main: time 2004-12-01_00:12:42 on domain   3:    0.09522 elapsed seconds
+Timing for main: time 2004-12-01_00:12:45 on domain   3:    0.09643 elapsed seconds
+Timing for main: time 2004-12-01_00:12:48 on domain   3:    0.09335 elapsed seconds
+Timing for main: time 2004-12-01_00:12:39 on domain   4:    0.07732 elapsed seconds
+Timing for main: time 2004-12-01_00:12:42 on domain   4:    0.08034 elapsed seconds
+Timing for main: time 2004-12-01_00:12:45 on domain   4:    0.07913 elapsed seconds
+Timing for main: time 2004-12-01_00:12:48 on domain   4:    0.08128 elapsed seconds
+Timing for main: time 2004-12-01_00:12:48 on domain   2:    1.02979 elapsed seconds
+Timing for main: time 2004-12-01_00:12:48 on domain   1:    4.28661 elapsed seconds
+Timing for main: time 2004-12-01_00:12:51 on domain   3:    0.10320 elapsed seconds
+Timing for main: time 2004-12-01_00:12:54 on domain   3:    0.09586 elapsed seconds
+Timing for main: time 2004-12-01_00:12:57 on domain   3:    0.08937 elapsed seconds
+Timing for main: time 2004-12-01_00:13:00 on domain   3:    0.09541 elapsed seconds
+Timing for main: time 2004-12-01_00:12:51 on domain   4:    0.08013 elapsed seconds
+Timing for main: time 2004-12-01_00:12:54 on domain   4:    0.08007 elapsed seconds
+Timing for main: time 2004-12-01_00:12:57 on domain   4:    0.07997 elapsed seconds
+Timing for main: time 2004-12-01_00:13:00 on domain   4:    0.08010 elapsed seconds
+Timing for main: time 2004-12-01_00:13:00 on domain   2:    1.03474 elapsed seconds
+Timing for main: time 2004-12-01_00:13:03 on domain   3:    0.10113 elapsed seconds
+Timing for main: time 2004-12-01_00:13:06 on domain   3:    0.09609 elapsed seconds
+Timing for main: time 2004-12-01_00:13:09 on domain   3:    0.08970 elapsed seconds
+Timing for main: time 2004-12-01_00:13:12 on domain   3:    0.09478 elapsed seconds
+Timing for main: time 2004-12-01_00:13:03 on domain   4:    0.08032 elapsed seconds
+Timing for main: time 2004-12-01_00:13:06 on domain   4:    0.07987 elapsed seconds
+Timing for main: time 2004-12-01_00:13:09 on domain   4:    0.08009 elapsed seconds
+Timing for main: time 2004-12-01_00:13:12 on domain   4:    0.07988 elapsed seconds
+Timing for main: time 2004-12-01_00:13:12 on domain   2:    1.02144 elapsed seconds
+Timing for main: time 2004-12-01_00:13:15 on domain   3:    0.10223 elapsed seconds
+Timing for main: time 2004-12-01_00:13:18 on domain   3:    0.09622 elapsed seconds
+Timing for main: time 2004-12-01_00:13:21 on domain   3:    0.08992 elapsed seconds
+Timing for main: time 2004-12-01_00:13:24 on domain   3:    0.09475 elapsed seconds
+Timing for main: time 2004-12-01_00:13:15 on domain   4:    0.08020 elapsed seconds
+Timing for main: time 2004-12-01_00:13:18 on domain   4:    0.08048 elapsed seconds
+Timing for main: time 2004-12-01_00:13:21 on domain   4:    0.08017 elapsed seconds
+Timing for main: time 2004-12-01_00:13:24 on domain   4:    0.08049 elapsed seconds
+Timing for main: time 2004-12-01_00:13:24 on domain   2:    1.02275 elapsed seconds
+Timing for main: time 2004-12-01_00:13:27 on domain   3:    0.10287 elapsed seconds
+Timing for main: time 2004-12-01_00:13:30 on domain   3:    0.08713 elapsed seconds
+Timing for main: time 2004-12-01_00:13:33 on domain   3:    0.08970 elapsed seconds
+Timing for main: time 2004-12-01_00:13:36 on domain   3:    0.09577 elapsed seconds
+Timing for main: time 2004-12-01_00:13:27 on domain   4:    0.07984 elapsed seconds
+Timing for main: time 2004-12-01_00:13:30 on domain   4:    0.08048 elapsed seconds
+Timing for main: time 2004-12-01_00:13:33 on domain   4:    0.07998 elapsed seconds
+Timing for main: time 2004-12-01_00:13:36 on domain   4:    0.08000 elapsed seconds
+Timing for main: time 2004-12-01_00:13:36 on domain   2:    1.02959 elapsed seconds
+Timing for main: time 2004-12-01_00:13:36 on domain   1:    4.27554 elapsed seconds
+Timing for main: time 2004-12-01_00:13:39 on domain   3:    0.10307 elapsed seconds
+Timing for main: time 2004-12-01_00:13:42 on domain   3:    0.09033 elapsed seconds
+Timing for main: time 2004-12-01_00:13:45 on domain   3:    0.09497 elapsed seconds
+Timing for main: time 2004-12-01_00:13:48 on domain   3:    0.09515 elapsed seconds
+Timing for main: time 2004-12-01_00:13:39 on domain   4:    0.08076 elapsed seconds
+Timing for main: time 2004-12-01_00:13:42 on domain   4:    0.08008 elapsed seconds
+Timing for main: time 2004-12-01_00:13:45 on domain   4:    0.07927 elapsed seconds
+Timing for main: time 2004-12-01_00:13:48 on domain   4:    0.08244 elapsed seconds
+Timing for main: time 2004-12-01_00:13:48 on domain   2:    1.03521 elapsed seconds
+Timing for main: time 2004-12-01_00:13:51 on domain   3:    0.10296 elapsed seconds
+Timing for main: time 2004-12-01_00:13:54 on domain   3:    0.09076 elapsed seconds
+Timing for main: time 2004-12-01_00:13:57 on domain   3:    0.09488 elapsed seconds
+Timing for main: time 2004-12-01_00:14:00 on domain   3:    0.09550 elapsed seconds
+Timing for main: time 2004-12-01_00:13:51 on domain   4:    0.08001 elapsed seconds
+Timing for main: time 2004-12-01_00:13:54 on domain   4:    0.08029 elapsed seconds
+Timing for main: time 2004-12-01_00:13:57 on domain   4:    0.08039 elapsed seconds
+Timing for main: time 2004-12-01_00:14:00 on domain   4:    0.08047 elapsed seconds
+Timing for main: time 2004-12-01_00:14:00 on domain   2:    1.02469 elapsed seconds
+Timing for main: time 2004-12-01_00:14:03 on domain   3:    0.10313 elapsed seconds
+Timing for main: time 2004-12-01_00:14:06 on domain   3:    0.09040 elapsed seconds
+Timing for main: time 2004-12-01_00:14:09 on domain   3:    0.09483 elapsed seconds
+Timing for main: time 2004-12-01_00:14:12 on domain   3:    0.09514 elapsed seconds
+Timing for main: time 2004-12-01_00:14:03 on domain   4:    0.07996 elapsed seconds
+Timing for main: time 2004-12-01_00:14:06 on domain   4:    0.07996 elapsed seconds
+Timing for main: time 2004-12-01_00:14:09 on domain   4:    0.08026 elapsed seconds
+Timing for main: time 2004-12-01_00:14:12 on domain   4:    0.08012 elapsed seconds
+Timing for main: time 2004-12-01_00:14:12 on domain   2:    1.02273 elapsed seconds
+Timing for main: time 2004-12-01_00:14:15 on domain   3:    0.10196 elapsed seconds
+Timing for main: time 2004-12-01_00:14:18 on domain   3:    0.09194 elapsed seconds
+Timing for main: time 2004-12-01_00:14:21 on domain   3:    0.09469 elapsed seconds
+Timing for main: time 2004-12-01_00:14:24 on domain   3:    0.09518 elapsed seconds
+Timing for main: time 2004-12-01_00:14:15 on domain   4:    0.07978 elapsed seconds
+Timing for main: time 2004-12-01_00:14:18 on domain   4:    0.07998 elapsed seconds
+Timing for main: time 2004-12-01_00:14:21 on domain   4:    0.08020 elapsed seconds
+Timing for main: time 2004-12-01_00:14:24 on domain   4:    0.07996 elapsed seconds
+Timing for main: time 2004-12-01_00:14:24 on domain   2:    1.02234 elapsed seconds
+Timing for main: time 2004-12-01_00:14:24 on domain   1:    4.27811 elapsed seconds
+Timing for main: time 2004-12-01_00:14:27 on domain   3:    0.10224 elapsed seconds
+Timing for main: time 2004-12-01_00:14:30 on domain   3:    0.09105 elapsed seconds
+Timing for main: time 2004-12-01_00:14:33 on domain   3:    0.09520 elapsed seconds
+Timing for main: time 2004-12-01_00:14:36 on domain   3:    0.09535 elapsed seconds
+Timing for main: time 2004-12-01_00:14:27 on domain   4:    0.07987 elapsed seconds
+Timing for main: time 2004-12-01_00:14:30 on domain   4:    0.08020 elapsed seconds
+Timing for main: time 2004-12-01_00:14:33 on domain   4:    0.08033 elapsed seconds
+Timing for main: time 2004-12-01_00:14:36 on domain   4:    0.08062 elapsed seconds
+Timing for main: time 2004-12-01_00:14:36 on domain   2:    1.03105 elapsed seconds
+Timing for main: time 2004-12-01_00:14:39 on domain   3:    0.10250 elapsed seconds
+Timing for main: time 2004-12-01_00:14:42 on domain   3:    0.09628 elapsed seconds
+Timing for main: time 2004-12-01_00:14:45 on domain   3:    0.09488 elapsed seconds
+Timing for main: time 2004-12-01_00:14:48 on domain   3:    0.09476 elapsed seconds
+Timing for main: time 2004-12-01_00:14:39 on domain   4:    0.08041 elapsed seconds
+Timing for main: time 2004-12-01_00:14:42 on domain   4:    0.08034 elapsed seconds
+Timing for main: time 2004-12-01_00:14:45 on domain   4:    0.08010 elapsed seconds
+Timing for main: time 2004-12-01_00:14:48 on domain   4:    0.08004 elapsed seconds
+Timing for main: time 2004-12-01_00:14:48 on domain   2:    1.02393 elapsed seconds
+Timing for main: time 2004-12-01_00:14:51 on domain   3:    0.10235 elapsed seconds
+Timing for main: time 2004-12-01_00:14:54 on domain   3:    0.09627 elapsed seconds
+Timing for main: time 2004-12-01_00:14:57 on domain   3:    0.09552 elapsed seconds
