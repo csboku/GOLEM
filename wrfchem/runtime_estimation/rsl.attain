@@ -1,0 +1,1000 @@
+taskid: 0 hostname: n403-037.vsc4.prov
+Quilting with   1 groups of   0 I/O tasks.
+ Ntasks in X           12 , ntasks in Y           15
+WRF V4.0.3 MODEL
+ *************************************
+ Parent domain
+ ids,ide,jds,jde            1         190           1         166
+ ims,ime,jms,jme           -4          23          -4          18
+ ips,ipe,jps,jpe            1          16           1          11
+ *************************************
+DYNAMICS OPTION: Eulerian Mass Coordinate
+   alloc_space_field: domain            1 ,              117064676  bytes allocated
+  med_initialdata_input: calling input_input
+   Input data is acceptable to use: wrfinput_d01
+Timing for processing wrfinput file (stream 0) for domain        1:    3.34143 elapsed seconds
+Max map factor in domain 1 =  1.01. Scale the dt in the model accordingly.
+INPUT LandUse = "USGS"
+ LANDUSE TYPE = "USGS" FOUND          33  CATEGORIES           2  SEASONS WATER CATEGORY =           16  SNOW CATEGORY =           24
+INITIALIZE THREE Noah LSM RELATED TABLES
+ LANDUSE TYPE = USGS FOUND          27  CATEGORIES
+ INPUT SOIL TEXTURE CLASSIFICATION = STAS
+ SOIL TEXTURE CLASSIFICATION = STAS FOUND          19  CATEGORIES
+ TSURFACE0_URB   280.9096
+ TDEEP0_URB   288.0808
+ IVGTYP           1
+ TR_URB2D   280.9096
+ TB_URB2D   280.9096
+ TG_URB2D   280.9096
+ TC_URB2D   280.9096
+ QC_URB2D  9.9999998E-03
+ XXXR_URB2D  0.0000000E+00
+ SH_URB2D  0.0000000E+00
+ LH_URB2D  0.0000000E+00
+ G_URB2D  0.0000000E+00
+ RN_URB2D  0.0000000E+00
+ TS_URB2D   280.9096
+ LF_AC_URB3D  0.0000000E+00
+ SF_AC_URB3D  0.0000000E+00
+ CM_AC_URB3D  0.0000000E+00
+ SFVENT_URB3D  0.0000000E+00
+ LFVENT_URB3D  0.0000000E+00
+ FRC_URB2D  0.9000000
+ UTYPE_URB2D           2
+ I          10 J           6
+ num_urban_hi          15
+*********************************************************************
+*             PROGRAM:WRF-Chem V4.0.3 MODEL
+*                                                                   *
+*    PLEASE REPORT ANY BUGS TO WRF-Chem HELP at                     *
+*                                                                   *
+*              wrfchemhelp.gsd@noaa.gov                             *
+*                                                                   *
+*********************************************************************
+  call madronich phot initialization
+  call upper boundary initialization
+ upper_bc_init: intializing domain 01
+ upper_bc_init: id, open filename=            1 ubvals_socol4_201201.nc
+ upper_bc_init: units for lev = mb... converting to pa
+ upper_bc_init: ubc table species CH4 not used
+ upper_bc_init: ubc table species N2O not used
+ upper_bc_init: ubc table species H2O not used
+ upper_bc_init: ub_vmr(1,1,1,:)
+  4.5415186E-06  1.5888673E-06  2.2660342E-06  1.6771550E-06  1.5912808E-06
+  1.8263642E-06  2.6149978E-06  3.5592075E-06  4.4667981E-06  4.9457390E-06
+  4.9178952E-06  4.7023673E-06  3.9897614E-06  3.8269959E-06  3.6709703E-06
+  3.6305555E-06  3.4779875E-06  3.1252216E-06  2.4769138E-06  1.7476186E-06
+  1.1224622E-06  7.5416682E-07  5.7975461E-07  4.5256323E-07  3.3666277E-07
+  2.4837797E-07  1.8116083E-07  1.3489725E-07  1.0229048E-07  8.0522220E-08
+  6.5732060E-08  5.5709091E-08  4.8676004E-08  4.3737746E-08
+ upper_bc_init: upper_bc(id)%vmr(its+5,jts+5,1,6,:)
+   16.84032       2.901311       2.133313       1.700360       1.889508
+   2.541968       3.990004       5.316841       6.076267       6.298761
+   6.263839       6.049402       5.688279       5.487828       5.203220
+   4.863249       4.258818       3.441061       2.602607       1.880389
+   1.356781       1.021062      0.8023307      0.6129843      0.4325933
+  0.2766401      0.1776976      0.1235580      9.6608840E-02  8.4027670E-02
+  7.8434281E-02  7.5914301E-02  7.4652649E-02  7.3946066E-02
+
+ upper_bc_init: DONE intialized domain            1
+
+ tropopause_init: intializing domain 01
+ tropopause_init: open filename= clim_p_trop.nc
+
+ tropopause_init: DONE intialized domain            1
+
+Timing for Writing wrfout_d01_2026-01-01_00:00:00 for domain        1:    8.03805 elapsed seconds
+Timing for Writing wrfxtrm_d01_2026-01-01_00:00:00 for domain        1:    0.09012 elapsed seconds
+d01 2026-01-01_00:00:00  Input data is acceptable to use: wrflowinp_d01
+d01 2026-01-01_00:00:00 Input data processed for aux input   4 for domain   1
+ mediation_integrate: med_read_wrf_chem_emissions: Read emissions for time 2026-01-01_00:00:00
+ mediation_integrate: med_read_wrf_chem_emissions: Open file wrfchemi_d01_2026-01-01_00:00:00
+d01 2026-01-01_00:00:00  Error trying to read metadata
+d01 2026-01-01_00:00:00  Input data is acceptable to use: wrfchemi_d01_2026-01-01_00:00:00
+open_aux_u : error opening auxinput8_d01_2026-01-01_00:00:00 for reading. 100
+d01 2026-01-01_00:00:00 Input data processed for aux input   8 for domain   1
+d01 2026-01-01_00:00:00  Input data is acceptable to use: wrfbdy_d01
+Timing for processing lateral boundary for domain        1:    2.93512 elapsed seconds
+ Tile Strategy is not specified. Assuming 1D-Y
+WRF TILE   1 IS      1 IE     16 JS      1 JE     11
+WRF NUMBER OF TILES =   1
+d01 2026-01-01_00:00:00 Re-initializing accumulation arrays
+ calculate MEGAN emissions at ktau, gmtp, tmidh =            1  0.0000000E+00  6.9444445E-03
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_00:00:50 on domain   1:   15.37033 elapsed seconds
+Timing for main: time 2026-01-01_00:01:40 on domain   1:    1.57361 elapsed seconds
+Timing for main: time 2026-01-01_00:02:30 on domain   1:    0.32823 elapsed seconds
+Timing for main: time 2026-01-01_00:03:20 on domain   1:    0.32538 elapsed seconds
+Timing for main: time 2026-01-01_00:04:10 on domain   1:    0.32759 elapsed seconds
+Timing for main: time 2026-01-01_00:05:00 on domain   1:    0.33348 elapsed seconds
+Timing for main: time 2026-01-01_00:05:50 on domain   1:    0.32759 elapsed seconds
+Timing for main: time 2026-01-01_00:06:40 on domain   1:    0.32454 elapsed seconds
+Timing for main: time 2026-01-01_00:07:30 on domain   1:    0.32956 elapsed seconds
+Timing for main: time 2026-01-01_00:08:20 on domain   1:    0.93215 elapsed seconds
+Timing for main: time 2026-01-01_00:09:10 on domain   1:    0.67291 elapsed seconds
+Timing for main: time 2026-01-01_00:10:00 on domain   1:    0.33801 elapsed seconds
+Timing for main: time 2026-01-01_00:10:50 on domain   1:    0.33375 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =           14  0.0000000E+00  0.1875000
+Timing for main: time 2026-01-01_00:11:40 on domain   1:    0.33153 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_00:12:30 on domain   1:    0.87317 elapsed seconds
+Timing for main: time 2026-01-01_00:13:20 on domain   1:    0.48404 elapsed seconds
+Timing for main: time 2026-01-01_00:14:10 on domain   1:    0.33557 elapsed seconds
+Timing for main: time 2026-01-01_00:15:00 on domain   1:    0.33515 elapsed seconds
+Timing for main: time 2026-01-01_00:15:50 on domain   1:    0.43987 elapsed seconds
+Timing for main: time 2026-01-01_00:16:40 on domain   1:    0.99733 elapsed seconds
+Timing for main: time 2026-01-01_00:17:30 on domain   1:    0.61229 elapsed seconds
+Timing for main: time 2026-01-01_00:18:20 on domain   1:    0.32098 elapsed seconds
+Timing for main: time 2026-01-01_00:19:10 on domain   1:    0.31394 elapsed seconds
+Timing for main: time 2026-01-01_00:20:00 on domain   1:    0.32555 elapsed seconds
+Timing for main: time 2026-01-01_00:20:50 on domain   1:    0.31705 elapsed seconds
+Timing for main: time 2026-01-01_00:21:40 on domain   1:    0.31873 elapsed seconds
+Timing for main: time 2026-01-01_00:22:30 on domain   1:    0.32648 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =           28  0.0000000E+00  0.3819444
+Timing for main: time 2026-01-01_00:23:20 on domain   1:    0.32459 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_00:24:10 on domain   1:    1.37753 elapsed seconds
+Timing for main: time 2026-01-01_00:25:00 on domain   1:    0.74638 elapsed seconds
+Timing for main: time 2026-01-01_00:25:50 on domain   1:    0.31956 elapsed seconds
+Timing for main: time 2026-01-01_00:26:40 on domain   1:    0.31845 elapsed seconds
+Timing for main: time 2026-01-01_00:27:30 on domain   1:    0.32056 elapsed seconds
+Timing for main: time 2026-01-01_00:28:20 on domain   1:    0.31736 elapsed seconds
+Timing for main: time 2026-01-01_00:29:10 on domain   1:    0.31792 elapsed seconds
+Timing for main: time 2026-01-01_00:30:00 on domain   1:    0.32761 elapsed seconds
+Timing for main: time 2026-01-01_00:30:50 on domain   1:    0.43666 elapsed seconds
+Timing for main: time 2026-01-01_00:31:40 on domain   1:    0.31857 elapsed seconds
+Timing for main: time 2026-01-01_00:32:30 on domain   1:    0.77812 elapsed seconds
+Timing for main: time 2026-01-01_00:33:20 on domain   1:    0.46990 elapsed seconds
+Timing for main: time 2026-01-01_00:34:10 on domain   1:    0.31941 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =           42  0.0000000E+00  0.5763889
+Timing for main: time 2026-01-01_00:35:00 on domain   1:    0.32651 elapsed seconds
+Timing for main: time 2026-01-01_00:35:50 on domain   1:    0.32356 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_00:36:40 on domain   1:    0.86447 elapsed seconds
+Timing for main: time 2026-01-01_00:37:30 on domain   1:    0.58387 elapsed seconds
+Timing for main: time 2026-01-01_00:38:20 on domain   1:    0.32732 elapsed seconds
+Timing for main: time 2026-01-01_00:39:10 on domain   1:    0.32490 elapsed seconds
+Timing for main: time 2026-01-01_00:40:00 on domain   1:    0.73090 elapsed seconds
+Timing for main: time 2026-01-01_00:40:50 on domain   1:    0.40670 elapsed seconds
+Timing for main: time 2026-01-01_00:41:40 on domain   1:    0.31578 elapsed seconds
+Timing for main: time 2026-01-01_00:42:30 on domain   1:    0.31921 elapsed seconds
+Timing for main: time 2026-01-01_00:43:20 on domain   1:    0.32289 elapsed seconds
+Timing for main: time 2026-01-01_00:44:10 on domain   1:    0.32297 elapsed seconds
+Timing for main: time 2026-01-01_00:45:00 on domain   1:    0.33172 elapsed seconds
+Timing for main: time 2026-01-01_00:45:50 on domain   1:    0.44281 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =           56  0.0000000E+00  0.7708333
+Timing for main: time 2026-01-01_00:46:40 on domain   1:    0.32642 elapsed seconds
+Timing for main: time 2026-01-01_00:47:30 on domain   1:    0.32948 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_00:48:20 on domain   1:    1.28217 elapsed seconds
+Timing for main: time 2026-01-01_00:49:10 on domain   1:    0.35760 elapsed seconds
+Timing for main: time 2026-01-01_00:50:00 on domain   1:    0.30105 elapsed seconds
+Timing for main: time 2026-01-01_00:50:50 on domain   1:    0.29950 elapsed seconds
+Timing for main: time 2026-01-01_00:51:40 on domain   1:    0.30661 elapsed seconds
+Timing for main: time 2026-01-01_00:52:30 on domain   1:    0.30124 elapsed seconds
+Timing for main: time 2026-01-01_00:53:20 on domain   1:    0.30576 elapsed seconds
+Timing for main: time 2026-01-01_00:54:10 on domain   1:    0.30203 elapsed seconds
+Timing for main: time 2026-01-01_00:55:00 on domain   1:    0.32174 elapsed seconds
+Timing for main: time 2026-01-01_00:55:50 on domain   1:    0.29403 elapsed seconds
+Timing for main: time 2026-01-01_00:56:40 on domain   1:    0.72192 elapsed seconds
+Timing for main: time 2026-01-01_00:57:30 on domain   1:    0.28876 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =           70  0.0000000E+00  0.9652778
+Timing for main: time 2026-01-01_00:58:20 on domain   1:    0.30547 elapsed seconds
+Timing for main: time 2026-01-01_00:59:10 on domain   1:    0.29396 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_01:00:00 on domain   1:    0.83925 elapsed seconds
+Timing for Writing wrfout_d01_2026-01-01_01:00:00 for domain        1:   11.54586 elapsed seconds
+ mediation_integrate: med_read_wrf_chem_emissions: Read emissions for time 2026-01-01_01:00:00
+d01 2026-01-01_01:00:00  Error trying to read metadata
+d01 2026-01-01_01:00:00  Input data is acceptable to use: wrfchemi_d01_2026-01-01_00:00:00
+Timing for main: time 2026-01-01_01:00:50 on domain   1:   12.13363 elapsed seconds
+Timing for main: time 2026-01-01_01:01:40 on domain   1:    0.28056 elapsed seconds
+Timing for main: time 2026-01-01_01:02:30 on domain   1:    0.26697 elapsed seconds
+Timing for main: time 2026-01-01_01:03:20 on domain   1:    0.27126 elapsed seconds
+Timing for main: time 2026-01-01_01:04:10 on domain   1:    0.66987 elapsed seconds
+Timing for main: time 2026-01-01_01:05:00 on domain   1:    0.28263 elapsed seconds
+Timing for main: time 2026-01-01_01:05:50 on domain   1:    0.26043 elapsed seconds
+Timing for main: time 2026-01-01_01:06:40 on domain   1:    0.26194 elapsed seconds
+Timing for main: time 2026-01-01_01:07:30 on domain   1:    0.25532 elapsed seconds
+Timing for main: time 2026-01-01_01:08:20 on domain   1:    0.25258 elapsed seconds
+Timing for main: time 2026-01-01_01:09:10 on domain   1:    0.25500 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =           84   1.000000       1.159722
+Timing for main: time 2026-01-01_01:10:00 on domain   1:    0.25931 elapsed seconds
+Timing for main: time 2026-01-01_01:10:50 on domain   1:    0.25736 elapsed seconds
+Timing for main: time 2026-01-01_01:11:40 on domain   1:    0.26300 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_01:12:30 on domain   1:    1.21766 elapsed seconds
+Timing for main: time 2026-01-01_01:13:20 on domain   1:    0.28012 elapsed seconds
+Timing for main: time 2026-01-01_01:14:10 on domain   1:    0.24957 elapsed seconds
+Timing for main: time 2026-01-01_01:15:00 on domain   1:    0.24303 elapsed seconds
+Timing for main: time 2026-01-01_01:15:50 on domain   1:    0.35208 elapsed seconds
+Timing for main: time 2026-01-01_01:16:40 on domain   1:    0.23758 elapsed seconds
+Timing for main: time 2026-01-01_01:17:30 on domain   1:    0.23159 elapsed seconds
+Timing for main: time 2026-01-01_01:18:20 on domain   1:    0.23461 elapsed seconds
+Timing for main: time 2026-01-01_01:19:10 on domain   1:    0.23764 elapsed seconds
+Timing for main: time 2026-01-01_01:20:00 on domain   1:    0.65547 elapsed seconds
+Timing for main: time 2026-01-01_01:20:50 on domain   1:    0.27895 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =           98   1.000000       1.354167
+Timing for main: time 2026-01-01_01:21:40 on domain   1:    0.25876 elapsed seconds
+Timing for main: time 2026-01-01_01:22:30 on domain   1:    0.24768 elapsed seconds
+Timing for main: time 2026-01-01_01:23:20 on domain   1:    0.24127 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_01:24:10 on domain   1:    0.79501 elapsed seconds
+Timing for main: time 2026-01-01_01:25:00 on domain   1:    0.29439 elapsed seconds
+Timing for main: time 2026-01-01_01:25:50 on domain   1:    0.23530 elapsed seconds
+Timing for main: time 2026-01-01_01:26:40 on domain   1:    0.24691 elapsed seconds
+Timing for main: time 2026-01-01_01:27:30 on domain   1:    0.23931 elapsed seconds
+Timing for main: time 2026-01-01_01:28:20 on domain   1:    0.71601 elapsed seconds
+Timing for main: time 2026-01-01_01:29:10 on domain   1:    0.30707 elapsed seconds
+Timing for main: time 2026-01-01_01:30:00 on domain   1:    0.23440 elapsed seconds
+Timing for main: time 2026-01-01_01:30:50 on domain   1:    0.30509 elapsed seconds
+Timing for main: time 2026-01-01_01:31:40 on domain   1:    0.22539 elapsed seconds
+Timing for main: time 2026-01-01_01:32:30 on domain   1:    0.24099 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          112   1.000000       1.548611
+Timing for main: time 2026-01-01_01:33:20 on domain   1:    0.23631 elapsed seconds
+Timing for main: time 2026-01-01_01:34:10 on domain   1:    0.23921 elapsed seconds
+Timing for main: time 2026-01-01_01:35:00 on domain   1:    0.25584 elapsed seconds
+Timing for main: time 2026-01-01_01:35:50 on domain   1:    0.22270 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_01:36:40 on domain   1:    1.19731 elapsed seconds
+Timing for main: time 2026-01-01_01:37:30 on domain   1:    0.74858 elapsed seconds
+Timing for main: time 2026-01-01_01:38:20 on domain   1:    0.21983 elapsed seconds
+Timing for main: time 2026-01-01_01:39:10 on domain   1:    0.21548 elapsed seconds
+Timing for main: time 2026-01-01_01:40:00 on domain   1:    0.21351 elapsed seconds
+Timing for main: time 2026-01-01_01:40:50 on domain   1:    0.20507 elapsed seconds
+Timing for main: time 2026-01-01_01:41:40 on domain   1:    0.23869 elapsed seconds
+Timing for main: time 2026-01-01_01:42:30 on domain   1:    0.22153 elapsed seconds
+Timing for main: time 2026-01-01_01:43:20 on domain   1:    0.23457 elapsed seconds
+Timing for main: time 2026-01-01_01:44:10 on domain   1:    0.62181 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          126   1.000000       1.743056
+Timing for main: time 2026-01-01_01:45:00 on domain   1:    0.34217 elapsed seconds
+Timing for main: time 2026-01-01_01:45:50 on domain   1:    0.31967 elapsed seconds
+Timing for main: time 2026-01-01_01:46:40 on domain   1:    0.22962 elapsed seconds
+Timing for main: time 2026-01-01_01:47:30 on domain   1:    0.22722 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_01:48:20 on domain   1:    0.77041 elapsed seconds
+Timing for main: time 2026-01-01_01:49:10 on domain   1:    0.20721 elapsed seconds
+Timing for main: time 2026-01-01_01:50:00 on domain   1:    0.21220 elapsed seconds
+Timing for main: time 2026-01-01_01:50:50 on domain   1:    0.23709 elapsed seconds
+Timing for main: time 2026-01-01_01:51:40 on domain   1:    0.24872 elapsed seconds
+Timing for main: time 2026-01-01_01:52:30 on domain   1:    0.68531 elapsed seconds
+Timing for main: time 2026-01-01_01:53:20 on domain   1:    0.37033 elapsed seconds
+Timing for main: time 2026-01-01_01:54:10 on domain   1:    0.20814 elapsed seconds
+Timing for main: time 2026-01-01_01:55:00 on domain   1:    0.23154 elapsed seconds
+Timing for main: time 2026-01-01_01:55:50 on domain   1:    0.24821 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          140   1.000000       1.937500
+Timing for main: time 2026-01-01_01:56:40 on domain   1:    0.22457 elapsed seconds
+Timing for main: time 2026-01-01_01:57:30 on domain   1:    0.23057 elapsed seconds
+Timing for main: time 2026-01-01_01:58:20 on domain   1:    0.23959 elapsed seconds
+Timing for main: time 2026-01-01_01:59:10 on domain   1:    0.22117 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_02:00:00 on domain   1:    1.18154 elapsed seconds
+Timing for Writing wrfout_d01_2026-01-01_02:00:00 for domain        1:   11.44391 elapsed seconds
+ mediation_integrate: med_read_wrf_chem_emissions: Read emissions for time 2026-01-01_02:00:00
+d01 2026-01-01_02:00:00  Error trying to read metadata
+d01 2026-01-01_02:00:00  Input data is acceptable to use: wrfchemi_d01_2026-01-01_00:00:00
+Timing for main: time 2026-01-01_02:00:50 on domain   1:   11.88058 elapsed seconds
+Timing for main: time 2026-01-01_02:01:40 on domain   1:    0.21443 elapsed seconds
+Timing for main: time 2026-01-01_02:02:30 on domain   1:    0.21094 elapsed seconds
+Timing for main: time 2026-01-01_02:03:20 on domain   1:    0.24120 elapsed seconds
+Timing for main: time 2026-01-01_02:04:10 on domain   1:    0.21841 elapsed seconds
+Timing for main: time 2026-01-01_02:05:00 on domain   1:    0.20738 elapsed seconds
+Timing for main: time 2026-01-01_02:05:50 on domain   1:    0.20766 elapsed seconds
+Timing for main: time 2026-01-01_02:06:40 on domain   1:    0.20874 elapsed seconds
+Timing for main: time 2026-01-01_02:07:30 on domain   1:    0.23809 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          154   2.000000       2.131944
+Timing for main: time 2026-01-01_02:08:20 on domain   1:    0.67123 elapsed seconds
+Timing for main: time 2026-01-01_02:09:10 on domain   1:    0.40748 elapsed seconds
+Timing for main: time 2026-01-01_02:10:00 on domain   1:    0.22838 elapsed seconds
+Timing for main: time 2026-01-01_02:10:50 on domain   1:    0.22549 elapsed seconds
+Timing for main: time 2026-01-01_02:11:40 on domain   1:    0.22484 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_02:12:30 on domain   1:    0.76785 elapsed seconds
+Timing for main: time 2026-01-01_02:13:20 on domain   1:    0.27094 elapsed seconds
+Timing for main: time 2026-01-01_02:14:10 on domain   1:    0.21402 elapsed seconds
+Timing for main: time 2026-01-01_02:15:00 on domain   1:    0.23836 elapsed seconds
+Timing for main: time 2026-01-01_02:15:50 on domain   1:    0.28371 elapsed seconds
+Timing for main: time 2026-01-01_02:16:40 on domain   1:    0.65031 elapsed seconds
+Timing for main: time 2026-01-01_02:17:30 on domain   1:    0.43374 elapsed seconds
+Timing for main: time 2026-01-01_02:18:20 on domain   1:    0.23879 elapsed seconds
+Timing for main: time 2026-01-01_02:19:10 on domain   1:    0.25942 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          168   2.000000       2.326389
+Timing for main: time 2026-01-01_02:20:00 on domain   1:    0.23824 elapsed seconds
+Timing for main: time 2026-01-01_02:20:50 on domain   1:    0.22554 elapsed seconds
+Timing for main: time 2026-01-01_02:21:40 on domain   1:    0.22840 elapsed seconds
+Timing for main: time 2026-01-01_02:22:30 on domain   1:    0.22843 elapsed seconds
+Timing for main: time 2026-01-01_02:23:20 on domain   1:    0.22647 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_02:24:10 on domain   1:    1.17902 elapsed seconds
+Timing for main: time 2026-01-01_02:25:00 on domain   1:    0.38251 elapsed seconds
+Timing for main: time 2026-01-01_02:25:50 on domain   1:    0.22564 elapsed seconds
+Timing for main: time 2026-01-01_02:26:40 on domain   1:    0.22533 elapsed seconds
+Timing for main: time 2026-01-01_02:27:30 on domain   1:    0.23991 elapsed seconds
+Timing for main: time 2026-01-01_02:28:20 on domain   1:    0.25432 elapsed seconds
+Timing for main: time 2026-01-01_02:29:10 on domain   1:    0.21452 elapsed seconds
+Timing for main: time 2026-01-01_02:30:00 on domain   1:    0.22769 elapsed seconds
+Timing for main: time 2026-01-01_02:30:50 on domain   1:    0.29276 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          182   2.000000       2.520833
+Timing for main: time 2026-01-01_02:31:40 on domain   1:    0.21996 elapsed seconds
+Timing for main: time 2026-01-01_02:32:30 on domain   1:    0.64989 elapsed seconds
+Timing for main: time 2026-01-01_02:33:20 on domain   1:    0.41964 elapsed seconds
+Timing for main: time 2026-01-01_02:34:10 on domain   1:    0.22785 elapsed seconds
+Timing for main: time 2026-01-01_02:35:00 on domain   1:    0.24070 elapsed seconds
+Timing for main: time 2026-01-01_02:35:50 on domain   1:    0.22451 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_02:36:40 on domain   1:    0.77337 elapsed seconds
+Timing for main: time 2026-01-01_02:37:30 on domain   1:    0.23707 elapsed seconds
+Timing for main: time 2026-01-01_02:38:20 on domain   1:    0.22538 elapsed seconds
+Timing for main: time 2026-01-01_02:39:10 on domain   1:    0.22380 elapsed seconds
+Timing for main: time 2026-01-01_02:40:00 on domain   1:    0.63907 elapsed seconds
+Timing for main: time 2026-01-01_02:40:50 on domain   1:    0.38828 elapsed seconds
+Timing for main: time 2026-01-01_02:41:40 on domain   1:    0.22054 elapsed seconds
+Timing for main: time 2026-01-01_02:42:30 on domain   1:    0.21873 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          196   2.000000       2.715278
+Timing for main: time 2026-01-01_02:43:20 on domain   1:    0.23667 elapsed seconds
+Timing for main: time 2026-01-01_02:44:10 on domain   1:    0.21072 elapsed seconds
+Timing for main: time 2026-01-01_02:45:00 on domain   1:    0.22878 elapsed seconds
+Timing for main: time 2026-01-01_02:45:50 on domain   1:    0.30349 elapsed seconds
+Timing for main: time 2026-01-01_02:46:40 on domain   1:    0.22973 elapsed seconds
+Timing for main: time 2026-01-01_02:47:30 on domain   1:    0.21824 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_02:48:20 on domain   1:    1.20054 elapsed seconds
+Timing for main: time 2026-01-01_02:49:10 on domain   1:    0.41286 elapsed seconds
+Timing for main: time 2026-01-01_02:50:00 on domain   1:    0.21309 elapsed seconds
+Timing for main: time 2026-01-01_02:50:50 on domain   1:    0.21859 elapsed seconds
+Timing for main: time 2026-01-01_02:51:40 on domain   1:    0.21648 elapsed seconds
+Timing for main: time 2026-01-01_02:52:30 on domain   1:    0.20827 elapsed seconds
+Timing for main: time 2026-01-01_02:53:20 on domain   1:    0.20659 elapsed seconds
+Timing for main: time 2026-01-01_02:54:10 on domain   1:    0.20613 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          210   2.000000       2.909722
+Timing for main: time 2026-01-01_02:55:00 on domain   1:    0.25650 elapsed seconds
+Timing for main: time 2026-01-01_02:55:50 on domain   1:    0.22439 elapsed seconds
+Timing for main: time 2026-01-01_02:56:40 on domain   1:    0.64524 elapsed seconds
+Timing for main: time 2026-01-01_02:57:30 on domain   1:    0.41362 elapsed seconds
+Timing for main: time 2026-01-01_02:58:20 on domain   1:    0.23251 elapsed seconds
+Timing for main: time 2026-01-01_02:59:10 on domain   1:    0.22703 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_03:00:00 on domain   1:    0.78131 elapsed seconds
+Timing for Writing wrfout_d01_2026-01-01_03:00:00 for domain        1:   11.74036 elapsed seconds
+ mediation_integrate: med_read_wrf_chem_emissions: Read emissions for time 2026-01-01_03:00:00
+d01 2026-01-01_03:00:00  Error trying to read metadata
+d01 2026-01-01_03:00:00  Input data is acceptable to use: wrfchemi_d01_2026-01-01_00:00:00
+Timing for main: time 2026-01-01_03:00:50 on domain   1:   12.30300 elapsed seconds
+Timing for main: time 2026-01-01_03:01:40 on domain   1:    0.20759 elapsed seconds
+Timing for main: time 2026-01-01_03:02:30 on domain   1:    0.20805 elapsed seconds
+Timing for main: time 2026-01-01_03:03:20 on domain   1:    0.20845 elapsed seconds
+Timing for main: time 2026-01-01_03:04:10 on domain   1:    0.61641 elapsed seconds
+Timing for main: time 2026-01-01_03:05:00 on domain   1:    0.41783 elapsed seconds
+Timing for main: time 2026-01-01_03:05:50 on domain   1:    0.21851 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          224   3.000000       3.104167
+Timing for main: time 2026-01-01_03:06:40 on domain   1:    0.24093 elapsed seconds
+Timing for main: time 2026-01-01_03:07:30 on domain   1:    0.21809 elapsed seconds
+Timing for main: time 2026-01-01_03:08:20 on domain   1:    0.21563 elapsed seconds
+Timing for main: time 2026-01-01_03:09:10 on domain   1:    0.22302 elapsed seconds
+Timing for main: time 2026-01-01_03:10:00 on domain   1:    0.23242 elapsed seconds
+Timing for main: time 2026-01-01_03:10:50 on domain   1:    0.24366 elapsed seconds
+Timing for main: time 2026-01-01_03:11:40 on domain   1:    0.21094 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_03:12:30 on domain   1:    1.20974 elapsed seconds
+Timing for main: time 2026-01-01_03:13:20 on domain   1:    0.43148 elapsed seconds
+Timing for main: time 2026-01-01_03:14:10 on domain   1:    0.22923 elapsed seconds
+Timing for main: time 2026-01-01_03:15:00 on domain   1:    0.24449 elapsed seconds
+Timing for main: time 2026-01-01_03:15:50 on domain   1:    0.29720 elapsed seconds
+Timing for main: time 2026-01-01_03:16:40 on domain   1:    0.21710 elapsed seconds
+Timing for main: time 2026-01-01_03:17:30 on domain   1:    0.21670 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          238   3.000000       3.298611
+Timing for main: time 2026-01-01_03:18:20 on domain   1:    0.22335 elapsed seconds
+Timing for main: time 2026-01-01_03:19:10 on domain   1:    0.25489 elapsed seconds
+Timing for main: time 2026-01-01_03:20:00 on domain   1:    0.65251 elapsed seconds
+Timing for main: time 2026-01-01_03:20:50 on domain   1:    0.43806 elapsed seconds
+Timing for main: time 2026-01-01_03:21:40 on domain   1:    0.22777 elapsed seconds
+Timing for main: time 2026-01-01_03:22:30 on domain   1:    0.23095 elapsed seconds
+Timing for main: time 2026-01-01_03:23:20 on domain   1:    0.22133 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_03:24:10 on domain   1:    0.76676 elapsed seconds
+Timing for main: time 2026-01-01_03:25:00 on domain   1:    0.23170 elapsed seconds
+Timing for main: time 2026-01-01_03:25:50 on domain   1:    0.21839 elapsed seconds
+Timing for main: time 2026-01-01_03:26:40 on domain   1:    0.22349 elapsed seconds
+Timing for main: time 2026-01-01_03:27:30 on domain   1:    0.21267 elapsed seconds
+Timing for main: time 2026-01-01_03:28:20 on domain   1:    0.64604 elapsed seconds
+Timing for main: time 2026-01-01_03:29:10 on domain   1:    0.41670 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          252   3.000000       3.493056
+Timing for main: time 2026-01-01_03:30:00 on domain   1:    0.22230 elapsed seconds
+Timing for main: time 2026-01-01_03:30:50 on domain   1:    0.29373 elapsed seconds
+Timing for main: time 2026-01-01_03:31:40 on domain   1:    0.22181 elapsed seconds
+Timing for main: time 2026-01-01_03:32:30 on domain   1:    0.21696 elapsed seconds
+Timing for main: time 2026-01-01_03:33:20 on domain   1:    0.21960 elapsed seconds
+Timing for main: time 2026-01-01_03:34:10 on domain   1:    0.22615 elapsed seconds
+Timing for main: time 2026-01-01_03:35:00 on domain   1:    0.22991 elapsed seconds
+Timing for main: time 2026-01-01_03:35:50 on domain   1:    0.22410 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_03:36:40 on domain   1:    1.18649 elapsed seconds
+Timing for main: time 2026-01-01_03:37:30 on domain   1:    0.43228 elapsed seconds
+Timing for main: time 2026-01-01_03:38:20 on domain   1:    0.22438 elapsed seconds
+Timing for main: time 2026-01-01_03:39:10 on domain   1:    0.23935 elapsed seconds
+Timing for main: time 2026-01-01_03:40:00 on domain   1:    0.25157 elapsed seconds
+Timing for main: time 2026-01-01_03:40:50 on domain   1:    0.22189 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          266   3.000000       3.687500
+Timing for main: time 2026-01-01_03:41:40 on domain   1:    0.22254 elapsed seconds
+Timing for main: time 2026-01-01_03:42:30 on domain   1:    0.22563 elapsed seconds
+Timing for main: time 2026-01-01_03:43:20 on domain   1:    0.23065 elapsed seconds
+Timing for main: time 2026-01-01_03:44:10 on domain   1:    0.65502 elapsed seconds
+Timing for main: time 2026-01-01_03:45:00 on domain   1:    0.39541 elapsed seconds
+Timing for main: time 2026-01-01_03:45:50 on domain   1:    0.29513 elapsed seconds
+Timing for main: time 2026-01-01_03:46:40 on domain   1:    0.23825 elapsed seconds
+Timing for main: time 2026-01-01_03:47:30 on domain   1:    0.23629 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_03:48:20 on domain   1:    0.76941 elapsed seconds
+Timing for main: time 2026-01-01_03:49:10 on domain   1:    0.27516 elapsed seconds
+Timing for main: time 2026-01-01_03:50:00 on domain   1:    0.22451 elapsed seconds
+Timing for main: time 2026-01-01_03:50:50 on domain   1:    0.21873 elapsed seconds
+Timing for main: time 2026-01-01_03:51:40 on domain   1:    0.22956 elapsed seconds
+Timing for main: time 2026-01-01_03:52:30 on domain   1:    0.63287 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          280   3.000000       3.881944
+Timing for main: time 2026-01-01_03:53:20 on domain   1:    0.42469 elapsed seconds
+Timing for main: time 2026-01-01_03:54:10 on domain   1:    0.21758 elapsed seconds
+Timing for main: time 2026-01-01_03:55:00 on domain   1:    0.22600 elapsed seconds
+Timing for main: time 2026-01-01_03:55:50 on domain   1:    0.21747 elapsed seconds
+Timing for main: time 2026-01-01_03:56:40 on domain   1:    0.21671 elapsed seconds
+Timing for main: time 2026-01-01_03:57:30 on domain   1:    0.22512 elapsed seconds
+Timing for main: time 2026-01-01_03:58:20 on domain   1:    0.25993 elapsed seconds
+Timing for main: time 2026-01-01_03:59:10 on domain   1:    0.23773 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_04:00:00 on domain   1:    1.16074 elapsed seconds
+Timing for Writing wrfout_d01_2026-01-01_04:00:00 for domain        1:   11.72045 elapsed seconds
+ mediation_integrate: med_read_wrf_chem_emissions: Read emissions for time 2026-01-01_04:00:00
+d01 2026-01-01_04:00:00  Error trying to read metadata
+d01 2026-01-01_04:00:00  Input data is acceptable to use: wrfchemi_d01_2026-01-01_00:00:00
+Timing for main: time 2026-01-01_04:00:50 on domain   1:   12.14183 elapsed seconds
+Timing for main: time 2026-01-01_04:01:40 on domain   1:    0.20514 elapsed seconds
+Timing for main: time 2026-01-01_04:02:30 on domain   1:    0.25974 elapsed seconds
+Timing for main: time 2026-01-01_04:03:20 on domain   1:    0.24328 elapsed seconds
+Timing for main: time 2026-01-01_04:04:10 on domain   1:    0.24302 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          294   4.000000       4.076389
+Timing for main: time 2026-01-01_04:05:00 on domain   1:    0.23923 elapsed seconds
+Timing for main: time 2026-01-01_04:05:50 on domain   1:    0.22049 elapsed seconds
+Timing for main: time 2026-01-01_04:06:40 on domain   1:    0.21420 elapsed seconds
+Timing for main: time 2026-01-01_04:07:30 on domain   1:    0.21551 elapsed seconds
+Timing for main: time 2026-01-01_04:08:20 on domain   1:    0.63568 elapsed seconds
+Timing for main: time 2026-01-01_04:09:10 on domain   1:    0.42548 elapsed seconds
+Timing for main: time 2026-01-01_04:10:00 on domain   1:    0.25415 elapsed seconds
+Timing for main: time 2026-01-01_04:10:50 on domain   1:    0.22581 elapsed seconds
+Timing for main: time 2026-01-01_04:11:40 on domain   1:    0.23656 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_04:12:30 on domain   1:    0.78195 elapsed seconds
+Timing for main: time 2026-01-01_04:13:20 on domain   1:    0.23506 elapsed seconds
+Timing for main: time 2026-01-01_04:14:10 on domain   1:    0.21084 elapsed seconds
+Timing for main: time 2026-01-01_04:15:00 on domain   1:    0.21214 elapsed seconds
+Timing for main: time 2026-01-01_04:15:50 on domain   1:    0.32269 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          308   4.000000       4.270833
+Timing for main: time 2026-01-01_04:16:40 on domain   1:    0.64626 elapsed seconds
+Timing for main: time 2026-01-01_04:17:30 on domain   1:    0.43518 elapsed seconds
+Timing for main: time 2026-01-01_04:18:20 on domain   1:    0.23012 elapsed seconds
+Timing for main: time 2026-01-01_04:19:10 on domain   1:    0.22152 elapsed seconds
+Timing for main: time 2026-01-01_04:20:00 on domain   1:    0.21143 elapsed seconds
+Timing for main: time 2026-01-01_04:20:50 on domain   1:    0.23617 elapsed seconds
+Timing for main: time 2026-01-01_04:21:40 on domain   1:    0.21453 elapsed seconds
+Timing for main: time 2026-01-01_04:22:30 on domain   1:    0.21429 elapsed seconds
+Timing for main: time 2026-01-01_04:23:20 on domain   1:    0.22291 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_04:24:10 on domain   1:    1.15394 elapsed seconds
+Timing for main: time 2026-01-01_04:25:00 on domain   1:    0.41401 elapsed seconds
+Timing for main: time 2026-01-01_04:25:50 on domain   1:    0.22200 elapsed seconds
+Timing for main: time 2026-01-01_04:26:40 on domain   1:    0.22830 elapsed seconds
+Timing for main: time 2026-01-01_04:27:30 on domain   1:    0.23322 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          322   4.000000       4.465278
+Timing for main: time 2026-01-01_04:28:20 on domain   1:    0.24253 elapsed seconds
+Timing for main: time 2026-01-01_04:29:10 on domain   1:    0.20933 elapsed seconds
+Timing for main: time 2026-01-01_04:30:00 on domain   1:    0.21202 elapsed seconds
+Timing for main: time 2026-01-01_04:30:50 on domain   1:    0.29263 elapsed seconds
+Timing for main: time 2026-01-01_04:31:40 on domain   1:    0.22419 elapsed seconds
+Timing for main: time 2026-01-01_04:32:30 on domain   1:    0.66014 elapsed seconds
+Timing for main: time 2026-01-01_04:33:20 on domain   1:    0.41721 elapsed seconds
+Timing for main: time 2026-01-01_04:34:10 on domain   1:    0.23809 elapsed seconds
+Timing for main: time 2026-01-01_04:35:00 on domain   1:    0.23361 elapsed seconds
+Timing for main: time 2026-01-01_04:35:50 on domain   1:    0.22148 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_04:36:40 on domain   1:    0.78371 elapsed seconds
+Timing for main: time 2026-01-01_04:37:30 on domain   1:    0.27070 elapsed seconds
+Timing for main: time 2026-01-01_04:38:20 on domain   1:    0.26142 elapsed seconds
+Timing for main: time 2026-01-01_04:39:10 on domain   1:    0.25680 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          336   4.000000       4.659722
+Timing for main: time 2026-01-01_04:40:00 on domain   1:    0.65497 elapsed seconds
+Timing for main: time 2026-01-01_04:40:50 on domain   1:    0.40214 elapsed seconds
+Timing for main: time 2026-01-01_04:41:40 on domain   1:    0.22520 elapsed seconds
+Timing for main: time 2026-01-01_04:42:30 on domain   1:    0.26238 elapsed seconds
+Timing for main: time 2026-01-01_04:43:20 on domain   1:    0.22858 elapsed seconds
+Timing for main: time 2026-01-01_04:44:10 on domain   1:    0.22726 elapsed seconds
+Timing for main: time 2026-01-01_04:45:00 on domain   1:    0.25675 elapsed seconds
+Timing for main: time 2026-01-01_04:45:50 on domain   1:    0.30944 elapsed seconds
+Timing for main: time 2026-01-01_04:46:40 on domain   1:    0.21570 elapsed seconds
+Timing for main: time 2026-01-01_04:47:30 on domain   1:    0.21392 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_04:48:20 on domain   1:    1.18536 elapsed seconds
+Timing for main: time 2026-01-01_04:49:10 on domain   1:    0.45094 elapsed seconds
+Timing for main: time 2026-01-01_04:50:00 on domain   1:    0.22736 elapsed seconds
+Timing for main: time 2026-01-01_04:50:50 on domain   1:    0.24247 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          350   4.000000       4.854167
+Timing for main: time 2026-01-01_04:51:40 on domain   1:    0.23085 elapsed seconds
+Timing for main: time 2026-01-01_04:52:30 on domain   1:    0.23641 elapsed seconds
+Timing for main: time 2026-01-01_04:53:20 on domain   1:    0.27268 elapsed seconds
+Timing for main: time 2026-01-01_04:54:10 on domain   1:    0.22137 elapsed seconds
+Timing for main: time 2026-01-01_04:55:00 on domain   1:    0.22574 elapsed seconds
+Timing for main: time 2026-01-01_04:55:50 on domain   1:    0.24081 elapsed seconds
+Timing for main: time 2026-01-01_04:56:40 on domain   1:    0.66957 elapsed seconds
+Timing for main: time 2026-01-01_04:57:30 on domain   1:    0.43863 elapsed seconds
+Timing for main: time 2026-01-01_04:58:20 on domain   1:    0.24694 elapsed seconds
+Timing for main: time 2026-01-01_04:59:10 on domain   1:    0.22241 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_05:00:00 on domain   1:    0.77469 elapsed seconds
+Timing for Writing wrfout_d01_2026-01-01_05:00:00 for domain        1:   13.32119 elapsed seconds
+ mediation_integrate: med_read_wrf_chem_emissions: Read emissions for time 2026-01-01_05:00:00
+d01 2026-01-01_05:00:00  Error trying to read metadata
+d01 2026-01-01_05:00:00  Input data is acceptable to use: wrfchemi_d01_2026-01-01_00:00:00
+Timing for main: time 2026-01-01_05:00:50 on domain   1:   13.89615 elapsed seconds
+Timing for main: time 2026-01-01_05:01:40 on domain   1:    0.32417 elapsed seconds
+Timing for main: time 2026-01-01_05:02:30 on domain   1:    0.22841 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          364   5.000000       5.048611
+Timing for main: time 2026-01-01_05:03:20 on domain   1:    0.22694 elapsed seconds
+Timing for main: time 2026-01-01_05:04:10 on domain   1:    2.94261 elapsed seconds
+Timing for main: time 2026-01-01_05:05:00 on domain   1:    0.38627 elapsed seconds
+Timing for main: time 2026-01-01_05:05:50 on domain   1:    0.24000 elapsed seconds
+Timing for main: time 2026-01-01_05:06:40 on domain   1:    0.23962 elapsed seconds
+Timing for main: time 2026-01-01_05:07:30 on domain   1:    0.23235 elapsed seconds
+Timing for main: time 2026-01-01_05:08:20 on domain   1:    0.22951 elapsed seconds
+Timing for main: time 2026-01-01_05:09:10 on domain   1:    0.22796 elapsed seconds
+Timing for main: time 2026-01-01_05:10:00 on domain   1:    0.23273 elapsed seconds
+Timing for main: time 2026-01-01_05:10:50 on domain   1:    0.24793 elapsed seconds
+Timing for main: time 2026-01-01_05:11:40 on domain   1:    0.22731 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_05:12:30 on domain   1:    1.20362 elapsed seconds
+Timing for main: time 2026-01-01_05:13:20 on domain   1:    3.37730 elapsed seconds
+Timing for main: time 2026-01-01_05:14:10 on domain   1:    0.25144 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          378   5.000000       5.243055
+Timing for main: time 2026-01-01_05:15:00 on domain   1:    0.21941 elapsed seconds
+Timing for main: time 2026-01-01_05:15:50 on domain   1:    3.46780 elapsed seconds
+Timing for main: time 2026-01-01_05:16:40 on domain   1:    0.23941 elapsed seconds
+Timing for main: time 2026-01-01_05:17:30 on domain   1:    0.23542 elapsed seconds
+Timing for main: time 2026-01-01_05:18:20 on domain   1:    0.22811 elapsed seconds
+Timing for main: time 2026-01-01_05:19:10 on domain   1:    0.22633 elapsed seconds
+Timing for main: time 2026-01-01_05:20:00 on domain   1:    0.63981 elapsed seconds
+Timing for main: time 2026-01-01_05:20:50 on domain   1:    0.38781 elapsed seconds
+Timing for main: time 2026-01-01_05:21:40 on domain   1:    0.22249 elapsed seconds
+Timing for main: time 2026-01-01_05:22:30 on domain   1:    0.22451 elapsed seconds
+Timing for main: time 2026-01-01_05:23:20 on domain   1:    0.23414 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_05:24:10 on domain   1:    0.77527 elapsed seconds
+Timing for main: time 2026-01-01_05:25:00 on domain   1:    0.85367 elapsed seconds
+Timing for main: time 2026-01-01_05:25:50 on domain   1:    0.24174 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          392   5.000000       5.437500
+Timing for main: time 2026-01-01_05:26:40 on domain   1:    0.23368 elapsed seconds
+Timing for main: time 2026-01-01_05:27:30 on domain   1:    1.87845 elapsed seconds
+Timing for main: time 2026-01-01_05:28:20 on domain   1:    0.66541 elapsed seconds
+Timing for main: time 2026-01-01_05:29:10 on domain   1:    0.40411 elapsed seconds
+Timing for main: time 2026-01-01_05:30:00 on domain   1:    0.23939 elapsed seconds
+Timing for main: time 2026-01-01_05:30:50 on domain   1:    0.30679 elapsed seconds
+Timing for main: time 2026-01-01_05:31:40 on domain   1:    0.22215 elapsed seconds
+Timing for main: time 2026-01-01_05:32:30 on domain   1:    0.21678 elapsed seconds
+Timing for main: time 2026-01-01_05:33:20 on domain   1:    0.21276 elapsed seconds
+Timing for main: time 2026-01-01_05:34:10 on domain   1:    0.21455 elapsed seconds
+Timing for main: time 2026-01-01_05:35:00 on domain   1:    0.22192 elapsed seconds
+Timing for main: time 2026-01-01_05:35:50 on domain   1:    0.21500 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_05:36:40 on domain   1:    1.21181 elapsed seconds
+Timing for main: time 2026-01-01_05:37:30 on domain   1:    1.75840 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          406   5.000000       5.631945
+Timing for main: time 2026-01-01_05:38:20 on domain   1:    0.21652 elapsed seconds
+Timing for main: time 2026-01-01_05:39:10 on domain   1:    2.97490 elapsed seconds
+Timing for main: time 2026-01-01_05:40:00 on domain   1:    0.24551 elapsed seconds
+Timing for main: time 2026-01-01_05:40:50 on domain   1:    0.22941 elapsed seconds
+Timing for main: time 2026-01-01_05:41:40 on domain   1:    0.22358 elapsed seconds
+Timing for main: time 2026-01-01_05:42:30 on domain   1:    0.23036 elapsed seconds
+Timing for main: time 2026-01-01_05:43:20 on domain   1:    0.25008 elapsed seconds
+Timing for main: time 2026-01-01_05:44:10 on domain   1:    0.63789 elapsed seconds
+Timing for main: time 2026-01-01_05:45:00 on domain   1:    0.37542 elapsed seconds
+Timing for main: time 2026-01-01_05:45:50 on domain   1:    0.30004 elapsed seconds
+Timing for main: time 2026-01-01_05:46:40 on domain   1:    0.23141 elapsed seconds
+Timing for main: time 2026-01-01_05:47:30 on domain   1:    0.21919 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_05:48:20 on domain   1:    0.76689 elapsed seconds
+Timing for main: time 2026-01-01_05:49:10 on domain   1:    1.98594 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          420   5.000000       5.826389
+Timing for main: time 2026-01-01_05:50:00 on domain   1:    0.22632 elapsed seconds
+Timing for main: time 2026-01-01_05:50:50 on domain   1:    1.77105 elapsed seconds
+Timing for main: time 2026-01-01_05:51:40 on domain   1:    0.22613 elapsed seconds
+Timing for main: time 2026-01-01_05:52:30 on domain   1:    0.66867 elapsed seconds
+Timing for main: time 2026-01-01_05:53:20 on domain   1:    0.41406 elapsed seconds
+Timing for main: time 2026-01-01_05:54:10 on domain   1:    0.22091 elapsed seconds
+Timing for main: time 2026-01-01_05:55:00 on domain   1:    0.22286 elapsed seconds
+Timing for main: time 2026-01-01_05:55:50 on domain   1:    0.21587 elapsed seconds
+Timing for main: time 2026-01-01_05:56:40 on domain   1:    0.22167 elapsed seconds
+Timing for main: time 2026-01-01_05:57:30 on domain   1:    0.21652 elapsed seconds
+Timing for main: time 2026-01-01_05:58:20 on domain   1:    0.21473 elapsed seconds
+Timing for main: time 2026-01-01_05:59:10 on domain   1:    0.21676 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_06:00:00 on domain   1:    1.18954 elapsed seconds
+Timing for Writing wrfout_d01_2026-01-01_06:00:00 for domain        1:   13.98826 elapsed seconds
+d01 2026-01-01_06:00:00  Input data is acceptable to use: wrflowinp_d01
+d01 2026-01-01_06:00:00 Input data processed for aux input   4 for domain   1
+ mediation_integrate: med_read_wrf_chem_emissions: Read emissions for time 2026-01-01_06:00:00
+d01 2026-01-01_06:00:00  Error trying to read metadata
+d01 2026-01-01_06:00:00  Input data is acceptable to use: wrfchemi_d01_2026-01-01_00:00:00
+d01 2026-01-01_06:00:00  Input data is acceptable to use: wrfbdy_d01
+Timing for processing lateral boundary for domain        1:    4.43246 elapsed seconds
+Timing for main: time 2026-01-01_06:00:50 on domain   1:   18.98042 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          434   6.000000       6.020833
+Timing for main: time 2026-01-01_06:01:40 on domain   1:    0.23114 elapsed seconds
+Timing for main: time 2026-01-01_06:02:30 on domain   1:    2.06238 elapsed seconds
+Timing for main: time 2026-01-01_06:03:20 on domain   1:    0.22285 elapsed seconds
+Timing for main: time 2026-01-01_06:04:10 on domain   1:    0.23069 elapsed seconds
+Timing for main: time 2026-01-01_06:05:00 on domain   1:    0.23805 elapsed seconds
+Timing for main: time 2026-01-01_06:05:50 on domain   1:    0.21741 elapsed seconds
+Timing for main: time 2026-01-01_06:06:40 on domain   1:    0.21509 elapsed seconds
+Timing for main: time 2026-01-01_06:07:30 on domain   1:    0.22824 elapsed seconds
+Timing for main: time 2026-01-01_06:08:20 on domain   1:    0.66319 elapsed seconds
+Timing for main: time 2026-01-01_06:09:10 on domain   1:    0.39537 elapsed seconds
+Timing for main: time 2026-01-01_06:10:00 on domain   1:    0.22858 elapsed seconds
+Timing for main: time 2026-01-01_06:10:50 on domain   1:    0.20795 elapsed seconds
+Timing for main: time 2026-01-01_06:11:40 on domain   1:    0.23276 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_06:12:30 on domain   1:    0.75851 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          448   6.000000       6.215278
+Timing for main: time 2026-01-01_06:13:20 on domain   1:    2.15012 elapsed seconds
+Timing for main: time 2026-01-01_06:14:10 on domain   1:    2.08601 elapsed seconds
+Timing for main: time 2026-01-01_06:15:00 on domain   1:    0.23495 elapsed seconds
+Timing for main: time 2026-01-01_06:15:50 on domain   1:    0.39393 elapsed seconds
+Timing for main: time 2026-01-01_06:16:40 on domain   1:    0.67749 elapsed seconds
+Timing for main: time 2026-01-01_06:17:30 on domain   1:    0.40073 elapsed seconds
+Timing for main: time 2026-01-01_06:18:20 on domain   1:    0.22987 elapsed seconds
+Timing for main: time 2026-01-01_06:19:10 on domain   1:    0.22860 elapsed seconds
+Timing for main: time 2026-01-01_06:20:00 on domain   1:    0.22040 elapsed seconds
+Timing for main: time 2026-01-01_06:20:50 on domain   1:    0.21636 elapsed seconds
+Timing for main: time 2026-01-01_06:21:40 on domain   1:    0.21542 elapsed seconds
+Timing for main: time 2026-01-01_06:22:30 on domain   1:    0.21555 elapsed seconds
+Timing for main: time 2026-01-01_06:23:20 on domain   1:    0.21655 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_06:24:10 on domain   1:    1.17516 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          462   6.000000       6.409722
+Timing for main: time 2026-01-01_06:25:00 on domain   1:    1.89495 elapsed seconds
+Timing for main: time 2026-01-01_06:25:50 on domain   1:    0.89667 elapsed seconds
+Timing for main: time 2026-01-01_06:26:40 on domain   1:    0.22501 elapsed seconds
+Timing for main: time 2026-01-01_06:27:30 on domain   1:    0.24872 elapsed seconds
+Timing for main: time 2026-01-01_06:28:20 on domain   1:    0.22434 elapsed seconds
+Timing for main: time 2026-01-01_06:29:10 on domain   1:    0.22431 elapsed seconds
+Timing for main: time 2026-01-01_06:30:00 on domain   1:    0.22696 elapsed seconds
+Timing for main: time 2026-01-01_06:30:50 on domain   1:    0.41403 elapsed seconds
+Timing for main: time 2026-01-01_06:31:40 on domain   1:    0.23173 elapsed seconds
+Timing for main: time 2026-01-01_06:32:30 on domain   1:    0.65490 elapsed seconds
+Timing for main: time 2026-01-01_06:33:20 on domain   1:    0.39722 elapsed seconds
+Timing for main: time 2026-01-01_06:34:10 on domain   1:    0.21539 elapsed seconds
+Timing for main: time 2026-01-01_06:35:00 on domain   1:    0.21291 elapsed seconds
+Timing for main: time 2026-01-01_06:35:50 on domain   1:    0.21737 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          476   6.000000       6.604167
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_06:36:40 on domain   1:    0.78250 elapsed seconds
+Timing for main: time 2026-01-01_06:37:30 on domain   1:    2.68019 elapsed seconds
+Timing for main: time 2026-01-01_06:38:20 on domain   1:    0.22672 elapsed seconds
+Timing for main: time 2026-01-01_06:39:10 on domain   1:    0.21632 elapsed seconds
+Timing for main: time 2026-01-01_06:40:00 on domain   1:    0.65136 elapsed seconds
+Timing for main: time 2026-01-01_06:40:50 on domain   1:    0.40054 elapsed seconds
+Timing for main: time 2026-01-01_06:41:40 on domain   1:    0.21455 elapsed seconds
+Timing for main: time 2026-01-01_06:42:30 on domain   1:    0.21677 elapsed seconds
+Timing for main: time 2026-01-01_06:43:20 on domain   1:    0.21753 elapsed seconds
+Timing for main: time 2026-01-01_06:44:10 on domain   1:    0.23955 elapsed seconds
+Timing for main: time 2026-01-01_06:45:00 on domain   1:    0.23320 elapsed seconds
+Timing for main: time 2026-01-01_06:45:50 on domain   1:    0.41275 elapsed seconds
+Timing for main: time 2026-01-01_06:46:40 on domain   1:    0.22820 elapsed seconds
+Timing for main: time 2026-01-01_06:47:30 on domain   1:    0.23012 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          490   6.000000       6.798611
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_06:48:20 on domain   1:    1.22254 elapsed seconds
+Timing for main: time 2026-01-01_06:49:10 on domain   1:    2.96985 elapsed seconds
+Timing for main: time 2026-01-01_06:50:00 on domain   1:    0.22790 elapsed seconds
+Timing for main: time 2026-01-01_06:50:50 on domain   1:    0.22291 elapsed seconds
+Timing for main: time 2026-01-01_06:51:40 on domain   1:    0.22358 elapsed seconds
+Timing for main: time 2026-01-01_06:52:30 on domain   1:    0.22427 elapsed seconds
+Timing for main: time 2026-01-01_06:53:20 on domain   1:    0.22294 elapsed seconds
+Timing for main: time 2026-01-01_06:54:10 on domain   1:    0.22451 elapsed seconds
+Timing for main: time 2026-01-01_06:55:00 on domain   1:    0.22874 elapsed seconds
+Timing for main: time 2026-01-01_06:55:50 on domain   1:    0.21204 elapsed seconds
+Timing for main: time 2026-01-01_06:56:40 on domain   1:    0.67115 elapsed seconds
+Timing for main: time 2026-01-01_06:57:30 on domain   1:    0.35906 elapsed seconds
+Timing for main: time 2026-01-01_06:58:20 on domain   1:    0.20961 elapsed seconds
+Timing for main: time 2026-01-01_06:59:10 on domain   1:    0.22511 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          504   6.000000       6.993055
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_07:00:00 on domain   1:    0.77669 elapsed seconds
+Timing for Writing wrfout_d01_2026-01-01_07:00:00 for domain        1:   16.06162 elapsed seconds
+ mediation_integrate: med_read_wrf_chem_emissions: Read emissions for time 2026-01-01_07:00:00
+d01 2026-01-01_07:00:00  Error trying to read metadata
+d01 2026-01-01_07:00:00  Input data is acceptable to use: wrfchemi_d01_2026-01-01_00:00:00
+Timing for main: time 2026-01-01_07:00:50 on domain   1:   16.66516 elapsed seconds
+Timing for main: time 2026-01-01_07:01:40 on domain   1:    0.21869 elapsed seconds
+Timing for main: time 2026-01-01_07:02:30 on domain   1:    0.22681 elapsed seconds
+Timing for main: time 2026-01-01_07:03:20 on domain   1:    0.22731 elapsed seconds
+Timing for main: time 2026-01-01_07:04:10 on domain   1:    0.63302 elapsed seconds
+Timing for main: time 2026-01-01_07:05:00 on domain   1:    0.38838 elapsed seconds
+Timing for main: time 2026-01-01_07:05:50 on domain   1:    0.21112 elapsed seconds
+Timing for main: time 2026-01-01_07:06:40 on domain   1:    0.22394 elapsed seconds
+Timing for main: time 2026-01-01_07:07:30 on domain   1:    0.22670 elapsed seconds
+Timing for main: time 2026-01-01_07:08:20 on domain   1:    0.22427 elapsed seconds
+Timing for main: time 2026-01-01_07:09:10 on domain   1:    0.21454 elapsed seconds
+Timing for main: time 2026-01-01_07:10:00 on domain   1:    0.22269 elapsed seconds
+Timing for main: time 2026-01-01_07:10:50 on domain   1:    0.22878 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          518   7.000000       7.187500
+Timing for main: time 2026-01-01_07:11:40 on domain   1:    0.21521 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_07:12:30 on domain   1:    1.21707 elapsed seconds
+Timing for main: time 2026-01-01_07:13:20 on domain   1:    0.60195 elapsed seconds
+Timing for main: time 2026-01-01_07:14:10 on domain   1:    0.22617 elapsed seconds
+Timing for main: time 2026-01-01_07:15:00 on domain   1:    0.22999 elapsed seconds
+Timing for main: time 2026-01-01_07:15:50 on domain   1:    0.43230 elapsed seconds
+Timing for main: time 2026-01-01_07:16:40 on domain   1:    0.24026 elapsed seconds
+Timing for main: time 2026-01-01_07:17:30 on domain   1:    0.23997 elapsed seconds
+Timing for main: time 2026-01-01_07:18:20 on domain   1:    0.22803 elapsed seconds
+Timing for main: time 2026-01-01_07:19:10 on domain   1:    0.22743 elapsed seconds
+Timing for main: time 2026-01-01_07:20:00 on domain   1:    0.65274 elapsed seconds
+Timing for main: time 2026-01-01_07:20:50 on domain   1:    0.36496 elapsed seconds
+Timing for main: time 2026-01-01_07:21:40 on domain   1:    0.23650 elapsed seconds
+Timing for main: time 2026-01-01_07:22:30 on domain   1:    0.22348 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          532   7.000000       7.381945
+Timing for main: time 2026-01-01_07:23:20 on domain   1:    0.22695 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_07:24:10 on domain   1:    1.13391 elapsed seconds
+Timing for main: time 2026-01-01_07:25:00 on domain   1:    0.30411 elapsed seconds
+Timing for main: time 2026-01-01_07:25:50 on domain   1:    0.22701 elapsed seconds
+Timing for main: time 2026-01-01_07:26:40 on domain   1:    0.25256 elapsed seconds
+Timing for main: time 2026-01-01_07:27:30 on domain   1:    0.24950 elapsed seconds
+Timing for main: time 2026-01-01_07:28:20 on domain   1:    0.82270 elapsed seconds
+Timing for main: time 2026-01-01_07:29:10 on domain   1:    0.29980 elapsed seconds
+Timing for main: time 2026-01-01_07:30:00 on domain   1:    0.23980 elapsed seconds
+Timing for main: time 2026-01-01_07:30:50 on domain   1:    0.42286 elapsed seconds
+Timing for main: time 2026-01-01_07:31:40 on domain   1:    0.24000 elapsed seconds
+Timing for main: time 2026-01-01_07:32:30 on domain   1:    0.22851 elapsed seconds
+Timing for main: time 2026-01-01_07:33:20 on domain   1:    0.22498 elapsed seconds
+Timing for main: time 2026-01-01_07:34:10 on domain   1:    0.22574 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          546   7.000000       7.576389
+Timing for main: time 2026-01-01_07:35:00 on domain   1:    0.23216 elapsed seconds
+Timing for main: time 2026-01-01_07:35:50 on domain   1:    1.44950 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_07:36:40 on domain   1:    1.47638 elapsed seconds
+Timing for main: time 2026-01-01_07:37:30 on domain   1:    1.92166 elapsed seconds
+Timing for main: time 2026-01-01_07:38:20 on domain   1:    0.22036 elapsed seconds
+Timing for main: time 2026-01-01_07:39:10 on domain   1:    0.22101 elapsed seconds
+Timing for main: time 2026-01-01_07:40:00 on domain   1:    0.23932 elapsed seconds
+Timing for main: time 2026-01-01_07:40:50 on domain   1:    0.21138 elapsed seconds
+Timing for main: time 2026-01-01_07:41:40 on domain   1:    0.21133 elapsed seconds
+Timing for main: time 2026-01-01_07:42:30 on domain   1:    0.20946 elapsed seconds
+Timing for main: time 2026-01-01_07:43:20 on domain   1:    0.21415 elapsed seconds
+Timing for main: time 2026-01-01_07:44:10 on domain   1:    0.62551 elapsed seconds
+Timing for main: time 2026-01-01_07:45:00 on domain   1:    0.41056 elapsed seconds
+Timing for main: time 2026-01-01_07:45:50 on domain   1:    0.45928 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          560   7.000000       7.770833
+Timing for main: time 2026-01-01_07:46:40 on domain   1:    0.22854 elapsed seconds
+Timing for main: time 2026-01-01_07:47:30 on domain   1:    1.06293 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_07:48:20 on domain   1:    0.95942 elapsed seconds
+Timing for main: time 2026-01-01_07:49:10 on domain   1:    1.42119 elapsed seconds
+Timing for main: time 2026-01-01_07:50:00 on domain   1:    0.22725 elapsed seconds
+Timing for main: time 2026-01-01_07:50:50 on domain   1:    0.33035 elapsed seconds
+Timing for main: time 2026-01-01_07:51:40 on domain   1:    0.33385 elapsed seconds
+Timing for main: time 2026-01-01_07:52:30 on domain   1:    0.70104 elapsed seconds
+Timing for main: time 2026-01-01_07:53:20 on domain   1:    0.27807 elapsed seconds
+Timing for main: time 2026-01-01_07:54:10 on domain   1:    0.23030 elapsed seconds
+Timing for main: time 2026-01-01_07:55:00 on domain   1:    0.21059 elapsed seconds
+Timing for main: time 2026-01-01_07:55:50 on domain   1:    0.20721 elapsed seconds
+Timing for main: time 2026-01-01_07:56:40 on domain   1:    0.20645 elapsed seconds
+Timing for main: time 2026-01-01_07:57:30 on domain   1:    0.22327 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          574   7.000000       7.965278
+Timing for main: time 2026-01-01_07:58:20 on domain   1:    0.30880 elapsed seconds
+Timing for main: time 2026-01-01_07:59:10 on domain   1:    3.17110 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_08:00:00 on domain   1:    1.39000 elapsed seconds
+Timing for Writing wrfout_d01_2026-01-01_08:00:00 for domain        1:   36.70687 elapsed seconds
+ mediation_integrate: med_read_wrf_chem_emissions: Read emissions for time 2026-01-01_08:00:00
+d01 2026-01-01_08:00:00  Error trying to read metadata
+d01 2026-01-01_08:00:00  Input data is acceptable to use: wrfchemi_d01_2026-01-01_00:00:00
+Timing for main: time 2026-01-01_08:00:50 on domain   1:   37.27298 elapsed seconds
+Timing for main: time 2026-01-01_08:01:40 on domain   1:    0.22643 elapsed seconds
+Timing for main: time 2026-01-01_08:02:30 on domain   1:    0.21351 elapsed seconds
+Timing for main: time 2026-01-01_08:03:20 on domain   1:    0.20930 elapsed seconds
+Timing for main: time 2026-01-01_08:04:10 on domain   1:    0.20873 elapsed seconds
+Timing for main: time 2026-01-01_08:05:00 on domain   1:    0.21262 elapsed seconds
+Timing for main: time 2026-01-01_08:05:50 on domain   1:    0.20993 elapsed seconds
+Timing for main: time 2026-01-01_08:06:40 on domain   1:    0.21146 elapsed seconds
+Timing for main: time 2026-01-01_08:07:30 on domain   1:    0.21782 elapsed seconds
+Timing for main: time 2026-01-01_08:08:20 on domain   1:    0.70019 elapsed seconds
+Timing for main: time 2026-01-01_08:09:10 on domain   1:    0.40055 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          588   8.000000       8.159722
+Timing for main: time 2026-01-01_08:10:00 on domain   1:    0.22688 elapsed seconds
+Timing for main: time 2026-01-01_08:10:50 on domain   1:    1.78639 elapsed seconds
+Timing for main: time 2026-01-01_08:11:40 on domain   1:    0.20686 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_08:12:30 on domain   1:    0.95143 elapsed seconds
+Timing for main: time 2026-01-01_08:13:20 on domain   1:    1.84315 elapsed seconds
+Timing for main: time 2026-01-01_08:14:10 on domain   1:    0.22900 elapsed seconds
+Timing for main: time 2026-01-01_08:15:00 on domain   1:    0.24495 elapsed seconds
+Timing for main: time 2026-01-01_08:15:50 on domain   1:    0.42053 elapsed seconds
+Timing for main: time 2026-01-01_08:16:40 on domain   1:    0.71355 elapsed seconds
+Timing for main: time 2026-01-01_08:17:30 on domain   1:    0.44911 elapsed seconds
+Timing for main: time 2026-01-01_08:18:20 on domain   1:    0.22377 elapsed seconds
+Timing for main: time 2026-01-01_08:19:10 on domain   1:    0.22303 elapsed seconds
+Timing for main: time 2026-01-01_08:20:00 on domain   1:    0.24149 elapsed seconds
+Timing for main: time 2026-01-01_08:20:50 on domain   1:    0.24153 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          602   8.000000       8.354167
+Timing for main: time 2026-01-01_08:21:40 on domain   1:    0.21429 elapsed seconds
+Timing for main: time 2026-01-01_08:22:30 on domain   1:    1.65534 elapsed seconds
+Timing for main: time 2026-01-01_08:23:20 on domain   1:    0.21924 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_08:24:10 on domain   1:    1.40775 elapsed seconds
+Timing for main: time 2026-01-01_08:25:00 on domain   1:    1.47889 elapsed seconds
+Timing for main: time 2026-01-01_08:25:50 on domain   1:    0.23299 elapsed seconds
+Timing for main: time 2026-01-01_08:26:40 on domain   1:    0.23024 elapsed seconds
+Timing for main: time 2026-01-01_08:27:30 on domain   1:    0.22978 elapsed seconds
+Timing for main: time 2026-01-01_08:28:20 on domain   1:    0.23313 elapsed seconds
+Timing for main: time 2026-01-01_08:29:10 on domain   1:    0.22049 elapsed seconds
+Timing for main: time 2026-01-01_08:30:00 on domain   1:    0.22681 elapsed seconds
+Timing for main: time 2026-01-01_08:30:50 on domain   1:    1.12510 elapsed seconds
+Timing for main: time 2026-01-01_08:31:40 on domain   1:    0.23544 elapsed seconds
+Timing for main: time 2026-01-01_08:32:30 on domain   1:    0.70232 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          616   8.000000       8.548611
+Timing for main: time 2026-01-01_08:33:20 on domain   1:    0.36714 elapsed seconds
+Timing for main: time 2026-01-01_08:34:10 on domain   1:    1.25254 elapsed seconds
+Timing for main: time 2026-01-01_08:35:00 on domain   1:    0.22993 elapsed seconds
+Timing for main: time 2026-01-01_08:35:50 on domain   1:    0.22237 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_08:36:40 on domain   1:    0.95908 elapsed seconds
+Timing for main: time 2026-01-01_08:37:30 on domain   1:    1.38725 elapsed seconds
+Timing for main: time 2026-01-01_08:38:20 on domain   1:    0.21916 elapsed seconds
+Timing for main: time 2026-01-01_08:39:10 on domain   1:    0.22428 elapsed seconds
+Timing for main: time 2026-01-01_08:40:00 on domain   1:    0.69910 elapsed seconds
+Timing for main: time 2026-01-01_08:40:50 on domain   1:    0.34006 elapsed seconds
+Timing for main: time 2026-01-01_08:41:40 on domain   1:    0.22054 elapsed seconds
+Timing for main: time 2026-01-01_08:42:30 on domain   1:    0.21917 elapsed seconds
+Timing for main: time 2026-01-01_08:43:20 on domain   1:    0.21895 elapsed seconds
+Timing for main: time 2026-01-01_08:44:10 on domain   1:    0.21941 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          630   8.000000       8.743055
+Timing for main: time 2026-01-01_08:45:00 on domain   1:    0.23291 elapsed seconds
+Timing for main: time 2026-01-01_08:45:50 on domain   1:    1.94727 elapsed seconds
+Timing for main: time 2026-01-01_08:46:40 on domain   1:    0.23995 elapsed seconds
+Timing for main: time 2026-01-01_08:47:30 on domain   1:    0.22775 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_08:48:20 on domain   1:    1.44105 elapsed seconds
+Timing for main: time 2026-01-01_08:49:10 on domain   1:    1.40693 elapsed seconds
+Timing for main: time 2026-01-01_08:50:00 on domain   1:    0.23252 elapsed seconds
+Timing for main: time 2026-01-01_08:50:50 on domain   1:    0.22637 elapsed seconds
+Timing for main: time 2026-01-01_08:51:40 on domain   1:    0.22597 elapsed seconds
+Timing for main: time 2026-01-01_08:52:30 on domain   1:    0.22454 elapsed seconds
+Timing for main: time 2026-01-01_08:53:20 on domain   1:    0.22143 elapsed seconds
+Timing for main: time 2026-01-01_08:54:10 on domain   1:    0.25070 elapsed seconds
+Timing for main: time 2026-01-01_08:55:00 on domain   1:    0.21515 elapsed seconds
+Timing for main: time 2026-01-01_08:55:50 on domain   1:    0.21684 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          644   8.000000       8.937500
+Timing for main: time 2026-01-01_08:56:40 on domain   1:    0.70995 elapsed seconds
+Timing for main: time 2026-01-01_08:57:30 on domain   1:    2.03699 elapsed seconds
+Timing for main: time 2026-01-01_08:58:20 on domain   1:    0.22833 elapsed seconds
+Timing for main: time 2026-01-01_08:59:10 on domain   1:    0.22694 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_09:00:00 on domain   1:    0.94636 elapsed seconds
+Timing for Writing wrfout_d01_2026-01-01_09:00:00 for domain        1:   16.72834 elapsed seconds
+ mediation_integrate: med_read_wrf_chem_emissions: Read emissions for time 2026-01-01_09:00:00
+d01 2026-01-01_09:00:00  Error trying to read metadata
+d01 2026-01-01_09:00:00  Input data is acceptable to use: wrfchemi_d01_2026-01-01_00:00:00
+Timing for main: time 2026-01-01_09:00:50 on domain   1:   17.27753 elapsed seconds
+Timing for main: time 2026-01-01_09:01:40 on domain   1:    0.22096 elapsed seconds
+Timing for main: time 2026-01-01_09:02:30 on domain   1:    0.22430 elapsed seconds
+Timing for main: time 2026-01-01_09:03:20 on domain   1:    0.23294 elapsed seconds
+Timing for main: time 2026-01-01_09:04:10 on domain   1:    0.71197 elapsed seconds
+Timing for main: time 2026-01-01_09:05:00 on domain   1:    0.36352 elapsed seconds
+Timing for main: time 2026-01-01_09:05:50 on domain   1:    0.21896 elapsed seconds
+Timing for main: time 2026-01-01_09:06:40 on domain   1:    0.22848 elapsed seconds
+Timing for main: time 2026-01-01_09:07:30 on domain   1:    0.20883 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          658   9.000000       9.131945
+Timing for main: time 2026-01-01_09:08:20 on domain   1:    0.23212 elapsed seconds
+Timing for main: time 2026-01-01_09:09:10 on domain   1:    1.85694 elapsed seconds
+Timing for main: time 2026-01-01_09:10:00 on domain   1:    0.22967 elapsed seconds
+Timing for main: time 2026-01-01_09:10:50 on domain   1:    0.23574 elapsed seconds
+Timing for main: time 2026-01-01_09:11:40 on domain   1:    0.22789 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_09:12:30 on domain   1:    1.43185 elapsed seconds
+Timing for main: time 2026-01-01_09:13:20 on domain   1:    1.25750 elapsed seconds
+Timing for main: time 2026-01-01_09:14:10 on domain   1:    0.23900 elapsed seconds
+Timing for main: time 2026-01-01_09:15:00 on domain   1:    0.22302 elapsed seconds
+Timing for main: time 2026-01-01_09:15:50 on domain   1:    0.75519 elapsed seconds
+Timing for main: time 2026-01-01_09:16:40 on domain   1:    0.21290 elapsed seconds
+Timing for main: time 2026-01-01_09:17:30 on domain   1:    0.21037 elapsed seconds
+Timing for main: time 2026-01-01_09:18:20 on domain   1:    0.24861 elapsed seconds
+Timing for main: time 2026-01-01_09:19:10 on domain   1:    0.23581 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          672   9.000000       9.326389
+Timing for main: time 2026-01-01_09:20:00 on domain   1:    0.68112 elapsed seconds
+Timing for main: time 2026-01-01_09:20:50 on domain   1:    1.59489 elapsed seconds
+Timing for main: time 2026-01-01_09:21:40 on domain   1:    0.22278 elapsed seconds
+Timing for main: time 2026-01-01_09:22:30 on domain   1:    0.22216 elapsed seconds
+Timing for main: time 2026-01-01_09:23:20 on domain   1:    0.21983 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_09:24:10 on domain   1:    0.93208 elapsed seconds
+Timing for main: time 2026-01-01_09:25:00 on domain   1:    0.38297 elapsed seconds
+Timing for main: time 2026-01-01_09:25:50 on domain   1:    0.21842 elapsed seconds
+Timing for main: time 2026-01-01_09:26:40 on domain   1:    0.21794 elapsed seconds
+Timing for main: time 2026-01-01_09:27:30 on domain   1:    0.22526 elapsed seconds
+Timing for main: time 2026-01-01_09:28:20 on domain   1:    0.70153 elapsed seconds
+Timing for main: time 2026-01-01_09:29:10 on domain   1:    0.39678 elapsed seconds
+Timing for main: time 2026-01-01_09:30:00 on domain   1:    0.22311 elapsed seconds
+Timing for main: time 2026-01-01_09:30:50 on domain   1:    0.42042 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          686   9.000000       9.520833
+Timing for main: time 2026-01-01_09:31:40 on domain   1:    0.22100 elapsed seconds
+Timing for main: time 2026-01-01_09:32:30 on domain   1:    0.89715 elapsed seconds
+Timing for main: time 2026-01-01_09:33:20 on domain   1:    0.21828 elapsed seconds
+Timing for main: time 2026-01-01_09:34:10 on domain   1:    0.21844 elapsed seconds
+Timing for main: time 2026-01-01_09:35:00 on domain   1:    0.22310 elapsed seconds
+Timing for main: time 2026-01-01_09:35:50 on domain   1:    0.22005 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_09:36:40 on domain   1:    1.41265 elapsed seconds
+Timing for main: time 2026-01-01_09:37:30 on domain   1:    0.43517 elapsed seconds
+Timing for main: time 2026-01-01_09:38:20 on domain   1:    0.21653 elapsed seconds
+Timing for main: time 2026-01-01_09:39:10 on domain   1:    0.21388 elapsed seconds
+Timing for main: time 2026-01-01_09:40:00 on domain   1:    0.21890 elapsed seconds
+Timing for main: time 2026-01-01_09:40:50 on domain   1:    0.21741 elapsed seconds
+Timing for main: time 2026-01-01_09:41:40 on domain   1:    0.22084 elapsed seconds
+Timing for main: time 2026-01-01_09:42:30 on domain   1:    0.22225 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          700   9.000000       9.715278
+Timing for main: time 2026-01-01_09:43:20 on domain   1:    0.22032 elapsed seconds
+Timing for main: time 2026-01-01_09:44:10 on domain   1:    0.67646 elapsed seconds
+Timing for main: time 2026-01-01_09:45:00 on domain   1:    0.36929 elapsed seconds
+Timing for main: time 2026-01-01_09:45:50 on domain   1:    0.44416 elapsed seconds
+Timing for main: time 2026-01-01_09:46:40 on domain   1:    0.22327 elapsed seconds
+Timing for main: time 2026-01-01_09:47:30 on domain   1:    0.22118 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_09:48:20 on domain   1:    0.93483 elapsed seconds
+Timing for main: time 2026-01-01_09:49:10 on domain   1:    0.38857 elapsed seconds
+Timing for main: time 2026-01-01_09:50:00 on domain   1:    0.23878 elapsed seconds
+Timing for main: time 2026-01-01_09:50:50 on domain   1:    0.23379 elapsed seconds
+Timing for main: time 2026-01-01_09:51:40 on domain   1:    0.22180 elapsed seconds
+Timing for main: time 2026-01-01_09:52:30 on domain   1:    0.71313 elapsed seconds
+Timing for main: time 2026-01-01_09:53:20 on domain   1:    0.39573 elapsed seconds
+Timing for main: time 2026-01-01_09:54:10 on domain   1:    0.22010 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          714   9.000000       9.909722
+Timing for main: time 2026-01-01_09:55:00 on domain   1:    0.24261 elapsed seconds
+Timing for main: time 2026-01-01_09:55:50 on domain   1:    0.24787 elapsed seconds
+Timing for main: time 2026-01-01_09:56:40 on domain   1:    0.23107 elapsed seconds
+Timing for main: time 2026-01-01_09:57:30 on domain   1:    0.22526 elapsed seconds
+Timing for main: time 2026-01-01_09:58:20 on domain   1:    0.22317 elapsed seconds
+Timing for main: time 2026-01-01_09:59:10 on domain   1:    0.22405 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_10:00:00 on domain   1:    1.39298 elapsed seconds
+Timing for Writing wrfout_d01_2026-01-01_10:00:00 for domain        1:   12.60865 elapsed seconds
+ mediation_integrate: med_read_wrf_chem_emissions: Read emissions for time 2026-01-01_10:00:00
+d01 2026-01-01_10:00:00  Error trying to read metadata
+d01 2026-01-01_10:00:00  Input data is acceptable to use: wrfchemi_d01_2026-01-01_00:00:00
+Timing for main: time 2026-01-01_10:00:50 on domain   1:   13.17871 elapsed seconds
+Timing for main: time 2026-01-01_10:01:40 on domain   1:    0.21242 elapsed seconds
+Timing for main: time 2026-01-01_10:02:30 on domain   1:    0.21313 elapsed seconds
+Timing for main: time 2026-01-01_10:03:20 on domain   1:    0.21072 elapsed seconds
+Timing for main: time 2026-01-01_10:04:10 on domain   1:    0.21004 elapsed seconds
+Timing for main: time 2026-01-01_10:05:00 on domain   1:    0.21130 elapsed seconds
+Timing for main: time 2026-01-01_10:05:50 on domain   1:    0.22314 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          728   10.00000       10.10417
+Timing for main: time 2026-01-01_10:06:40 on domain   1:    0.22569 elapsed seconds
+Timing for main: time 2026-01-01_10:07:30 on domain   1:    0.22515 elapsed seconds
+Timing for main: time 2026-01-01_10:08:20 on domain   1:    0.69832 elapsed seconds
+Timing for main: time 2026-01-01_10:09:10 on domain   1:    0.40273 elapsed seconds
+Timing for main: time 2026-01-01_10:10:00 on domain   1:    0.22252 elapsed seconds
+Timing for main: time 2026-01-01_10:10:50 on domain   1:    0.21417 elapsed seconds
+Timing for main: time 2026-01-01_10:11:40 on domain   1:    0.22018 elapsed seconds
+ photolysis_driver: called for domain            1
+Timing for main: time 2026-01-01_10:12:30 on domain   1:    0.93766 elapsed seconds
+Timing for main: time 2026-01-01_10:13:20 on domain   1:    0.38195 elapsed seconds
+Timing for main: time 2026-01-01_10:14:10 on domain   1:    0.23056 elapsed seconds
+Timing for main: time 2026-01-01_10:15:00 on domain   1:    0.23375 elapsed seconds
+Timing for main: time 2026-01-01_10:15:50 on domain   1:    0.44806 elapsed seconds
+Timing for main: time 2026-01-01_10:16:40 on domain   1:    0.70574 elapsed seconds
+Timing for main: time 2026-01-01_10:17:30 on domain   1:    0.41032 elapsed seconds
+ calculate MEGAN emissions at ktau, gmtp, tmidh =          742   10.00000       10.29861
+Timing for main: time 2026-01-01_10:18:20 on domain   1:    0.22319 elapsed seconds
+Timing for main: time 2026-01-01_10:19:10 on domain   1:    0.22423 elapsed seconds
+Timing for main: time 2026-01-01_10:20:00 on domain   1:    0.22562 elapsed seconds
+Timing for main: time 2026-01-01_10:20:50 on domain   1:    0.24681 elapsed seconds
+Timing for main: time 2026-01-01_10:21:40 on domain   1:    0.22873 elapsed seconds
+Timing for main: time 2026-01-01_10:22:30 on domain   1:    0.22991 elapsed seconds
+Timing for main: time 2026-01-01_10:23:20 on domain   1:    0.22890 elapsed seconds
+ photolysis_driver: called for domain            1
