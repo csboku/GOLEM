@@ -1,3 +1,0 @@
-export WRF_CHEM=1
-export WRFIO_NCD_LARGE_FILE_SUPPORT=1
-export WRF_KPP=1
