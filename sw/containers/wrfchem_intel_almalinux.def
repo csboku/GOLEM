@@ -1,0 +1,136 @@
+Bootstrap: docker
+From: almalinux:9
+
+%post
+    # Configure system to use PowerTools/CodeReady repositories
+    dnf -y install dnf-plugins-core epel-release
+    dnf -y config-manager --set-enabled crb
+
+    echo "### Updating System and Installing Base Dependencies ###"
+    dnf -y update
+    dnf -y install --allowerasing\
+        wget curl \
+        ca-certificates \
+        netcdf-devel netcdf-fortran-devel \
+        hdf5-devel \
+        byacc \
+        libpng-devel \
+        flex-devel \
+        flex \
+        zlib-devel \
+        perl flex bison make cmake nano \
+        nco git \
+        unzip zip \
+        libjpeg-turbo-devel \
+        vim \
+        ksh \
+        tcsh \
+        gcc gcc-c++ gcc-gfortran \
+        gnupg2 \
+        glibc-langpack-en \
+        procps-ng
+
+    echo "### Configuring locales ###"
+    dnf -y install glibc-langpack-en
+    echo "LANG=en_US.UTF-8" > /etc/locale.conf
+    echo "LC_ALL=en_US.UTF-8" >> /etc/locale.conf
+
+
+    # Install Intel oneAPI compilers
+    echo "### Setting up Intel oneAPI repository ###"
+    tee > /etc/yum.repos.d/oneAPI.repo << 'EOF'
+[oneAPI]
+name=Intel(R) oneAPI repository
+baseurl=https://yum.repos.intel.com/oneapi
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://yum.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+EOF
+
+    dnf -y update
+
+    echo "### Installing Intel oneAPI components ###"
+    dnf -y install \
+        intel-oneapi-compiler-fortran \
+        intel-oneapi-compiler-dpcpp-cpp \
+        intel-oneapi-mpi-devel \
+        intel-oneapi-mkl-devel
+
+    # Add Intel oneAPI environment to shell startup
+    echo "### Creating environment setup script ###"
+    cat > /etc/profile.d/intel-wrf.sh << 'EOF'
+#!/bin/bash
+# Source Intel oneAPI environment
+if [ -f /opt/intel/oneapi/setvars.sh ]; then
+    . /opt/intel/oneapi/setvars.sh > /dev/null 2>&1
+fi
+
+# WRF-Chem environment
+export WRF_DIR="/opt/GOLEM/wrfchem"
+export WRF_CHEM=1
+export WRF_KPP=1
+export EM_CORE=1
+export NMM_CORE=0
+export NETCDF=/usr/
+export HDF5=/usr/
+export JASPER="/opt/GOLEM/"
+export JASPERLIB="/opt/GOLEM/lib"
+export JASPERINC="/opt/GOLEM/include"
+export YACC="/usr/bin/yacc -d"
+export FLEX_LIB_DIR=/usr/lib64/
+
+# Intel compiler settings for newer LLVM-based compilers
+export FC=ifx
+export CC=icx
+export CXX=icpx
+export MPIFC=mpiifort
+export MPICC=mpiicc
+export MPICXX=mpiicpc
+
+# Intel-optimized compiler flags for newer LLVM-based compilers
+export FFLAGS='-O3 -fp-model=fast -fiopenmp'
+export CFLAGS='-O3 -fp-model=fast -fiopenmp -Wno-strict-prototypes'
+export CXXFLAGS='-O3 -fp-model=fast -fiopenmp'
+export LDFLAGS='-O3 -fiopenmp'
+
+# For HPC compatibility
+export I_MPI_PMI_LIBRARY=/usr/lib64/libpmi.so
+EOF
+
+    chmod +x /etc/profile.d/intel-wrf.sh
+
+%environment
+    # Set locale environment variables
+    export LANG=en_US.UTF-8
+    export LANGUAGE=en_US:en
+    export LC_ALL=en_US.UTF-8
+
+    # Source the Intel environment setup script
+    . /etc/profile.d/intel-wrf.sh
+
+%runscript
+    exec /bin/bash
+
+%help
+    Intel-optimized container for WRFChem simulations on AlmaLinux 9.
+
+    Features:
+    - Intel oneAPI LLVM-based compilers (ifx/icx)
+    - Intel MPI for parallel processing
+    - Intel MKL for optimized math routines
+    - NetCDF and HDF5 libraries
+
+    Directories for manual compilation:
+    - /opt/jasper_src - Jasper source code
+    - /opt/kpp_src - KPP source code
+    - /opt/wrfchem - Directory for WRFChem compilation
+
+    The environment is set up to use the newer LLVM-based Intel compilers (ifx/icx)
+    with appropriate flags for high performance.
+
+    Designed to work with Slurm on HPC systems.
+    Recommended for Intel Xeon and Core processors.
+
+    To use with Slurm:
+    srun -n [tasks] apptainer exec wrfchem-almalinux.sif [command]
