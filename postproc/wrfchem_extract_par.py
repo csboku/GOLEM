@@ -1,141 +1,71 @@
 #!/usr/bin/env python
 """
-Extract variables from WRF output files at specific heights and surface level.
+Extract variables from WRF output files at specific heights and the ground surface.
 This script loads a WRF output file, extracts variables at user-specified
 heights and at the surface level, and exports the data to a netCDF file.
 
-Includes proper date handling and verification.
+Includes minimal date verification with fixed string handling.
 """
 
 import os
 import sys
 import numpy as np
-from netCDF4 import Dataset, num2date, date2num
+from netCDF4 import Dataset, num2date
 import wrf
-from wrf import getvar, interplevel, to_np, ALL_TIMES, extract_vars
+from wrf import getvar, interplevel, to_np, ALL_TIMES
 import multiprocessing as mp
 from functools import partial
 import time
 import datetime
 
 
-def get_wrf_times(ncfile):
+def verify_wrf_times(ncfile):
     """
-    Extract and validate time information from WRF output.
+    Verify time information from WRF output without changing it.
+    Simply checks and reports if there are issues.
 
     Parameters:
     -----------
     ncfile : netCDF4.Dataset
         Open WRF output file
-
-    Returns:
-    --------
-    tuple:
-        (times_np, times_datetime, time_units, calendar)
-        times_np: numpy array of time values
-        times_datetime: list of datetime objects
-        time_units: string with time units
-        calendar: string with calendar type
     """
     try:
-        # Try to get times using wrf-python
+        # Get times using wrf-python
         times_wrf = getvar(ncfile, "times", timeidx=ALL_TIMES)
         times_np = to_np(times_wrf)
 
-        # Convert to datetime objects and get proper units
-        if hasattr(times_wrf, 'units'):
-            time_units = times_wrf.units
-        else:
-            # Fallback if wrf-python doesn't provide units
-            time_units = 'hours since 1900-01-01 00:00:00'
+        # Print the time range for verification
+        if len(times_np) > 0:
+            print(f"Time range: {times_np[0]} to {times_np[-1]} ({len(times_np)} time steps)")
 
-        # Get calendar if available
-        if hasattr(times_wrf, 'calendar'):
-            calendar = times_wrf.calendar
-        else:
-            calendar = 'standard'
-
-        # Convert to datetime objects
-        times_datetime = []
-        for t in times_np:
-            # Check if it's already a numpy datetime64
-            if isinstance(t, np.datetime64):
-                times_datetime.append(t.astype(datetime.datetime))
-            elif isinstance(t, str):
-                # Parse string format that wrf-python often returns
+            # Check if times are sequential
+            if len(times_np) > 1:
+                # Try to detect if times are evenly spaced
                 try:
-                    times_datetime.append(datetime.datetime.strptime(t, '%Y-%m-%d_%H:%M:%S'))
-                except ValueError:
-                    try:
-                        times_datetime.append(datetime.datetime.strptime(t, '%Y-%m-%d %H:%M:%S'))
-                    except ValueError:
-                        print(f"Warning: Could not parse time string: {t}")
-                        times_datetime.append(None)
-            else:
-                print(f"Warning: Unknown time format: {type(t)}")
-                times_datetime.append(None)
+                    # Check if they're datetime strings or objects
+                    if isinstance(times_np[0], str):
+                        # Parse strings to datetime objects for better comparison
+                        datetime_format = '%Y-%m-%d_%H:%M:%S'
+                        first_time = datetime.datetime.strptime(times_np[0], datetime_format)
+                        second_time = datetime.datetime.strptime(times_np[1], datetime_format)
+                        expected_interval = second_time - first_time
 
-        return times_np, times_datetime, time_units, calendar
+                        # Check a few time steps for consistency
+                        for i in range(1, min(5, len(times_np))):
+                            current = datetime.datetime.strptime(times_np[i], datetime_format)
+                            previous = datetime.datetime.strptime(times_np[i-1], datetime_format)
+                            interval = current - previous
+                            if interval != expected_interval:
+                                print(f"Warning: Inconsistent time interval at step {i}: {interval} vs expected {expected_interval}")
+                    # Additional checks could be added for other types if needed
+                except Exception as e:
+                    print(f"Note: Could not fully verify time intervals: {e}")
+        else:
+            print("Warning: No time steps found in the file")
 
     except Exception as e:
-        print(f"Error getting WRF times: {e}")
-
-        # Fall back to netCDF4 direct access if wrf-python method fails
-        try:
-            if 'Time' in ncfile.dimensions and 'XTIME' in ncfile.variables:
-                xtime = ncfile.variables['XTIME']
-                time_units = xtime.units if hasattr(xtime, 'units') else 'minutes since program start'
-                calendar = xtime.calendar if hasattr(xtime, 'calendar') else 'standard'
-
-                # Convert to datetime objects
-                times_datetime = num2date(xtime[:], units=time_units, calendar=calendar)
-                times_np = xtime[:]
-
-                return times_np, times_datetime, time_units, calendar
-
-            else:
-                # Last resort: create synthetic times based on file name if possible
-                filename = os.path.basename(ncfile.filepath())
-                if filename.startswith('wrfout_') and '_' in filename:
-                    # Try to parse date from filename (common format: wrfout_d01_YYYY-MM-DD_HH:MM:SS)
-                    parts = filename.split('_')
-                    if len(parts) >= 4:
-                        date_str = f"{parts[2]}_{parts[3]}"
-                        try:
-                            base_date = datetime.datetime.strptime(date_str, '%Y-%m-%d_%H:%M:%S')
-                            n_times = len(ncfile.dimensions['Time'])
-
-                            # Create times at hourly intervals
-                            times_datetime = [base_date + datetime.timedelta(hours=i) for i in range(n_times)]
-                            times_np = np.array(range(n_times), dtype=float)
-                            time_units = f'hours since {base_date.strftime("%Y-%m-%d %H:%M:%S")}'
-                            calendar = 'standard'
-
-                            print(f"Warning: Created synthetic times from filename, starting at {base_date}")
-                            return times_np, times_datetime, time_units, calendar
-                        except:
-                            pass
-
-                # Truly last resort: just use integers
-                n_times = len(ncfile.dimensions['Time'])
-                print(f"Warning: Could not determine time information. Using integers 0 to {n_times-1}")
-                times_np = np.array(range(n_times), dtype=float)
-                times_datetime = [datetime.datetime(1900, 1, 1) + datetime.timedelta(hours=i) for i in range(n_times)]
-                time_units = 'hours since 1900-01-01 00:00:00'
-                calendar = 'standard'
-
-                return times_np, times_datetime, time_units, calendar
-
-        except Exception as e2:
-            print(f"Error in fallback time extraction: {e2}")
-            # Final fallback
-            n_times = len(ncfile.dimensions['Time'])
-            times_np = np.array(range(n_times), dtype=float)
-            times_datetime = [datetime.datetime(1900, 1, 1) + datetime.timedelta(hours=i) for i in range(n_times)]
-            time_units = 'hours since 1900-01-01 00:00:00'
-            calendar = 'standard'
-
-            return times_np, times_datetime, time_units, calendar
+        print(f"Warning: Could not verify WRF times: {e}")
+        # This doesn't affect the extraction process, just a warning
 
 
 def safe_get_variable(ncfile, var_name, t_idx):
@@ -373,27 +303,32 @@ def extract_variables_at_heights(wrfout_file, variables, heights, output_file, n
     try:
         # Open the WRF output file to get dimensions and create output file
         with Dataset(wrfout_file, 'r') as ncfile:
+            # Verify dates without modifying them
+            verify_wrf_times(ncfile)
+
             # Get time, latitude, and longitude
+            times = getvar(ncfile, "times", timeidx=ALL_TIMES)
             lats, lons = getvar(ncfile, "lat"), getvar(ncfile, "lon")
 
             # Get shape for pre-allocation
             shape = (lats.shape[0], lats.shape[1])
+            n_times = len(times)
 
-            # Get time information with validation
-            times_np, times_datetime, time_units, calendar = get_wrf_times(ncfile)
-            n_times = len(times_datetime)
-
-            # Print time range for verification
-            if n_times > 0 and times_datetime[0] is not None:
-                start_date = times_datetime[0]
-                end_date = times_datetime[-1]
-                print(f"Time range: {start_date} to {end_date} ({n_times} time steps)")
-            else:
-                print(f"Warning: Could not determine proper time information")
-
-            # Get data to be used by all processes
+            # Get height info to be used by all processes
+            time_values = to_np(times)
             lat_values = to_np(lats)
             lon_values = to_np(lons)
+
+            # Try to get time units and calendar for proper time representation
+            if hasattr(times, 'units'):
+                time_units = times.units
+            else:
+                time_units = 'hours since 1900-01-01 00:00:00'
+
+            if hasattr(times, 'calendar'):
+                calendar = times.calendar
+            else:
+                calendar = 'standard'
 
         # Create output file
         with Dataset(output_file, 'w', format='NETCDF4') as outfile:
@@ -407,34 +342,22 @@ def extract_variables_at_heights(wrfout_file, variables, heights, output_file, n
             time_var = outfile.createVariable('time', 'f8', ('time',))
             time_var.units = time_units
             time_var.calendar = calendar
-
-            # Store times as numeric values
-            if isinstance(times_np[0], (str, np.datetime64)):
-                # Convert string or datetime64 to numeric values using netCDF4
-                numeric_times = date2num(times_datetime, units=time_units, calendar=calendar)
-                time_var[:] = numeric_times
-            else:
-                # Already numeric
-                time_var[:] = times_np
-
-            # Add proper time attributes
             time_var.standard_name = "time"
-            time_var.long_name = "Time"
+            time_var[:] = np.arange(n_times)  # Use simple indices to avoid date conversion issues
 
-            # Create a string variable to store time as formatted dates for convenience
-            time_str_var = outfile.createVariable('time_str', str, ('time',))
-            time_str_var.units = "YYYY-MM-DD_HH:MM:SS"
-            time_str_var.standard_name = "time_as_string"
+            # Create a character array to store time strings
+            # Use a fixed-length character array instead of a string variable
+            str_len = 20  # Length to fit YYYY-MM-DD_HH:MM:SS format
+            outfile.createDimension('str_len', str_len)
+            time_str_var = outfile.createVariable('time_str', 'S1', ('time', 'str_len'))
+            time_str_var.units = "YYYY-MM-DD_HH:MM:SS format"
             time_str_var.long_name = "Time as formatted string"
 
-            # Store formatted date strings
-            time_strings = []
-            for dt in times_datetime:
-                if dt is not None:
-                    time_strings.append(dt.strftime("%Y-%m-%d_%H:%M:%S"))
-                else:
-                    time_strings.append("unknown_time")
-            time_str_var[:] = time_strings
+            # Fill the character array
+            for i, t in enumerate(time_values):
+                t_str = str(t)
+                for j, c in enumerate(t_str[:str_len]):
+                    time_str_var[i, j] = c
 
             height_var = outfile.createVariable('height', 'f8', ('height',))
             height_var.units = 'meters'
@@ -450,13 +373,6 @@ def extract_variables_at_heights(wrfout_file, variables, heights, output_file, n
             lon_var.units = 'degrees_east'
             lon_var.description = 'longitude'
             lon_var[:] = lon_values
-
-            # Add global attributes for tracking
-            outfile.description = f"Variables extracted from {os.path.basename(wrfout_file)}"
-            outfile.history = f"Created on {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
-            outfile.source = "WRF-Chem extraction script"
-            outfile.heights = str(heights)
-            outfile.variables_requested = str(variables)
 
         # Use a process pool for parallel processing of time steps
         with mp.Pool(processes=n_processes) as pool:
