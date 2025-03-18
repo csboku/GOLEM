@@ -7,7 +7,7 @@
  start_second                        = 00, 00, 00, 00
  end_year                           = 2004, 2004, 2004, 2004
  end_month                          = 12, 12, 12, 12
- end_day                            = 31, 31, 31, 31
+ end_day                            = 07, 07, 07, 07
  end_hour                           = 00, 00, 00, 00
  end_minute                         = 00, 00, 00, 00
  end_second                         = 00, 00, 00, 00
@@ -21,13 +21,14 @@
  io_form_restart                     = 2
  io_form_input                       = 2
  io_form_boundary                    = 2
+ auxinput1_inname                    = '/gpfs/data/fs71391/cschmidt/projects/STOA/met/met_em.d<domain>.<date>'
 /
 
 &domains
- time_step                           = 48
+ time_step                           = 42
  time_step_fract_num                 = 0
  time_step_fract_den                 = 1
- max_dom                             = 4
+ max_dom                             = 3
  e_we                               = 180, 301, 271, 226
  e_sn                               = 160, 151, 151, 151
  e_vert                             = 33, 33, 33, 33
@@ -44,13 +45,14 @@
 /
 
 &physics
- mp_physics                         = 2, 2, 2, 2
+ mp_physics                         = 10, 10, 10, 2
  ra_lw_physics                      = 4, 4, 4, 4
  ra_sw_physics                      = 4, 4, 4, 4
  radt                              = 15, 15, 15, 15
  sf_sfclay_physics                  = 2, 2, 2, 2
  sf_surface_physics                 = 2, 2, 2, 2
- bl_pbl_physics                     = 8, 8, 8, 8
+ bl_pbl_physics                     = 5, 5, 5, 8
+ sf_urban_physics                   = 1,1,1,1
  bldt                              = 0, 0, 0, 0
  cu_physics                         = 5, 5, 5, 5
  cudt                              = 5, 5, 5, 5
