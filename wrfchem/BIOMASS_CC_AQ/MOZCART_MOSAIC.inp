@@ -1,0 +1,34 @@
+&control
+
+do_bc     = .true.
+do_ic     = .true.
+
+domain    = 1
+
+dir_wrf   = './'
+
+dir_moz = '/gpfs/data/fs71391/cschmidt/projects/STOA/CAM-CHEM/'
+
+fn_moz  = 'CAM_CHEM_200412.nc'
+moz_var_suffix = ''
+
+
+spc_map = 'o3 -> O3', 'no -> NO', 'no2 -> NO2',
+'hno3 -> HNO3', 'hno4 -> HO2NO2', 'ho -> OH',
+'h2o2 -> H2O2',
+'ch4 -> CH4', 'hcho -> CH2O',
+'co -> CO', 'c2h6 -> C2H6',
+'ald -> CH3CHO',
+'pan -> PAN', 'bigene -> BIGENE', 'bigalk -> BIGALK',
+'isopr -> ISOP', 'tol -> 0.3*TOLUENE',
+'benzene -> 0.7*TOLUENE', 'so2 -> SO2', 'bc_a02->bc_a1',
+'bc_a03->bc_a4', 'so4_a02->so4_a2',
+'so4_a03->so4_a3', 'so4_a04->0.1*so4_a1+so4_a2+so4_a3;1.0',
+'oc_a02->0.4*pom_a1+pom_a4;1.0', 'oc_a03->0.5*pom_a1+pom_a4;1.0', 'oc_a04->0.1*pom_a1+pom_a4;1.0',
+'oin_a02->0.05*dst_a1+0.05*dst_a2+0.05*dst_a3;1.0',
+'oin_a03->0.85*dst_a1+0.85*dst_a2+0.85*dst_a3;1.0',
+'oin_a04->0.10*dst_a1+0.10*dst_a2+0.10*dst_a3;1.0',
+'num_a02->1.25e07*bc_a1+bc_a4 + 1.47e07*so4_a1+so4_a2+so4_a3 + 1.39e07*pom_a1+pom_a4 + 1.18e06*dst_a1 + 1.18e06*dst_a2 +1.18e06*dst_a3;1.0',
+'num_a03->7.82e05*bc_a1+bc_a4 + 2.88e05*so4_a1+so4_a2+so4_a3 + 2.72e05*pom_a1+pom_a4 + 3.14e05*dst_a1 +3.14e05*dst_a2 + 3.14e05*dst_a3;1.0',
+'num_a04-> 8.99e02*SO4 + 8.49e02*OC + 5.77e02*DU01 + 5.77e02*DU02 + 5.77e02*DU03;1.0'
+/
