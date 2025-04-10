@@ -1,0 +1,31 @@
+# WRF-Chem Extraction Configuration
+
+# Input/Output settings
+input:
+  folder: "/path/to/wrfout/files"  # Directory containing wrfout files to process
+  pattern: "wrfout_d01_*"          # File pattern to match (glob pattern)
+
+output:
+  folder: "/path/to/output"        # Directory for output files
+  prefix: "extracted_"             # Prefix for output files
+
+# Variables to extract
+variables:
+  - "O3"      # Ozone 
+  - "PM2_5_DRY"  # PM2.5
+  - "no"      # Nitric oxide
+  - "no2"     # Nitrogen dioxide
+  - "co"      # Carbon monoxide
+
+# Heights for extraction (in meters above ground level)
+heights:
+  - 10    # 10 meters
+  - 100   # 100 meters
+  - 1000  # 1 kilometer
+
+# Processing options
+options:
+  include_surface: true            # Whether to include surface level values
+  processes: null                  # Number of processes (null = auto)
+  process_files_parallel: true     # Process multiple files in parallel
+  max_parallel_files: 2            # Maximum number of files to process in parallel
