@@ -1,0 +1,8 @@
+[deps]
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+Gtk = "4c0ca9eb-093a-5379-98c5-f87ac0bbbf44"
+HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
+JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
+JSON3 = "0f8b85d8-7281-11e9-16c2-39a750bddbf1"
+LanguageServer = "2b0e0bc5-e4fd-59b4-8912-456d1b03d8d7"
+Sockets = "6462fe0b-24de-5631-8697-dd941f90decc"
