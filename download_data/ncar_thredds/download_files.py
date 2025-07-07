@@ -16,7 +16,7 @@ def download_files():
     base_download_url = "https://thredds.rda.ucar.edu/thredds/fileServer/files/g/d313007/2016/"
 
     # The local directory where files will be saved
-    download_directory = "golem_downloaded_files"
+    download_directory = "/sto4/projects/BIOMASS_CC_AQ/geosphere/cam-chem/"
 
     # --- Step 1: Create the local download directory if it doesn't exist ---
     if not os.path.exists(download_directory):
@@ -72,7 +72,7 @@ def download_files():
             # Save the file to the local directory
             with open(local_file_path, 'wb') as f:
                 # Use iter_content to handle large files efficiently
-                for chunk in file_response.iter_content(chunk_size=8192):
+                for chunk in file_response.iter_content(chunk_size=4096):
                     f.write(chunk)
 
             print(f"Successfully downloaded '{name}'")
