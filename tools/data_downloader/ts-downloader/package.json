@@ -1,0 +1,21 @@
+{
+  "name": "ts-downloader",
+  "version": "1.0.0",
+  "description": "A data downloader application.",
+  "main": "main.js",
+  "scripts": {
+    "start": "tsc && electron .",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.10",
+    "electron": "^15.3.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.4"
+  }
+}
