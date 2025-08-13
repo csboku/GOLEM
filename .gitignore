@@ -4,3 +4,5 @@
 *.jld
 *.sif
 *.tif
+data/
+

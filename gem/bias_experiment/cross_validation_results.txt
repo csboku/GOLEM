@@ -1,0 +1,6 @@
+  - Cross-validation run, holding out: station_1
+  - Cross-validation run, holding out: station_2
+  - Cross-validation run, holding out: station_3
+  - Cross-validation run, holding out: station_4
+  - Cross-validation run, holding out: station_5
+Successfully exported RMSE scores to web/data/scores.json
