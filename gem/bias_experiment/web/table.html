@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bias Correction - Tabular Data</title>
+    <style>
+        body { font-family: system-ui, sans-serif; margin: 0; background-color: #f8f9fa; }
+        .header { background-color: #343a40; color: white; padding: 1rem; text-align: center; }
+        .controls { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem; padding: 1rem; background-color: #e9ecef; }
+        .container { padding: 1rem; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { border: 1px solid #dee2e6; padding: 0.75rem; text-align: left; }
+        th { background-color: #e9ecef; }
+        .nav-link { color: white; text-decoration: none; margin: 0 1rem; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Tabular Data</h1>
+        <nav>
+            <a href="index.html" class="nav-link">Dashboard</a>
+            <a href="table.html" class="nav-link">Tables</a>
+        </nav>
+    </div>
+    <div class="controls">
+        <div>
+            <label for="station-scenario-select">Station Network:</label>
+            <select id="station-scenario-select">
+                <option value="3_stations">Sparse (3)</option>
+                <option value="10_stations" selected>Moderate (10)</option>
+                <option value="25_stations">Dense (25)</option>
+            </select>
+        </div>
+    </div>
+    <div class="container" id="table-container">
+        <!-- Tables will be generated here -->
+    </div>
+    <script src="table.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bias Correction Dashboard</title>
+    <style>
+        body { font-family: system-ui, sans-serif; margin: 0; background-color: #f8f9fa; }
+        .header { background-color: #343a40; color: white; padding: 1rem; text-align: center; }
+        .controls { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem; padding: 1rem; background-color: #e9ecef; }
+        .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 1rem; padding: 1rem; }
+        .panel { background-color: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .panel-header { padding: 0.75rem; border-bottom: 1px solid #dee2e6; text-align: center; min-height: 4.5em; }
+        .panel-header h2 { margin: 0; font-size: 1.1rem; }
+        .panel-body { padding: 1rem; }
+        .plot { width: 100%; height: 300px; }
+        #dist-plot-container { grid-column: 1 / -1; }
+    .nav-link { color: white; text-decoration: none; margin: 0 1rem; }
+    </style>
+    <script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Bias Correction Experiment</h1>
+        <nav>
+            <a href="index.html" class="nav-link">Dashboard</a>
+            <a href="table.html" class="nav-link">Tables</a>
+        </nav>
+    </div>
+    <div class="controls">
+        <div>
+            <label for="station-scenario-select">Station Network:</label>
+            <select id="station-scenario-select">
+                <option value="3_stations">Sparse (3)</option>
+                <option value="10_stations" selected>Moderate (10)</option>
+                <option value="25_stations">Dense (25)</option>
+            </select>
+        </div>
+        <div>
+            <label for="method-select">Correction Method:</label>
+            <select id="method-select">
+                <option value="ml" selected>Machine Learning</option>
+                <option value="variance">Variance Scaling</option>
+                <option value="spatial_delta">Spatial Delta</option>
+                <option value="delta">Delta Change</option>
+                <option value="scaling">Scaling</option>
+                <option value="parametric">Parametric (Normal)</option>
+                <option value="parametric_gamma">Parametric (Gamma)</option>
+                <option value="qm">Quantile Mapping</option>
+            </select>
+        </div>
+        <div>
+            <label for="model-scenario-select">Model Scenario:</label>
+            <select id="model-scenario-select">
+                <option value="1km" selected>1km</option>
+                <option value="9km">9km</option>
+            </select>
+        </div>
+    </div>
+    <div class="container">
+        <div id="station-panel" class="panel"><div class="panel-header"></div><div class="panel-body"><div id="station-plot" class="plot"></div></div></div>
+        <div id="original-panel" class="panel"><div class="panel-header"></div><div class="panel-body"><div id="original-plot" class="plot"></div></div></div>
+        <div id="corrected-panel" class="panel"><div class="panel-header"></div><div class="panel-body"><div id="corrected-plot" class="plot"></div></div></div>
+        <div id="difference-panel" class="panel"><div class="panel-header"></div><div class="panel-body"><div id="difference-plot" class="plot"></div></div></div>
+        <div id="dist-plot-container" class="panel">
+            <div class="panel-header"><h2>Distribution Comparison (1km Bimodal Scenario)</h2></div>
+            <div class="panel-body"><div id="dist-plot" class="plot" style="height: 450px;"></div></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

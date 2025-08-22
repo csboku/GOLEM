@@ -3,3 +3,6 @@
 *.svg
 *.jld
 *.sif
+*.tif
+data/
+

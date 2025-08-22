@@ -1,0 +1,74 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[margin=2cm]{geometry}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{booktabs}
+
+\title{Ozone Model Comparison: August 2011}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Spatial Distribution Maps}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{o3_mean_corrected_fine_august_2011.png}
+        \caption{Fine 1km Corrected}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{o3_mean_uncorrected_fine_august_2011.png}
+        \caption{Fine 1km Uncorrected}
+    \end{subfigure}
+    \caption{Fine Resolution Ozone Concentrations}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{o3_mean_corrected_coarse_august_2011.png}
+        \caption{Coarse 9km Corrected}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{o3_mean_corrected_regridded_august_2011.png}
+        \caption{Coarse 9km Uncorrected (Regridded)}
+    \end{subfigure}
+    \caption{Coarse Resolution Ozone Concentrations}
+\end{figure}
+
+\section{Difference Analysis}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{o3_difference_august_2011.png}
+    \caption{Difference Between Fine and Coarse Resolution Models}
+\end{figure}
+
+\section{Statistical Distributions}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{o3_pdf_comparison_august_2011.png}
+    \caption{Probability Density Functions of Ozone Concentrations}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{o3_ecdf_comparison_august_2011.png}
+    \caption{Empirical Cumulative Distribution Functions of Ozone Concentrations}
+\end{figure}
+
+\end{document}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Data Downloader</title>
+    <style>
+        body { font-family: sans-serif; padding: 1em; }
+        .container { display: flex; flex-direction: column; height: 100vh; }
+        .input-group { margin-bottom: 1em; }
+        .button-group { display: flex; gap: 1em; margin-bottom: 1em; }
+        #link-list { flex-grow: 1; overflow-y: auto; border: 1px solid #ccc; padding: 0.5em; }
+        #link-list option { padding: 0.25em; }
+        #status { margin-top: 1em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input-group">
+            <label for="url-input">URL:</label>
+            <input type="text" id="url-input" style="width: 100%;">
+        </div>
+        <button id="fetch-button">Fetch Links</button>
+
+        <div class="input-group" style="margin-top: 1em;">
+            <label for="filter-input">Filter:</label>
+            <input type="text" id="filter-input" style="width: 100%;">
+        </div>
+
+        <select id="link-list" multiple style="height: 300px;"></select>
+
+        <div class="button-group">
+            <button id="download-selected-button">Download Selected</button>
+            <button id="download-all-button">Download All</button>
+        </div>
+
+        <div id="status">Enter a URL and click 'Fetch Links'</div>
+    </div>
+
+    <script src="./renderer.js"></script>
+</body>
+</html>
