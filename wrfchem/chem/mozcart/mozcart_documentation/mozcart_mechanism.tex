@@ -1,0 +1,539 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{hyperref}
+
+\geometry{margin=1in}
+
+\title{MOZART-GEOS5 Chemical Mechanism (MOZCART) Documentation}
+\author{Generated from KPP Files}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\section{Introduction}
+
+This document describes the MOZART-GEOS5 chemical mechanism (MOZCART) as implemented in the Kinetic PreProcessor (KPP) format. The MOZCART mechanism is a tropospheric gas-phase chemical mechanism that includes comprehensive treatment of hydrocarbon chemistry, nitrogen oxides, and sulfur chemistry.
+
+The mechanism includes 83 variable species and represents atmospheric chemistry processes including:
+\begin{itemize}
+    \item Photolysis reactions
+    \item Gas-phase radical reactions
+    \item Volatile organic compound (VOC) oxidation
+    \item Nitrogen oxide chemistry
+    \item Sulfur chemistry
+    \item Aerosol precursor formation
+\end{itemize}
+
+\section{Chemical Species}
+
+\subsection{Variable Species}
+
+The mechanism includes 83 variable chemical species that are transported and undergo chemical transformations. These species are defined with the IGNORE flag, indicating they are calculated by the chemical solver.
+
+\begin{longtable}{|p{3cm}|p{8cm}|p{3cm}|}
+\hline
+\textbf{Species} & \textbf{Description} & \textbf{Category} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Species} & \textbf{Description} & \textbf{Category} \\
+\hline
+\endhead
+
+O3 & Ozone & Oxidant \\
+O & Atomic oxygen & Radical \\
+O1D\_CB4 & Excited oxygen atom O($^1$D) & Radical \\
+N2O & Nitrous oxide & Nitrogen oxide \\
+NO & Nitric oxide & Nitrogen oxide \\
+NO2 & Nitrogen dioxide & Nitrogen oxide \\
+NO3 & Nitrate radical & Nitrogen oxide \\
+NH3 & Ammonia & Nitrogen compound \\
+HNO3 & Nitric acid & Nitrogen oxide \\
+HO2NO2 & Peroxynitric acid & Nitrogen oxide \\
+N2O5 & Dinitrogen pentoxide & Nitrogen oxide \\
+H2 & Hydrogen & Inorganic \\
+OH & Hydroxyl radical & Radical \\
+HO2 & Hydroperoxyl radical & Radical \\
+H2O2 & Hydrogen peroxide & Peroxide \\
+CH4 & Methane & Hydrocarbon \\
+CO & Carbon monoxide & Carbon oxide \\
+CH3O2 & Methyl peroxy radical & Peroxy radical \\
+CH3OOH & Methyl hydroperoxide & Peroxide \\
+CH2O & Formaldehyde & Aldehyde \\
+CH3OH & Methanol & Alcohol \\
+C2H4 & Ethene & Alkene \\
+EO & Ethoxy radical & Radical \\
+EO2 & Ethylperoxy radical & Peroxy radical \\
+CH3CHO & Acetaldehyde & Aldehyde \\
+CH3COOH & Acetic acid & Organic acid \\
+CH3COCH3 & Acetone & Ketone \\
+CH3COCHO & Methylglyoxal & Dicarbonyl \\
+CH3CO3 & Acetyl peroxy radical & Peroxy radical \\
+CH3COOOH & Peracetic acid & Peroxide \\
+GLYOXAL & Glyoxal & Dicarbonyl \\
+PO2 & Propylperoxy radical & Peroxy radical \\
+POOH & Propyl hydroperoxide & Peroxide \\
+PAN & Peroxyacetyl nitrate & Organic nitrate \\
+MPAN & Methacryloyl peroxynitrate & Organic nitrate \\
+MCO3 & Methacryloyl peroxy radical & Peroxy radical \\
+MACR & Methacrolein & Aldehyde \\
+MACRO2 & Methacrolein peroxy radical & Peroxy radical \\
+MACROOH & Methacrolein hydroperoxide & Peroxide \\
+MVK & Methyl vinyl ketone & Ketone \\
+C2H6 & Ethane & Alkane \\
+C3H6 & Propene & Alkene \\
+C3H8 & Propane & Alkane \\
+C2H5OH & Ethanol & Alcohol \\
+C2H5OOH & Ethyl hydroperoxide & Peroxide \\
+C3H7O2 & Propyl peroxy radical & Peroxy radical \\
+C3H7OOH & Propyl hydroperoxide & Peroxide \\
+C10H16 & $\alpha$-Pinene (monoterpene) & Biogenic VOC \\
+RO2 & Generic peroxy radical & Peroxy radical \\
+ROOH & Generic hydroperoxide & Peroxide \\
+ONIT & Organic nitrate & Organic nitrate \\
+ONITR & Alkyl nitrate & Organic nitrate \\
+ISOP & Isoprene & Biogenic VOC \\
+ISOPO2 & Isoprene peroxy radical & Peroxy radical \\
+ISOPOOH & Isoprene hydroperoxide & Peroxide \\
+ISOPNO3 & Isoprene nitrate & Organic nitrate \\
+HYAC & Hydroxyacetone & Ketone \\
+GLYALD & Glycolaldehyde & Aldehyde \\
+HYDRALD & Hydroxyaldehyde & Aldehyde \\
+ENEO2 & Lumped alkene peroxy radical & Peroxy radical \\
+MEK & Butanone (methyl ethyl ketone) & Ketone \\
+MEKO2 & Butanone peroxy radical & Peroxy radical \\
+C2H5O2 & Ethyl peroxy radical & Peroxy radical \\
+BIGENE & Lumped alkenes & Alkene \\
+BIGALD & Lumped aldehydes & Aldehyde \\
+BIGALK & Lumped alkanes & Alkane \\
+ALKO2 & Alkane peroxy radical & Peroxy radical \\
+ALKOOH & Alkane hydroperoxide & Peroxide \\
+MEKOOH & Butanone hydroperoxide & Peroxide \\
+TOLUENE & Toluene & Aromatic \\
+TOLO2 & Toluene peroxy radical & Peroxy radical \\
+TOLOOH & Toluene hydroperoxide & Peroxide \\
+TERPO2 & Monoterpene peroxy radical & Peroxy radical \\
+TERPOOH & Monoterpene hydroperoxide & Peroxide \\
+CRESOL & Cresol & Aromatic \\
+DMS & Dimethyl sulfide & Sulfur compound \\
+SO2 & Sulfur dioxide & Sulfur compound \\
+SO4 & Sulfate & Sulfur compound \\
+XO2 & Generic peroxy radical & Peroxy radical \\
+XOH & Generic hydroxyl compound & Radical \\
+XOOH & Generic hydroperoxide & Peroxide \\
+\hline
+\end{longtable}
+
+\subsection{Fixed Species}
+
+The mechanism includes two fixed species that are held constant:
+\begin{itemize}
+    \item \textbf{H2O}: Water vapor - concentration determined by meteorological conditions
+    \item \textbf{M}: Total air density - represents third-body collisions in pressure-dependent reactions
+\end{itemize}
+
+\section{Chemical Reactions}
+
+The MOZCART mechanism consists of 197 chemical reactions divided into two main categories:
+
+\subsection{Photolysis Reactions (J01-J38)}
+
+Photolysis reactions represent the breakdown of molecules by solar radiation. These reactions are typically first-order with rate constants that depend on solar zenith angle, overhead ozone column, and atmospheric conditions.
+
+Key photolysis processes include:
+
+\subsubsection{Inorganic Photolysis}
+\begin{itemize}
+    \item O2 photolysis: O2 + h$\nu$ $\rightarrow$ O + O
+    \item Ozone photolysis: O3 + h$\nu$ $\rightarrow$ O($^1$D) + O2 or O + O2
+    \item NO2 photolysis: NO2 + h$\nu$ $\rightarrow$ O + NO
+    \item N2O5 photolysis: N2O5 + h$\nu$ $\rightarrow$ NO2 + NO3
+\end{itemize}
+
+\subsubsection{Organic Photolysis}
+\begin{itemize}
+    \item Formaldehyde: CH2O + h$\nu$ $\rightarrow$ HO2 + HO2 + CO or CO + H2
+    \item Acetaldehyde: CH3CHO + h$\nu$ $\rightarrow$ CH3O2 + CO + HO2
+    \item Peroxides: ROOH + h$\nu$ $\rightarrow$ RO + OH
+    \item PAN: PAN + h$\nu$ $\rightarrow$ CH3CO3 + NO2 (branching ratios apply)
+\end{itemize}
+
+\subsection{Gas-Phase Reactions (001-157)}
+
+Gas-phase reactions include bimolecular and termolecular reactions with temperature and pressure dependencies.
+
+\subsubsection{Oxygen Chemistry}
+Key reactions controlling ozone formation and destruction:
+\begin{align}
+\text{O + O2 + M} &\rightarrow \text{O3 + M} \\
+\text{O + O3} &\rightarrow \text{2O2} \\
+\text{O($^1$D) + M} &\rightarrow \text{O + M} \\
+\text{O($^1$D) + H2O} &\rightarrow \text{2OH}
+\end{align}
+
+\subsubsection{HOx Chemistry}
+Reactions involving OH and HO2 radicals:
+\begin{align}
+\text{OH + CO} &\rightarrow \text{HO2 + CO2} \\
+\text{HO2 + HO2} &\rightarrow \text{H2O2 + O2} \\
+\text{OH + HO2} &\rightarrow \text{H2O + O2} \\
+\text{H2O2 + OH} &\rightarrow \text{HO2 + H2O}
+\end{align}
+
+\subsubsection{NOx Chemistry}
+Nitrogen oxide reactions:
+\begin{align}
+\text{NO + HO2} &\rightarrow \text{NO2 + OH} \\
+\text{NO + O3} &\rightarrow \text{NO2 + O2} \\
+\text{NO2 + OH + M} &\rightarrow \text{HNO3 + M} \\
+\text{NO2 + NO3 + M} &\rightarrow \text{N2O5 + M}
+\end{align}
+
+\subsubsection{Hydrocarbon Oxidation}
+Methane and higher hydrocarbons:
+\begin{align}
+\text{CH4 + OH} &\rightarrow \text{CH3O2 + H2O} \\
+\text{CH3O2 + NO} &\rightarrow \text{CH2O + NO2 + HO2} \\
+\text{C2H4 + OH + M} &\rightarrow \text{EO2 + M} \\
+\text{ISOP + OH} &\rightarrow \text{ISOPO2}
+\end{align}
+
+\section{Rate Expressions}
+
+The mechanism uses several types of rate expressions:
+
+\subsection{Arrhenius Rate Constants}
+Simple temperature-dependent rate constants:
+\begin{equation}
+k(T) = A \exp\left(-\frac{E_a}{RT}\right)
+\end{equation}
+
+Implemented as \texttt{ARR2(A, Ea, TEMP)} where $E_a$ is in Kelvin.
+
+\subsection{Pressure-Dependent Reactions}
+Three-body reactions using Troe formalism:
+\begin{equation}
+k(T,M) = \frac{k_0[M]}{1 + k_0[M]/k_\infty} F_c^{\left(1 + [\log_{10}(k_0[M]/k_\infty)]^2\right)^{-1}}
+\end{equation}
+
+Implemented as \texttt{TROE(k0\_300K, n, kinf\_300K, m, TEMP, C\_M)}.
+
+\subsection{User-Defined Functions}
+Several complex reactions use custom rate functions:
+
+\begin{itemize}
+    \item \textbf{usr5}: OH + HNO3 reaction with complex pressure dependence
+    \item \textbf{usr8}: CO + OH reaction with water vapor enhancement
+    \item \textbf{usr9}: HO2 + HO2 reaction with water vapor catalysis
+    \item \textbf{usr23}: SO2 + OH reaction using updated parameterization
+    \item \textbf{usr24}: DMS + OH reaction with branching ratios
+\end{itemize}
+
+\section{Ozone Chemistry and Formation Mechanisms}
+
+Ozone (O3) is a central species in tropospheric chemistry, serving both as an important greenhouse gas and air quality indicator. The MOZCART mechanism includes comprehensive treatment of ozone formation and destruction pathways through both inorganic and organic reaction chains.
+
+\subsection{Fundamental Ozone Reactions}
+
+\subsubsection{Ozone Formation}
+The primary mechanism for tropospheric ozone formation involves the photochemical oxidation of volatile organic compounds (VOCs) in the presence of nitrogen oxides (NOx). The key reactions include:
+
+\textbf{Chapman Cycle:}
+\begin{align}
+\text{O2 + h$\nu$ ($\lambda < 242$ nm)} &\rightarrow \text{O + O} \quad \text{(J01)} \\
+\text{O + O2 + M} &\rightarrow \text{O3 + M} \quad \text{(001)} \\
+\text{O3 + h$\nu$} &\rightarrow \text{O($^1$D) + O2} \quad \text{(J02)} \\
+\text{O3 + h$\nu$} &\rightarrow \text{O($^3$P) + O2} \quad \text{(J03)}
+\end{align}
+
+\textbf{Catalytic Ozone Production:}
+The net production of ozone occurs through VOC oxidation in the presence of NOx:
+\begin{align}
+\text{VOC + OH} &\rightarrow \text{RO2 + H2O} \\
+\text{RO2 + NO} &\rightarrow \text{RO + NO2} \\
+\text{RO + O2} &\rightarrow \text{RCHO + HO2} \\
+\text{HO2 + NO} &\rightarrow \text{OH + NO2} \\
+\text{2(NO2 + h$\nu$)} &\rightarrow \text{2(NO + O)} \\
+\text{2(O + O2 + M)} &\rightarrow \text{2(O3 + M)}
+\end{align}
+
+Net reaction: VOC + 4O2 + 2h$\nu$ $\rightarrow$ RCHO + H2O + 2O3
+
+\subsubsection{Ozone Destruction}
+Ozone destruction occurs through several pathways:
+
+\textbf{Direct photolysis and O($^1$D) reactions:}
+\begin{align}
+\text{O3 + h$\nu$} &\rightarrow \text{O($^1$D) + O2} \quad \text{(J02)} \\
+\text{O($^1$D) + H2O} &\rightarrow \text{2OH} \quad \text{(004)} \\
+\text{O($^1$D) + M} &\rightarrow \text{O($^3$P) + M} \quad \text{(003)}
+\end{align}
+
+\textbf{Reaction with radicals:}
+\begin{align}
+\text{O3 + OH} &\rightarrow \text{HO2 + O2} \quad \text{(009)} \\
+\text{O3 + HO2} &\rightarrow \text{OH + 2O2} \quad \text{(010)} \\
+\text{O3 + NO} &\rightarrow \text{NO2 + O2} \quad \text{(019)}
+\end{align}
+
+\textbf{Reaction with alkenes (ozonolysis):}
+\begin{align}
+\text{O3 + C2H4} &\rightarrow \text{CH2O + products} \quad \text{(044)} \\
+\text{O3 + C3H6} &\rightarrow \text{CH2O + CH3CHO + products} \quad \text{(056)} \\
+\text{O3 + ISOP} &\rightarrow \text{MACR + MVK + products} \quad \text{(098)}
+\end{align}
+
+\subsection{Detailed VOC Oxidation Pathways}
+
+Volatile organic compound oxidation is the primary driver of tropospheric ozone formation. The MOZCART mechanism includes detailed treatment of various VOC classes.
+
+\subsubsection{Alkane Oxidation}
+
+\textbf{Methane Oxidation:}
+Methane (CH4) is the most abundant hydrocarbon in the atmosphere:
+\begin{align}
+\text{CH4 + OH} &\rightarrow \text{CH3O2 + H2O} \quad \text{(034)} \\
+\text{CH4 + O($^1$D)} &\rightarrow \text{0.75 CH3O2 + 0.75 OH + products} \quad \text{(035)} \\
+\text{CH3O2 + NO} &\rightarrow \text{CH2O + NO2 + HO2} \quad \text{(036)} \\
+\text{CH3O2 + HO2} &\rightarrow \text{CH3OOH + O2} \quad \text{(038)}
+\end{align}
+
+The methyl peroxy radical (CH3O2) can also undergo self-reaction:
+\begin{align}
+\text{CH3O2 + CH3O2} &\rightarrow \text{2CH2O + 2HO2} \quad \text{(036)} \\
+\text{CH3O2 + CH3O2} &\rightarrow \text{CH2O + CH3OH} \quad \text{(037)}
+\end{align}
+
+\textbf{Ethane Oxidation:}
+\begin{align}
+\text{C2H6 + OH} &\rightarrow \text{C2H5O2 + H2O} \quad \text{(050)} \\
+\text{C2H5O2 + NO} &\rightarrow \text{CH3CHO + HO2 + NO2} \quad \text{(051)} \\
+\text{C2H5O2 + HO2} &\rightarrow \text{C2H5OOH + O2} \quad \text{(052)}
+\end{align}
+
+\textbf{Propane Oxidation:}
+\begin{align}
+\text{C3H8 + OH} &\rightarrow \text{C3H7O2 + H2O} \quad \text{(070)} \\
+\text{C3H7O2 + NO} &\rightarrow \text{0.82 CH3COCH3 + 0.27 CH3CHO + NO2 + HO2} \quad \text{(071)}
+\end{align}
+
+\textbf{Higher Alkanes (BIGALK):}
+Large alkanes are represented by the lumped species BIGALK:
+\begin{align}
+\text{BIGALK + OH} &\rightarrow \text{ALKO2} \quad \text{(083)} \\
+\text{ALKO2 + NO} &\rightarrow \text{products + NO2 + HO2} \quad \text{(084)}
+\end{align}
+
+\subsubsection{Alkene Oxidation}
+
+\textbf{Ethene Oxidation:}
+\begin{align}
+\text{C2H4 + OH + M} &\rightarrow \text{EO2 + M} \quad \text{(043)} \\
+\text{C2H4 + O3} &\rightarrow \text{CH2O + products} \quad \text{(044)} \\
+\text{EO2 + NO} &\rightarrow \text{EO + NO2} \quad \text{(047)} \\
+\text{EO} &\rightarrow \text{2CH2O + HO2} \quad \text{(049)}
+\end{align}
+
+\textbf{Propene Oxidation:}
+\begin{align}
+\text{C3H6 + OH + M} &\rightarrow \text{PO2 + M} \quad \text{(055)} \\
+\text{C3H6 + O3} &\rightarrow \text{products} \quad \text{(056)} \\
+\text{C3H6 + NO3} &\rightarrow \text{ONIT} \quad \text{(057)} \\
+\text{PO2 + NO} &\rightarrow \text{CH3CHO + CH2O + HO2 + NO2} \quad \text{(058)}
+\end{align}
+
+\textbf{Lumped Alkenes (BIGENE):}
+\begin{align}
+\text{BIGENE + OH} &\rightarrow \text{ENEO2} \quad \text{(080)} \\
+\text{ENEO2 + NO} &\rightarrow \text{products + NO2 + HO2} \quad \text{(081)}
+\end{align}
+
+\subsubsection{Aromatic VOC Oxidation}
+
+\textbf{Toluene Oxidation:}
+Aromatic compounds undergo complex oxidation forming both ring-opening and ring-retaining products:
+\begin{align}
+\text{TOLUENE + OH} &\rightarrow \text{0.25 CRESOL + 0.25 HO2 + 0.7 TOLO2} \quad \text{(091)} \\
+\text{TOLO2 + NO} &\rightarrow \text{0.45 GLYOXAL + 0.45 CH3COCHO + 0.9 BIGALD + products} \quad \text{(094)} \\
+\text{CRESOL + OH} &\rightarrow \text{XOH} \quad \text{(092)} \\
+\text{XOH + NO2} &\rightarrow \text{0.7 NO2 + 0.7 BIGALD + 0.7 HO2} \quad \text{(093)}
+\end{align}
+
+\subsubsection{Biogenic VOC Oxidation}
+
+\textbf{Isoprene Oxidation:}
+Isoprene (C5H8) is the most abundant non-methane biogenic VOC:
+
+\textit{OH-initiated oxidation:}
+\begin{align}
+\text{ISOP + OH} &\rightarrow \text{ISOPO2} \quad \text{(097)} \\
+\text{ISOPO2 + NO} &\rightarrow \text{0.08 ONITR + 0.92 NO2 + products} \quad \text{(099)} \\
+\text{ISOPO2 + HO2} &\rightarrow \text{ISOPOOH} \quad \text{(101)} \\
+\text{ISOPOOH + OH} &\rightarrow \text{0.5 XO2 + 0.5 ISOPO2} \quad \text{(102)}
+\end{align}
+
+\textit{Ozonolysis:}
+\begin{align}
+\text{ISOP + O3} &\rightarrow \text{0.4 MACR + 0.2 MVK + products} \quad \text{(098)}
+\end{align}
+
+\textit{NO3-initiated oxidation:}
+\begin{align}
+\text{ISOP + NO3} &\rightarrow \text{ISOPNO3} \quad \text{(130)} \\
+\text{ISOPNO3 + NO} &\rightarrow \text{products + ONITR} \quad \text{(131)}
+\end{align}
+
+\textbf{Monoterpene Oxidation:}
+Monoterpenes (C10H16) represent larger biogenic VOCs:
+\begin{align}
+\text{C10H16 + OH} &\rightarrow \text{TERPO2} \quad \text{(123)} \\
+\text{C10H16 + O3} &\rightarrow \text{0.7 OH + MVK + MACR + HO2} \quad \text{(124)} \\
+\text{C10H16 + NO3} &\rightarrow \text{TERPO2 + NO2} \quad \text{(125)} \\
+\text{TERPO2 + NO} &\rightarrow \text{products + NO2} \quad \text{(126)}
+\end{align}
+
+\subsubsection{Oxidation of Secondary Products}
+
+\textbf{Formaldehyde (CH2O):}
+Formaldehyde is a key intermediate in VOC oxidation:
+\begin{align}
+\text{CH2O + OH} &\rightarrow \text{CO + HO2 + H2O} \quad \text{(041)} \\
+\text{CH2O + NO3} &\rightarrow \text{CO + HO2 + HNO3} \quad \text{(040)} \\
+\text{CH2O + h$\nu$} &\rightarrow \text{HO2 + HO2 + CO} \quad \text{(J12)} \\
+\text{CH2O + h$\nu$} &\rightarrow \text{CO + H2} \quad \text{(J13)}
+\end{align}
+
+\textbf{Acetaldehyde (CH3CHO):}
+\begin{align}
+\text{CH3CHO + OH} &\rightarrow \text{CH3CO3 + H2O} \quad \text{(061)} \\
+\text{CH3CHO + NO3} &\rightarrow \text{CH3CO3 + HNO3} \quad \text{(062)} \\
+\text{CH3CHO + h$\nu$} &\rightarrow \text{CH3O2 + CO + HO2} \quad \text{(J15)}
+\end{align}
+
+\textbf{Acetone (CH3COCH3):}
+\begin{align}
+\text{CH3COCH3 + OH} &\rightarrow \text{RO2 + H2O} \quad \text{(075)} \\
+\text{CH3COCH3 + h$\nu$} &\rightarrow \text{CH3CO3 + CH3O2} \quad \text{(J25)}
+\end{align}
+
+\subsection{PAN Chemistry}
+
+Peroxyacetyl nitrate (PAN) and related compounds serve as temporary reservoirs for NOx and play crucial roles in ozone formation:
+
+\textbf{PAN Formation and Destruction:}
+\begin{align}
+\text{CH3CO3 + NO2 + M} &\rightarrow \text{PAN + M} \quad \text{(064)} \\
+\text{PAN + M} &\rightarrow \text{CH3CO3 + NO2 + M} \quad \text{(068)} \\
+\text{PAN + OH} &\rightarrow \text{CH2O + NO3 + CO2} \quad \text{(149)} \\
+\text{PAN + h$\nu$} &\rightarrow \text{0.6 CH3CO3 + 0.6 NO2 + products} \quad \text{(J18)}
+\end{align}
+
+\textbf{MPAN (Methacryloyl PAN):}
+\begin{align}
+\text{MCO3 + NO2 + M} &\rightarrow \text{MPAN + M} \quad \text{(121)} \\
+\text{MPAN + M} &\rightarrow \text{MCO3 + NO2 + M} \quad \text{(122)} \\
+\text{MPAN + OH} &\rightarrow \text{products} \quad \text{(148)}
+\end{align}
+
+\subsection{Ozone Production Efficiency}
+
+The ozone production efficiency depends on the VOC/NOx ratio and the reactivity of the VOC mixture. Different VOC classes contribute differently to ozone formation:
+
+\begin{itemize}
+    \item \textbf{High reactivity}: Alkenes (C2H4, C3H6), isoprene, monoterpenes
+    \item \textbf{Medium reactivity}: Aromatics (toluene), aldehydes (CH3CHO)  
+    \item \textbf{Low reactivity}: Alkanes (CH4, C2H6), alcohols (CH3OH)
+\end{itemize}
+
+The mechanism captures the nonlinear relationship between VOC emissions, NOx concentrations, and ozone formation, enabling accurate simulation of ozone sensitivity regimes in different atmospheric conditions.
+
+\section{Special Features}
+
+\subsection{Heterogeneous Chemistry}
+The mechanism includes several heterogeneous reactions that occur on aerosol surfaces:
+\begin{itemize}
+    \item N2O5 hydrolysis: N2O5 $\rightarrow$ 2HNO3
+    \item NO3 uptake: NO3 $\rightarrow$ HNO3
+    \item HO2 uptake: HO2 $\rightarrow$ 0.5H2O2
+\end{itemize}
+
+These reactions use humidity and temperature-dependent rate coefficients.
+
+\subsection{Isoprene Chemistry}
+Detailed treatment of isoprene (C5H8) oxidation includes:
+\begin{itemize}
+    \item OH-initiated oxidation forming ISOPO2
+    \item Ozonolysis reactions
+    \item Formation of methacrolein (MACR) and methyl vinyl ketone (MVK)
+    \item Secondary oxidation products
+\end{itemize}
+
+\subsection{Aromatic Chemistry}
+Simplified treatment of aromatic compounds:
+\begin{itemize}
+    \item Toluene oxidation by OH
+    \item Formation of cresol and peroxy radicals
+    \item Fragmentation to smaller carbonyls
+\end{itemize}
+
+\section{Implementation Notes}
+
+\subsection{Fortran 90 Implementation}
+The mechanism is implemented with Fortran 90 functions for complex rate calculations. Custom functions handle:
+\begin{itemize}
+    \item JPL Troe formalism for pressure dependence
+    \item User-defined rate expressions
+    \item Temperature and pressure scaling
+\end{itemize}
+
+\subsection{Photolysis Rates}
+Photolysis rates are calculated externally and passed to the mechanism through the TUV (Tropospheric Ultraviolet-Visible) radiative transfer model. The mapping file \texttt{mozcart.tuv.jmap} connects KPP photolysis labels to TUV reaction numbers.
+
+\subsection{Integration with WRF-Chem}
+The mechanism is designed for use within the WRF-Chem modeling system with:
+\begin{itemize}
+    \item Species mapping through \texttt{mozcart\_wrfkpp.equiv}
+    \item Consistent units and conventions
+    \item Optimized for computational efficiency
+\end{itemize}
+
+\section{Summary}
+
+The MOZCART chemical mechanism provides a comprehensive treatment of tropospheric gas-phase chemistry suitable for regional and global atmospheric modeling. With 83 species and 197 reactions, it captures the essential processes controlling:
+
+\begin{itemize}
+    \item Ozone formation and destruction
+    \item Radical cycling (HOx, NOx)
+    \item Volatile organic compound oxidation
+    \item Secondary organic aerosol precursors
+    \item Sulfur chemistry
+\end{itemize}
+
+The mechanism balances chemical detail with computational efficiency, making it suitable for multi-dimensional atmospheric chemistry transport models.
+
+\section{References}
+
+\begin{itemize}
+    \item Emmons, L. K., et al. (2010). Description and evaluation of the Model for Ozone and Related Chemical Tracers, version 4 (MOZART-4). \textit{Geoscientific Model Development}, 3(1), 43-67.
+    \item Sander, S. P., et al. (2011). Chemical kinetics and photochemical data for use in atmospheric studies. \textit{JPL Publication}, 10-6.
+    \item Damian, V., et al. (2002). The kinetic preprocessor KPP-a software environment for solving chemical kinetics. \textit{Computers \& Chemical Engineering}, 26(11), 1567-1579.
+\end{itemize}
+
+\end{document}
