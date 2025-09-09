@@ -35,7 +35,7 @@ end
 
 
 
-function download_files(urls::Vector{String}, download_dir::String="./downloads")
+function download_files(urls, download_dir::String="./downloads")
     # Create download directory
     mkpath(download_dir)
 
@@ -70,5 +70,8 @@ end
 # Usage
 links = extract_links_from_file("./dsd.html")
 
-failed_downloads = download_files(links, "/sto4/")
+
+
+
+failed_downloads = download_files(links, "/sto4/projects/BIOMASS_CC_AQ/geosphere/rcp_data/dl/")
 

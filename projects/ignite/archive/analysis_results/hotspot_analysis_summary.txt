@@ -1,0 +1,26 @@
+
+HOTSPOT ANALYSIS SUMMARY (fireevents_final style)
+================================================
+
+DATASET:
+• Hotspot fires: 275
+• Region: T
+• Date range: 2003-2020
+
+FFMC ADJUSTMENTS:
+• Mean adjustment: +1.048
+• Standard deviation: 3.290
+• Range: -11.2 to +12.2
+
+CLASS CHANGES:
+• No change: 181 fires (65.8%)
+• Upgraded: 75 fires (27.3%)
+• Downgraded: 19 fires (6.9%)
+
+GENERATED FILES:
+• hotspot_heatmap_ffmc_class_changes.png
+• hotspot_barplot_ffmc_class_comparison.png  
+• hotspot_barplot_ffmc_class_changes.png
+• hotspot_ffmc_panel.png
+• hotspot_summary_stats.png
+    
