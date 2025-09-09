@@ -1,0 +1,41 @@
+div.gridbox{
+	overflow:hidden;
+}
+div.gridbox table.hdr td {
+	font-family:arial;
+	font-size:12px;
+	background-Color:#D4D0C8;
+	border: 1px solid;
+	border-color : white Gray Gray white;
+	text-align: center;
+	margin:0px;
+	padding:5px 0px 5px 0px ;
+	font-weight:normal;
+    -moz-user-select:none;
+	}
+div.gridbox table.obj td {
+	border: 1px solid;
+	border-color : white Gray Gray white;
+	font-family:arial;
+	font-size:12px;
+    -moz-user-select:none;
+	}
+div.gridbox .objbox {
+	background-color:white;
+
+	}
+div.gridbox table.obj td span.space, div.gridbox table.obj td img.space{
+	width:18px;
+	}
+div.gridbox table.obj tr.rowselected td.cellselected, div.gridbox table.obj td.cellselected {
+	background-color:#d8d8d8;
+	color:black;
+	}
+div.gridbox table.obj tr.rowselected td{
+	background-color:#e1e0d7;
+	color:black;
+	}
+div.gridbox table.obj td.editable{
+    -moz-user-select:text;
+    color:green;
+    }

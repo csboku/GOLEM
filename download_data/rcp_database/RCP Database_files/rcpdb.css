@@ -1,0 +1,490 @@
+* {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 9pt;
+}
+
+table {
+  border: 0px;
+}
+table.resultTable {
+  background-color: #ccc;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Verdana, Arial, sans-serif;
+  font-size:10pt;
+  background-color: #f5f5f5;
+  /* width: 1000;
+  height: 700; */
+}
+body.rcpdbapp {
+  background-color: #fff;
+  overflow: hidden;
+}
+.headerRow {
+	background-color: #fe3;
+	font-weight: bold;
+	font-size: 9pt;
+}
+.oddRow {
+	background-color: #f5f5f5; /* #ddf */;
+}
+.evenRow {
+	background-color: #eee; /*#cce;   */
+}
+#header_intro {
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  padding: 3px;
+  font-size: 15px;
+  overflow: hidden;
+}
+div.chartHeader {
+  font-weight: bold;
+  padding-left: 3px;
+  font-size: 12px;
+  background-color: #ddf;
+  overflow: hidden;
+  height: 22;
+  vertical-align: top;
+}
+div.treeHeader {
+  font-weight: bold;
+  padding: 3px;
+  font-size: 12px;
+  background-color: #ddf;
+  overflow: hidden;
+  height: 16;
+  vertical-align: middle;
+}
+div.treeContent {
+  top: 24px;
+  bottom: 2px;
+  overflow: auto;
+  height: 230em;
+  /*height:70em;
+    */
+}
+div.downloadOption {
+  float: left;
+  border: 2px solid;
+  width: 180;
+  height: 68;
+  display: inline;
+  margin: 3px;
+  border-color:#e0e0e0 #bbb #bbb #e0e0e0;
+  background-color: #eee;
+  padding: 2px;
+  text-align: center;
+}
+div.downloadOption p {
+  margin: 0px;
+  text-align: center;
+}
+div.downloadOption a {
+  border: 0px;
+}
+#header {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 998;
+  height: 70;
+  background-color:#f5f5f5;
+  border :1px solid Silver;
+  overflow: visible;
+}
+
+#header_toolbar {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 46;
+  background-image:url(../img/bannernd.jpg);
+  /*background-color: orange; /*#f5f5f5; */
+  overflow: visible;
+  border: 1px solid;
+  border-color: blue;
+}
+
+#iamc_link {
+  float: left;
+}
+
+#rcpdb_label {
+  float: right;
+  color: white;/* #00ff33; */
+  font-size: 24px;
+  padding-top: 0;
+  padding-right: 5;
+}
+#rcpdb_versionlabel {
+  position: absolute;
+  color: yellow;
+  font-size: 15px;
+  font-weight: bold;
+  top: 27;
+  right: 4;
+}
+
+#rcpdb_disclaimer {
+  color: yellow;
+  font-size: 16px;
+  font-weight: bold;
+  padding-top: 2px;
+  text-align: center;
+  visibility: hidden;
+}
+
+#tree_zone {
+  width:1000;
+  height:330;
+  position: absolute;
+  top: 28px;
+  left: 0px;
+  overflow: hidden;
+}
+
+#bulk_zone {
+  width:1000;
+  height:330;
+  position: absolute;
+  top: 28px;
+  left: 0px;
+  overflow: auto;
+}
+
+#scenario_tree_container {
+  position: absolute;
+  width: 148;
+  height: 272;
+  top: 48;
+  left: 152;
+  background-color:#f5f5f5;
+  border :1px solid Silver;
+  overflow: hidden;
+}
+#region_tree_container {
+  position: absolute;
+  width: 148;
+  height: 272;
+  top: 48;
+  left: 2px;
+  background-color:#f5f5f5;
+  border :1px solid Silver;
+  overflow: hidden;
+}
+#variable_tree_container {
+  position: absolute;
+  width: 197;
+  height: 272;
+  top: 48;
+  left: 302;
+  background-color:#f5f5f5;
+  border :1px solid Silver;
+}
+#content {
+  position: absolute;
+  width: 996;
+  height: 300;
+  top: 350;
+  left: 2;
+}
+.about * {
+  font-size: 12pt;
+}
+.about {
+  padding: 0;
+  overflow: hidden;
+}
+.about p {
+  top: 3pt;
+  bottom: 3pt;
+}
+.about li {
+  font-size: 12pt;
+  top: 3pt;
+  bottom: 3pt;
+}
+.about h1 {
+  font-size: 18pt;
+  font-weight: bold;
+}
+.about h2 {
+  font-size: 16pt;
+  font-weight: bold;
+}
+.about h3 {
+  font-size: 13pt;
+  font-weight: bold;
+}
+.about_nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding-top: 12;
+  width: 175;
+  /* background-color: green; */
+}
+.about_content {
+  position: absolute;
+  top: 0;
+  left: 160;
+  height: 500;
+  padding-left: 12pt;
+  padding-right: 6pt;
+  overflow: auto;
+}
+.spatial_content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 500;
+  padding-left: 12pt;
+  padding-right: 6pt;
+  overflow: auto;
+}
+#result_area_container {
+  position: absolute;
+  width: 998;
+  height: 294;
+  top: 2;
+  left: 0;
+  background-color:#f5f5f5;
+  border :1px solid Silver;
+}
+#result1 {
+  width: 992;
+  height: 270;
+}
+#chart_area_container {
+  position: absolute;
+  width: 499;
+  height: 272;
+  top: 48;
+  left: 501;
+  background-color:#f5f5f5;
+  border :1px solid Silver;
+}
+#chart1 {
+  position: absolute;
+  width: 496;
+  height:20;
+  top: 20;
+  left: 1;
+  background-color:#f5f5f5;
+}
+#download_area_container {
+  position: absolute;
+  width: 497;
+  height: 110;
+  top: 300;
+  background-color:#f5f5f5;
+  border :1px solid Silver;
+}
+#download_area_content {
+  background-color:#f5f5f5;
+  overflow: auto;
+  height: 86;
+}
+#description_area_container {
+  position: absolute;
+  width: 497;
+  height: 110;
+  top: 300;
+  left: 501;
+  background-color:#f5f5f5;
+  border :1px solid Silver;
+}
+#description_area_content {
+  background-color:#f5f5f5;
+  overflow: auto;
+}
+#description_area_content p {
+  margin: 3;
+  margin-bottom: 6;
+}
+#help_area_container {
+  position: absolute;
+  width: 50%;
+  height: 40%;
+  top: 70%;
+  left: 50%;
+  background-color:#fff505;
+  border :1px solid Silver;
+  visibility: hidden;
+}
+#footer {
+  position: absolute;
+  left: 2;
+  bottom: 2;
+  width: 998;
+  background: #f5f5f5;
+  height: 16px;
+  border :1px solid Silver;
+  padding: 2px;
+  font-size: 12px;
+}
+#help_trigger {
+  position: absolute;
+  right: 0;
+  height: 16;
+  bottom: 0;
+  width: 18;
+  border :1px solid Silver;
+  background-color: #ffff00;
+  font-weight: bold;
+  color: red;
+  text-align: center;
+  padding: 0;
+}
+#copyright {
+  position: absolute;
+  height: 18;
+  left: 2;
+}
+#loginform {
+  height: 16px;
+}
+#logindiv {
+  position: absolute;
+  top: 0;
+  bottom:0;
+  right:25;
+  width: 30em;
+}
+.logindiv {
+  padding-left: 10pt;
+}
+#logindiv input {
+  border: solid 1px silver;
+}
+div#navmenu {
+  position: absolute;
+  top: 27;
+  left: 175;
+  background: #008;
+  background-image:url(../img/bannernd.jpg);
+}
+ul#nav, ul#nav li {
+  list-style-type:none;
+  margin:0;
+  padding:0
+}
+ul#nav {
+  margin-left: 0px;
+  
+}
+ul#nav li {
+  float: left;
+  margin-right: 5px;
+  text-align: center
+}
+ul#nav a {
+  float:left;
+  width: 7em;
+  padding: 2px 0;
+  background: #922;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: #efe;
+}
+ul#nav a:hover {
+  background: #faa;/*#FFA826;*/
+  color: black;
+}
+ul#nav li.activelink a,ul#nav li.activelink a:hover {
+  background: #f5f5f5;
+  color: black;
+}
+ul#abnav, ul#abnav li {
+  list-style-type:none;
+  margin:0;
+  padding:0
+}
+ul#abnav {
+  margin-left: 0px;
+  
+}
+ul#abnav li {
+  float: left;
+  margin-top: 5px;
+  text-align: left;
+}
+ul#abnav a {
+  float:left;
+  width: 160;
+  padding: 2px 0;
+  padding-left: 6;
+  background: #922;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: #efe;
+}
+ul#abnav a:hover {
+  background: #faa;/*#FFA826;*/
+  color: black;
+}
+ul#abnav li.activelink a,ul#nav li.activelink a:hover {
+  background: #f5f5f5;
+  color: black;
+}
+td.flabl {
+  padding-right: 3pt;
+  font-size: 9pt;
+  width: 20%;
+  text-align: right;
+}
+td.flabl-required {
+  padding-right: 3pt;
+  font-weight: bold;
+  font-size: 9pt;
+  width: 20%; 
+  text-align: right
+}td.fdata input {
+  border-right: #666 1pt solid;
+  padding-right: 2pt;
+  border-top: #666 1pt solid;
+  padding-left: 2pt;
+  font-size: 10pt;
+  border-left: #666 1pt solid;
+  width: 100%;
+  border-bottom: #666 1pt solid;
+  background-color: #ffd;
+}
+.fdata textarea {
+  border-right: #666 1pt solid;
+  PADDING-RIGHT: 2pt;
+  BORDER-TOP: #666 1pt solid;
+  PADDING-LEFT: 2pt;
+  FONT-SIZE: 10pt;
+  BORDER-LEFT: #666 1pt solid;
+  WIDTH: 100%;
+  BORDER-BOTTOM: #666 1pt solid;
+  BACKGROUND-COLOR: #ffd;
+}
+body.login {
+  padding: 10;
+}
+body.agrdefs {
+  padding: 10;
+}
+div.error_msg {
+  background-color: rgb(255,255,204);
+  margin: 10pt;
+  padding-left: 10pt;
+  padding-right: 10pt;
+  border: 1pt solid rgb(255,64,64);
+}
+div.info_msg {
+  background-color: rgb(255,255,204);
+  margin: 10pt;
+  padding-left: 10pt;
+  padding-right: 10pt;
+  border: 2pt solid rgb(32,192,32);
+}
