@@ -26,8 +26,9 @@ def download_era5_plev_data(year_str, month_str):
     # Determine the number of days in the month
     num_days_in_month = calendar.monthrange(year, month)[1]
 
-    days_part1 = [str(d).zfill(2) for d in range(1, min(19, num_days_in_month + 1))]
-    days_part2 = [str(d).zfill(2) for d in range(19, num_days_in_month + 1)]
+    days_part1 = [str(d).zfill(2) for d in range(1, min(11, num_days_in_month + 1))]
+    days_part2 = [str(d).zfill(2) for d in range(11, min(21, num_days_in_month + 1))]
+    days_part3 = [str(d).zfill(2) for d in range(21, num_days_in_month + 1)]
 
     common_params = {
         'product_type': 'reanalysis',
@@ -99,6 +100,22 @@ def download_era5_plev_data(year_str, month_str):
             print(f"Error downloading {output_filename_p2}: {e}")
             # No sys.exit here, as part 1 might have been successful.
             # Or, decide if partial success is acceptable.
+    if days_part3:
+        request_params_p3 = common_params.copy()
+        request_params_p3['day'] = days_part3
+        output_filename_p3 = f'ERA5_pl_{year}_{str(month).zfill(2)}_p3.grib'
+
+        print(f"Requesting part 3 data for {year}-{str(month).zfill(2)}, days: {days_part3}")
+        print(f"Output file: {output_filename_p3}")
+        try:
+            c.retrieve('reanalysis-era5-pressure-levels', request_params_p3, output_filename_p3)
+            print(f"Successfully downloaded {output_filename_p3}")
+        except Exception as e:
+            print(f"Error downloading {output_filename_p3}: {e}")
+            # No sys.exit here, as part 1 might have been successful.
+            # Or, decide if partial success is acceptable.
+
+
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
